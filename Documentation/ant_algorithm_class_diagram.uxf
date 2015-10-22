@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="11.3">
+  <zoom_level>7</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>133</x>
+      <y>77</y>
+      <w>189</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>Ant
+--
+- position : int
+- destination : int
+- lastPosition : int
+--
++ move(landscape : Landscape) : int
++ setDest(dest : int) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>63</x>
+      <y>336</y>
+      <w>308</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>AntColony
+--
+- ants : Vector&lt;Ant&gt;
+- antMoves : Vector&lt;Vector&lt;int&gt;&gt;
+- landscape : Landscape
+- source : int
+- destination : int
+--
++ nextStep(steps: unsigned int = 1): Vector&lt;Vector&lt;int&gt;&gt;
++ getAntMoves() : Vector&lt;Vector&lt;int&gt;&gt;
++ getLandscape() : Landscape</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>532</x>
+      <y>357</y>
+      <w>245</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>Landscape
+--
+- adjazenz : Vector&lt;Path&gt;
+- pheromonUpdate : Vector&lt;Vector&lt;double&gt;&gt;
+--
++ getPath (position : int) : PathIterator
++ update () : void
++ setPheromonUpdate (from : int, to : int) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>525</x>
+      <y>84</y>
+      <w>245</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>Path
+--
++ cost : double
++ pheromone : double
++ source : int
++ destination : int
++ next : Path *
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>203</x>
+      <y>140</y>
+      <w>40</w>
+      <h>209</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1 ... *
+m2= 1</panel_attributes>
+    <additional_attributes>21;21;21;196</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>350</x>
+      <y>378</y>
+      <w>195</w>
+      <h>34</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>182;21;21;21</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>630</x>
+      <y>147</y>
+      <w>40</w>
+      <h>223</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1 ... *
+m2= 1</panel_attributes>
+    <additional_attributes>21;21;21;210</additional_attributes>
+  </element>
+</diagram>
