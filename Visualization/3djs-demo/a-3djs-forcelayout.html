@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>D3-forcelayout</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+
+
+  <style>
+
+	.node {
+	    fill: #32cd32;
+	    stroke: #ffd700;
+	    stroke-width: 2px;
+	}
+
+	.link {
+	    stroke: #2e8b57;
+	    stroke-width: 2px;
+	}
+
+  </style>
+
+ 
+
+</head>
+<body id="bootstrap-themes" class="swag-line template-index">
+<div class="container">
+  <h2>D3.js Data Visualization</h2>
+
+  <p>Ziel dieser Demo ist es einen Graphen mithilfe von D3.js Force Layout auf der Grundlage einer Adjazenzmatrix dynamisch zu erzeugen.</p>
+
+  <div class="panel panel-default">
+	  <div class="panel-heading">
+   		 <h3 class="panel-title">Graph Visualisierung</h3>
+  	  </div>
+  	  <div id="visPanel" class="panel-body">
+	    
+	  </div>
+  </div>
+  <div class="panel panel-default">
+	  <div class="panel-heading">
+   		 <h3 class="panel-title">Adjazenzmatrix JSON</h3>
+  	  </div>
+  	  <div class="panel-body">
+	    <pre>{
+	{ source: 1, target: 2 },
+    { source: 1, target: 5 },
+    { source: 1, target: 4 },
+    { source: 2, target: 3 },
+    { source: 2, target: 5 },
+    { source: 3, target: 5 },
+    { source: 3, target: 6 },
+    { source: 4, target: 5 },
+    { source: 4, target: 7 },
+    { source: 4, target: 8 },
+    { source: 4, target: 9 },
+    { source: 5, target: 6 },
+    { source: 5, target: 9 },
+    { source: 5, target: 12 },
+    { source: 6, target: 9 },
+    { source: 6, target: 10 },
+    { source: 6, target: 12 },
+    { source: 7, target: 8 },
+    { source: 7, target: 11 },
+    { source: 7, target: 12 },
+    { source: 8, target: 9 },
+    { source: 8, target: 11 },
+    { source: 8, target: 12 },
+    { source: 9, target: 10 },
+    { source: 9, target: 12 },
+    { source: 9, target: 13 },
+    { source: 11, target: 12 },
+    { source: 11, target: 13 },
+    { source: 12, target: 13 }
+}</pre>
+	  </div>
+  </div>
+  <div class="panel panel-default">
+	  <div class="panel-heading">
+   		 <h3 class="panel-title">Tutorials</h3>
+  	  </div>
+  	  <div class="panel-body">
+	    
+    <a href="http://bl.ocks.org/sathomas/11550728">Understanding D3.js Force Layout</a>
+	  </div>
+  </div>
+
+  <script>
+
+// Define the dimensions of the visualization. We're using
+// a size that's convenient for displaying the graphic on
+// http://jsDataV.is
+
+var width = 960,
+    height = 600;
+
+// Define the data for the example. In general, a force layout
+// requires two data arrays. The first array, here named `nodes`,
+// contains the object that are the focal point of the visualization.
+// The second array, called `links` below, identifies all the links
+// between the nodes. (The more mathematical term is "edges.")
+
+// For the simplest possible example we only define two nodes. As
+// far as D3 is concerned, nodes are arbitrary objects. Normally the
+// objects wouldn't be initialized with `x` and `y` properties like
+// we're doing below. When those properties are present, they tell
+// D3 where to place the nodes before the force layout starts its
+// magic. More typically, they're left out of the nodes and D3 picks
+// random locations for each node. We're defining them here so we can
+// get a consistent application of the layout which lets us see the
+// effects of different properties.
+
+var nodes = {};
+
+// The `links` array contains objects with a `source` and a `target`
+// property. The values of those properties are the indices in
+// the `nodes` array of the two endpoints of the link.
+
+var links = [
+    { source: 1, target: 2 },
+    { source: 1, target: 5 },
+    { source: 1, target: 4 },
+    { source: 2, target: 3 },
+    { source: 2, target: 5 },
+    { source: 3, target: 5 },
+    { source: 3, target: 6 },
+    { source: 4, target: 5 },
+    { source: 4, target: 7 },
+    { source: 4, target: 8 },
+    { source: 4, target: 9 },
+    { source: 5, target: 6 },
+    { source: 5, target: 9 },
+    { source: 5, target: 12 },
+    { source: 6, target: 9 },
+    { source: 6, target: 10 },
+    { source: 6, target: 12 },
+    { source: 7, target: 8 },
+    { source: 7, target: 11 },
+    { source: 7, target: 12 },
+    { source: 8, target: 9 },
+    { source: 8, target: 11 },
+    { source: 8, target: 12 },
+    { source: 9, target: 10 },
+    { source: 9, target: 12 },
+    { source: 9, target: 13 },
+    { source: 11, target: 12 },
+    { source: 11, target: 13 },
+    { source: 12, target: 13 }
+];
+
+links.forEach(function(link) {
+  link.source = nodes[link.source] || (nodes[link.source] = {name: link.source});
+  link.target = nodes[link.target] || (nodes[link.target] = {name: link.target});
+});
+
+var svg = d3.select('#visPanel').append('svg')
+    .attr('width', width)
+    .attr('height', height);
+
+var force = d3.layout.force()
+	.nodes(d3.values(nodes))
+	.links(links)
+    .size([width, height])
+    .charge(-9000)
+    .start();
+
+force.gravity(0.4);
+force.linkDistance(height/10);
+
+
+var link = svg.selectAll('.link')
+    .data(links)
+    .enter().append('line')
+    .attr('class', 'link');
+
+var node = svg.selectAll('.node')
+    .data(force.nodes())
+    .enter().append('circle')
+    .attr('class', 'node');
+
+force.on('end', function() {
+  
+    node.attr('r', 10)
+        .attr('cx', function(d) { return d.x; })
+        .attr('cy', function(d) { return d.y; });
+
+
+    link.attr('x1', function(d) { return d.source.x; })
+        .attr('y1', function(d) { return d.source.y; })
+        .attr('x2', function(d) { return d.target.x; })
+        .attr('y2', function(d) { return d.target.y; });
+
+});
+
+
+
+
+    </script>
+    
+</div>
+</body>
+</html>
