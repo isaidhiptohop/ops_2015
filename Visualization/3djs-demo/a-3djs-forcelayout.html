@@ -88,36 +88,12 @@
 	  </div>
   </div>
 
-  <script>
-
-// Define the dimensions of the visualization. We're using
-// a size that's convenient for displaying the graphic on
-// http://jsDataV.is
+<script>
 
 var width = 960,
     height = 600;
 
-// Define the data for the example. In general, a force layout
-// requires two data arrays. The first array, here named `nodes`,
-// contains the object that are the focal point of the visualization.
-// The second array, called `links` below, identifies all the links
-// between the nodes. (The more mathematical term is "edges.")
-
-// For the simplest possible example we only define two nodes. As
-// far as D3 is concerned, nodes are arbitrary objects. Normally the
-// objects wouldn't be initialized with `x` and `y` properties like
-// we're doing below. When those properties are present, they tell
-// D3 where to place the nodes before the force layout starts its
-// magic. More typically, they're left out of the nodes and D3 picks
-// random locations for each node. We're defining them here so we can
-// get a consistent application of the layout which lets us see the
-// effects of different properties.
-
 var nodes = {};
-
-// The `links` array contains objects with a `source` and a `target`
-// property. The values of those properties are the indices in
-// the `nodes` array of the two endpoints of the link.
 
 var links = [
     { source: 1, target: 2 },
@@ -156,49 +132,50 @@ links.forEach(function(link) {
   link.target = nodes[link.target] || (nodes[link.target] = {name: link.target});
 });
 
-var svg = d3.select('#visPanel').append('svg')
-    .attr('width', width)
-    .attr('height', height);
-
 var force = d3.layout.force()
 	.nodes(d3.values(nodes))
 	.links(links)
     .size([width, height])
-    .charge(-9000)
+    .linkDistance(height/8)
+    .linkStrength(0.65)
+    .charge(-3000)
+    .gravity(0.1)
+    .on("tick", tick)
     .start();
 
-force.gravity(0.4);
-force.linkDistance(height/10);
+var svg = d3.select('#visPanel').append('svg')
+    .attr('width', width)
+    .attr('height', height);
 
-
-var link = svg.selectAll('.link')
-    .data(links)
-    .enter().append('line')
+var link = svg.append("g").selectAll('.link')
+    .data(force.links())
+    .enter().append('path')
     .attr('class', 'link');
 
-var node = svg.selectAll('.node')
+var node = svg.append("g").selectAll('node')
     .data(force.nodes())
     .enter().append('circle')
-    .attr('class', 'node');
+    .attr('r', 10)
+    .attr('class', 'node')
+    .call(force.drag);
 
-force.on('end', function() {
-  
-    node.attr('r', 10)
-        .attr('cx', function(d) { return d.x; })
-        .attr('cy', function(d) { return d.y; });
+function tick() {
+  link.attr("d", linkArc);
+  node.attr("transform", transform);
+}
 
+function linkArc(d) {
+  var dx = d.target.x - d.source.x,
+      dy = d.target.y - d.source.y,
+      dr = 0;
+  return "M" + d.source.x + "," + d.source.y + "A" + dr + "," + dr + " 0 0,1 " + d.target.x + "," + d.target.y;
+}
 
-    link.attr('x1', function(d) { return d.source.x; })
-        .attr('y1', function(d) { return d.source.y; })
-        .attr('x2', function(d) { return d.target.x; })
-        .attr('y2', function(d) { return d.target.y; });
+function transform(d) {
+  return "translate(" + d.x + "," + d.y + ")";
+}
 
-});
-
-
-
-
-    </script>
+</script>
     
 </div>
 </body>
