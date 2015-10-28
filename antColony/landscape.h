@@ -2,6 +2,7 @@
 #define ANT_COLONY_LANDSCAPE_H
 
 #include "interfaces.h"
+#include "pathiterator.h"
 
 namespace ant_colony {
 

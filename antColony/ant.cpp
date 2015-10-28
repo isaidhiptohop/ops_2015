@@ -6,9 +6,25 @@ namespace ant_colony {
 	Ant::~Ant() {}
 	
 	int Ant::move(ILandscape& landscape) {
+		bool pathToLast = false;
+		std::vector<IPath> p;
+				
+		IPathIterator &iterator=*(landscape.getPaths(position));
+		for(;iterator; ++iterator){
+			if(*iterator.destination==lastPosition)
+				pathToLast = true;
+			else
+				p.push_back(*iterator);
+		}
+
 		return 0;
 	}
 	
-	void Ant::setDestination(int) {
+	//setter with not negativ test
+	void Ant::setDestination(int dest){
+		if(dest>=0)
+			destination = dest;
+		else
+			throw 0; // todo fehlermeldung
 	}
 }
