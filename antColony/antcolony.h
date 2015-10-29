@@ -9,7 +9,7 @@
 namespace ant_colony {
 
 	class AntColony : public IAntColony {
-		//std::vector<std::unique_ptr<IAnt>> ants;
+		//std::vector<std::unique_ptr<int>> ants;
 		ILandscape * landscape;
 		std::vector<std::vector<int>> history;
 		public:
