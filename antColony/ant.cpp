@@ -7,14 +7,15 @@ namespace ant_colony {
 	
 	int Ant::move(ILandscape& landscape) {
 		bool pathToLast = false;
-		std::vector<IPath> p;
+		//std::vector<IPath> p; //Markus: du kannst kein vector mit dem typ IPath erstellen
 				
-		IPathIterator &iterator=*(landscape.getPaths(position));
+		IPathIterator & iterator=*(landscape.getPaths(position));
+		
 		for(;iterator; ++iterator){
-			if(*iterator.destination==lastPosition)
+			if((*iterator).destination==lastPosition)
 				pathToLast = true;
 			else
-				p.push_back(*iterator);
+				;//p.push_back(*iterator);
 		}
 
 		return 0;

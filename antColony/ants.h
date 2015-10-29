@@ -4,3 +4,4 @@
 #include "landscape.h"
 #include "path.h"
 #include "pathiterator.h"
+#include "exceptions.h"

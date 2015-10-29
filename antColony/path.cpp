@@ -5,5 +5,9 @@ namespace ant_colony {
 	
 	Path::Path(double cost, double pheromon, int source, int destination) : Path(cost, pheromon, source, destination, nullptr){}
 	
-	Path::~Path() {}
+	Path::~Path() {
+		if(this->next) {
+			delete this->next;
+		}
+	}
 }

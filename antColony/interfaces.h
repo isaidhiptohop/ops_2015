@@ -57,7 +57,7 @@ namespace ant_colony {
 		IPathIterator();
 		public:
 		virtual IPathIterator& operator++() = 0;
-		virtual IPath& operator*() const = 0;
+		virtual const IPath& operator*() const = 0;
 		virtual operator bool() const = 0;
 		virtual ~IPathIterator();
 	};
