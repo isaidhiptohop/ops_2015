@@ -8,7 +8,7 @@ namespace ant_colony {
 	Landscape::~Landscape() {}
 	
 	IPathIterator* Landscape::getPaths(int position) const {
-		return nullptr;
+		return new PathIterator(nullptr);
 	}
 	
 	void Landscape::update() {

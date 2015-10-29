@@ -2,6 +2,7 @@
 #define ANT_COLONY_ANT_H
 
 #include"interfaces.h"
+#include<vector>
 
 namespace ant_colony {
 
