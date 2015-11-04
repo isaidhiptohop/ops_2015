@@ -6,13 +6,17 @@
 #include <stdexcept>
 #include <cstdlib>
 
-// #include "antColony/ants.h"
+#include "antColony/ants.h"
+
+// using namespace ant_Colony
 
 /****************** environment struct ******************/
 
+// dummy struct as long as AntColony is under development
 struct AntColony {
     int foo = 1;
 };
+// */
 
 struct Environment {
     /* ant algorithm parameters
@@ -77,10 +81,8 @@ void printEnvironment (Environment * environment, std::fstream & log);
 // draws a square matrix with brackets (oh my glob)
 void drawMatrix (int size, double ** matrix, std::fstream & log);
 
+// draws vector with brackets
 void drawVector (std::vector<double> vector);
-
-// starts the ant algorithm on the given environment
-void initAntAlgorithm (AntColony * antColony = nullptr);
 
 
 /****************** main function ******************/
@@ -160,16 +162,16 @@ int main () {
             }
             else if (command == "start" && environment) { // starts the ant algorithm on set environment
                 bool algorithmIsRunning = true;
-                initAntAlgorithm (antColony);
+                // initialising the antColony with set environment
+                antColony = new AntColony (/*environment->n, environment->adjacency, environment->source, environment->destination, environment->alpha, environment->beta*/);
                 int steps = 1;
                 
                 while (algorithmIsRunning) {
                     std::string buf;
-//                    std::string stepsStr; // just a relict of an old version
                     
                     while (std::getline (std::cin, buf)) {
                         log << buf << std::endl;
-                        if (buf.empty()) { // default or last set step amount is taken again
+                        if (buf.empty()) { // default or last set step amount is used again
                             break;
                         }            
                         else if (buf == "abort") { // ant algorithms is aborted
@@ -189,7 +191,8 @@ int main () {
                     }
 
                     // the steps taken by the ant colony are saved in ant moves
-                    antMoves.push_back (antColony.nextStep (steps));
+//                    antMoves.push_back (antColony->nextStep (steps));
+//                    antColony.getLandscape
 
                     if (algorithmIsRunning) { // only a little gimmick, so no output is made after run has been aborted
                         if (steps != 1) {
@@ -244,9 +247,6 @@ void newEnvironment (Environment * environment, std::fstream & log) {
     std::cout << "path destination = ";
     std::cin >> environment->destination;
     log << "path destination = " << environment->destination << std::endl;
-    
-    //caling input function which calls interface function
-    input (environment->n, environment->adjacency, environment->source, environment->destination);
 }
 
 void setMatrix (Environment * environment, std::fstream & log)
@@ -341,6 +341,3 @@ void drawMatrix (int size, double ** matrix, std::fstream & log) {
     log << " /" << std::endl;
 }
 
-void initAntAlgorithm (AntColony * antColony) {
-    std::cout << "void initAntAlgorithm" << std::endl;
-}
