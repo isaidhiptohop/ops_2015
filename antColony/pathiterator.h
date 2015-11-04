@@ -10,10 +10,10 @@ namespace ant_colony {
 		Path * path;
 		public:
 		PathIterator(Path * path);
-		virtual IPathIterator& operator++();
-		virtual IPath& operator*() const;
-		virtual operator bool() const;
-		virtual ~PathIterator();
+		IPathIterator& operator++() override;
+		const IPath& operator*() const override;
+		operator bool() const override;
+		~PathIterator();
 	};
 }
 

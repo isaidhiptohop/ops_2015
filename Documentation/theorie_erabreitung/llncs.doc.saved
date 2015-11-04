@@ -1,0 +1,1280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE abiword PUBLIC "-//ABISOURCE//DTD AWML 1.0 Strict//EN" "http://www.abisource.com/awml.dtd">
+<abiword template="false" xmlns:ct="http://www.abisource.com/changetracking.dtd" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:math="http://www.w3.org/1998/Math/MathML" xid-max="1258" xmlns:dc="http://purl.org/dc/elements/1.1/" fileformat="1.1" xmlns:svg="http://www.w3.org/2000/svg" xmlns:awml="http://www.abisource.com/awml.dtd" xmlns="http://www.abisource.com/awml.dtd" xmlns:xlink="http://www.w3.org/1999/xlink" version="3.0.0" xml:space="preserve" props="dom-dir:ltr; document-footnote-restart-section:0; document-endnote-type:numeric; document-endnote-place-enddoc:1; document-endnote-initial:1; lang:de-AT; document-endnote-restart-section:0; document-footnote-restart-page:0; document-footnote-type:numeric; document-footnote-initial:1; document-endnote-place-endsection:0">
+<!-- ======================================================================== -->
+<!-- This file is an AbiWord document.                                        -->
+<!-- AbiWord is a free, Open Source word processor.                           -->
+<!-- More information about AbiWord is available at http://www.abisource.com/ -->
+<!-- You should not edit this file by hand.                                   -->
+<!-- ======================================================================== -->
+
+<metadata>
+<m key="abiword.generator">AbiWord</m>
+<m key="dc.format">application/x-abiword</m>
+</metadata>
+<rdf>
+</rdf>
+<styles>
+<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Liberation Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+</styles>
+<pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+<section xid="1">
+<p style="Normal" xid="2" props="text-align:left; dom-dir:ltr">% This is LLNCS.DOC the documentation file of</p>
+<p style="Normal" xid="3" props="text-align:left; dom-dir:ltr">% the LaTeX2e class from Springer-Verlag</p>
+<p style="Normal" xid="4" props="text-align:left; dom-dir:ltr">% for Lecture Notes in Computer Science, version 2.4</p>
+<p style="Normal" xid="5" props="text-align:left; dom-dir:ltr">\documentclass{llncs}</p>
+<p style="Normal" xid="6" props="text-align:left; dom-dir:ltr">\usepackage{llncsdoc}</p>
+<p style="Normal" xid="7">%</p>
+<p style="Normal" xid="8" props="text-align:left; dom-dir:ltr">\begin{document}</p>
+<p style="Normal" xid="9" props="text-align:left; dom-dir:ltr">\markboth{\LaTeXe{} Class for Lecture Notes in Computer</p>
+<p style="Normal" xid="10" props="text-align:left; dom-dir:ltr">Science}{\LaTeXe{} Class for Lecture Notes in Computer Science}</p>
+<p style="Normal" xid="11" props="text-align:left; dom-dir:ltr">\thispagestyle{empty}</p>
+<p style="Normal" xid="12" props="text-align:left; dom-dir:ltr">\begin{flushleft}</p>
+<p style="Normal" xid="13" props="text-align:left; dom-dir:ltr">\LARGE\bfseries Instructions for Authors\\</p>
+<p style="Normal" xid="14" props="text-align:left; dom-dir:ltr">Coding with \LaTeX\\[2cm]</p>
+<p style="Normal" xid="15" props="text-align:left; dom-dir:ltr">\end{flushleft}</p>
+<p style="Normal" xid="16" props="text-align:left; dom-dir:ltr">\rule{\textwidth}{1pt}</p>
+<p style="Normal" xid="17" props="text-align:left; dom-dir:ltr">\vspace{2pt}</p>
+<p style="Normal" xid="18" props="text-align:left; dom-dir:ltr">\begin{flushright}</p>
+<p style="Normal" xid="19" props="text-align:left; dom-dir:ltr">\Huge</p>
+<p style="Normal" xid="20" props="text-align:left; dom-dir:ltr">\begin{tabular}{@{}l}</p>
+<p style="Normal" xid="21" props="text-align:left; dom-dir:ltr">\LaTeXe{} Class\\</p>
+<p style="Normal" xid="22" props="text-align:left; dom-dir:ltr">for Lecture Notes\\</p>
+<p style="Normal" xid="23" props="text-align:left; dom-dir:ltr">in Computer Science\\[6pt]</p>
+<p style="Normal" xid="24" props="text-align:left; dom-dir:ltr">{\Large Version 2.4}</p>
+<p style="Normal" xid="25" props="text-align:left; dom-dir:ltr">\end{tabular}</p>
+<p style="Normal" xid="26" props="text-align:left; dom-dir:ltr">\end{flushright}</p>
+<p style="Normal" xid="27" props="text-align:left; dom-dir:ltr">\rule{\textwidth}{1pt}</p>
+<p style="Normal" xid="28" props="text-align:left; dom-dir:ltr">\vfill</p>
+<p style="Normal" xid="29" props="text-align:left; dom-dir:ltr">%\begin{flushleft}</p>
+<p style="Normal" xid="30" props="text-align:left; dom-dir:ltr">%\large\itshape</p>
+<p style="Normal" xid="31" props="text-align:left; dom-dir:ltr">%\begin{tabular}{@{}l}</p>
+<p style="Normal" xid="32" props="text-align:left; dom-dir:ltr">%{\Large\upshape\bfseries Springer}\\[8pt]</p>
+<p style="Normal" xid="33" props="text-align:left; dom-dir:ltr">%Berlin\enspace Heidelberg\enspace New\kern0.1em York\\[5pt]</p>
+<p style="Normal" xid="34" props="text-align:left; dom-dir:ltr">%Barcelona\enspace Budapest\enspace Hong\kern0.2em Kong\\[5pt]</p>
+<p style="Normal" xid="35" props="text-align:left; dom-dir:ltr">%London\enspace Milan\enspace Paris\enspace\\[5pt]</p>
+<p style="Normal" xid="36" props="text-align:left; dom-dir:ltr">%Santa\kern0.2em Clara\enspace Singapore\enspace Tokyo</p>
+<p style="Normal" xid="37" props="text-align:left; dom-dir:ltr">%\end{tabular}</p>
+<p style="Normal" xid="38" props="text-align:left; dom-dir:ltr">%\end{flushleft}</p>
+<p style="Normal" xid="39" props="text-align:left; dom-dir:ltr">\newpage</p>
+<p style="Normal" xid="40">%</p>
+<p style="Normal" xid="41" props="text-align:left; dom-dir:ltr">\section*{For further information please contact us:}</p>
+<p style="Normal" xid="42">%</p>
+<p style="Normal" xid="43" props="text-align:left; dom-dir:ltr">\begin{flushleft}</p>
+<p style="Normal" xid="44" props="text-align:left; dom-dir:ltr">\begin{tabular}{l@{\quad}l@{\hspace{3mm}}l@{\qquad}l}</p>
+<p style="Normal" xid="45" props="text-align:left; dom-dir:ltr">$\bullet$&amp;\multicolumn{3}{@{}l}{\bfseries LNCS Editorial Office}\\[1mm]</p>
+<p style="Normal" xid="46" props="text-align:left; dom-dir:ltr">&amp;\multicolumn{3}{@{}l}{Springer-Verlag}\\</p>
+<p style="Normal" xid="47" props="text-align:left; dom-dir:ltr">&amp;\multicolumn{3}{@{}l}{Computer Science Editorial}\\</p>
+<p style="Normal" xid="48" props="text-align:left; dom-dir:ltr">&amp;\multicolumn{3}{@{}l}{Tiergartenstraße 17}\\</p>
+<p style="Normal" xid="49" props="text-align:left; dom-dir:ltr">&amp;\multicolumn{3}{@{}l}{69121 Heidelberg}\\</p>
+<p style="Normal" xid="50" props="text-align:left; dom-dir:ltr">&amp;\multicolumn{3}{@{}l}{Germany}\\[0.5mm]</p>
+<p style="Normal" xid="51" props="text-align:left; dom-dir:ltr"> &amp; Tel:       &amp; +49-6221-487-8706\\</p>
+<p style="Normal" xid="52" props="text-align:left; dom-dir:ltr"> &amp; Fax:       &amp; +49-6221-487-8588\\</p>
+<p style="Normal" xid="53" props="text-align:left; dom-dir:ltr"> &amp; e-mail:    &amp; \tt lncs@springer.com    &amp; for editorial questions\\</p>
+<p style="Normal" xid="54" props="text-align:left; dom-dir:ltr"> &amp;            &amp; \tt texhelp@springer.de &amp; for \TeX{} problems\\[2mm]</p>
+<p style="Normal" xid="55" props="text-align:left; dom-dir:ltr">\noalign{\rule{\textwidth}{1pt}}</p>
+<p style="Normal" xid="56" props="text-align:left; dom-dir:ltr">\noalign{\vskip2mm}</p>
+<p style="Normal" xid="57">%</p>
+<p style="Normal" xid="58" props="text-align:left; dom-dir:ltr">%{\tt svserv@vax.ntp.springer.de}\hfil first try the \verb|help|</p>
+<p style="Normal" xid="59" props="text-align:left; dom-dir:ltr">%command.</p>
+<p style="Normal" xid="60">%</p>
+<p style="Normal" xid="61" props="text-align:left; dom-dir:ltr">$\bullet$&amp;\multicolumn{3}{@{}l}{\bfseries We are also reachable through the world wide web:}\\[1mm]</p>
+<p style="Normal" xid="62" props="text-align:left; dom-dir:ltr">         &amp;\multicolumn{2}{@{}l}{\texttt{http://www.springer.com}}&amp;Springer Global Website\\</p>
+<p style="Normal" xid="63" props="text-align:left; dom-dir:ltr">         &amp;\multicolumn{2}{@{}l}{\texttt{http://www.springer.com/lncs}}&amp;LNCS home page\\</p>
+<p style="Normal" xid="64" props="text-align:left; dom-dir:ltr">         &amp;\multicolumn{2}{@{}l}{\texttt{http://www.springerlink.com}}&amp;data repository\\</p>
+<p style="Normal" xid="65" props="text-align:left; dom-dir:ltr">         &amp;\multicolumn{2}{@{}l}{\texttt{ftp://ftp.springer.de}}&amp;FTP server</p>
+<p style="Normal" xid="66" props="text-align:left; dom-dir:ltr">\end{tabular}</p>
+<p style="Normal" xid="67" props="text-align:left; dom-dir:ltr">\end{flushleft}</p>
+<p style="Normal" xid="68"><c></c></p>
+<p style="Normal" xid="69"><c></c></p>
+<p style="Normal" xid="70">%</p>
+<p style="Normal" xid="71" props="text-align:left; dom-dir:ltr">\newpage</p>
+<p style="Normal" xid="72" props="text-align:left; dom-dir:ltr">\tableofcontents</p>
+<p style="Normal" xid="73" props="text-align:left; dom-dir:ltr">\newpage</p>
+<p style="Normal" xid="74">%</p>
+<p style="Normal" xid="75" props="text-align:left; dom-dir:ltr">\section{Introduction}</p>
+<p style="Normal" xid="76">%</p>
+<p style="Normal" xid="77" props="text-align:left; dom-dir:ltr">Authors wishing to code their contribution</p>
+<p style="Normal" xid="78" props="text-align:left; dom-dir:ltr">with \LaTeX{}, as well as those who have already coded with \LaTeX{},</p>
+<p style="Normal" xid="79" props="text-align:left; dom-dir:ltr">will be provided with a document class that will give the text the</p>
+<p style="Normal" xid="80" props="text-align:left; dom-dir:ltr">desired layout. Authors are requested to</p>
+<p style="Normal" xid="81" props="text-align:left; dom-dir:ltr">adhere strictly to these instructions; {\em the class</p>
+<p style="Normal" xid="82" props="text-align:left; dom-dir:ltr">file must not be changed}.</p>
+<p style="Normal" xid="83"><c></c></p>
+<p style="Normal" xid="84" props="text-align:left; dom-dir:ltr">The text output area is automatically set within an area of</p>
+<p style="Normal" xid="85" props="text-align:left; dom-dir:ltr">12.2\,cm horizontally  and 19.3\,cm vertically.</p>
+<p style="Normal" xid="86"><c></c></p>
+<p style="Normal" xid="87" props="text-align:left; dom-dir:ltr">If you are already familiar with \LaTeX{}, then the</p>
+<p style="Normal" xid="88" props="text-align:left; dom-dir:ltr">LLNCS class should not give you any major difficulties.</p>
+<p style="Normal" xid="89" props="text-align:left; dom-dir:ltr">It will change the layout to the required LLNCS style</p>
+<p style="Normal" xid="90" props="text-align:left; dom-dir:ltr">(it will for instance define the layout of \verb|\section|).</p>
+<p style="Normal" xid="91" props="text-align:left; dom-dir:ltr">We had to invent some extra commands,</p>
+<p style="Normal" xid="92" props="text-align:left; dom-dir:ltr">which are not provided by \LaTeX{} (e.g.\</p>
+<p style="Normal" xid="93" props="text-align:left; dom-dir:ltr">\verb|\institute|, see also Sect.\,\ref{contbegin})</p>
+<p style="Normal" xid="94"><c></c></p>
+<p style="Normal" xid="95" props="text-align:left; dom-dir:ltr">For the main body of the paper (the text) you</p>
+<p style="Normal" xid="96" props="text-align:left; dom-dir:ltr">should use the commands of the standard \LaTeX{} ``article'' class.</p>
+<p style="Normal" xid="97" props="text-align:left; dom-dir:ltr">Even if you are familiar with those commands, we urge you to read</p>
+<p style="Normal" xid="98" props="text-align:left; dom-dir:ltr">this entire documentation thoroughly. It contains many suggestions on</p>
+<p style="Normal" xid="99" props="text-align:left; dom-dir:ltr">how to use our commands properly; thus your paper</p>
+<p style="Normal" xid="100" props="text-align:left; dom-dir:ltr">will be formatted exactly to LLNCS standard.</p>
+<p style="Normal" xid="101" props="text-align:left; dom-dir:ltr">For the input of the references at the end of your contribution,</p>
+<p style="Normal" xid="102" props="text-align:left; dom-dir:ltr">please follow our instructions given in Sect.\,\ref{refer} References.</p>
+<p style="Normal" xid="103"><c></c></p>
+<p style="Normal" xid="104" props="text-align:left; dom-dir:ltr">The majority of these hints are not specific for LLNCS; they may improve</p>
+<p style="Normal" xid="105" props="text-align:left; dom-dir:ltr">your use of \LaTeX{} in general.</p>
+<p style="Normal" xid="106" props="text-align:left; dom-dir:ltr">Furthermore, the documentation provides suggestions about the proper</p>
+<p style="Normal" xid="107" props="text-align:left; dom-dir:ltr">editing and use</p>
+<p style="Normal" xid="108" props="text-align:left; dom-dir:ltr">of the input files (capitalization, abbreviation etc.) (see</p>
+<p style="Normal" xid="109" props="text-align:left; dom-dir:ltr">Sect.\,\ref{refedit} How to Edit Your Input File).</p>
+<p style="Normal" xid="110">%</p>
+<p style="Normal" xid="111" props="text-align:left; dom-dir:ltr">\section{How to Proceed}</p>
+<p style="Normal" xid="112">%</p>
+<p style="Normal" xid="113" props="text-align:left; dom-dir:ltr">The package consists of the following files:</p>
+<p style="Normal" xid="114" props="text-align:left; dom-dir:ltr">\begin{flushleft}</p>
+<p style="Normal" xid="115" props="text-align:left; dom-dir:ltr">\begin{tabular}{@{}p{2.5cm}l}</p>
+<p style="Normal" xid="116" props="text-align:left; dom-dir:ltr">{\tt history.txt}&amp; the version history of the package\\[2pt]</p>
+<p style="Normal" xid="117" props="text-align:left; dom-dir:ltr">{\tt llncs.cls}  &amp; class file for \LaTeX{}\\[2pt]</p>
+<p style="Normal" xid="118" props="text-align:left; dom-dir:ltr">{\tt llncs.dem}  &amp; an example showing how to code the text\\[2pt]</p>
+<p style="Normal" xid="119" props="text-align:left; dom-dir:ltr">{\tt llncs.doc}  &amp; general instructions (source of this document),\\</p>
+<p style="Normal" xid="120" props="text-align:left; dom-dir:ltr">        &amp; {\tt llncs.doc} means {\itshape l\/}atex {\itshape doc\/}umentation for\\</p>
+<p style="Normal" xid="121" props="text-align:left; dom-dir:ltr">        &amp; {\itshape L\/}ecture {\itshape N}otes in {\itshape C\/}omputer {\itshape S\/}cience\\</p>
+<p style="Normal" xid="122" props="text-align:left; dom-dir:ltr">{\tt llncsdoc.pdf}&amp; the documentation of the class (PDF version),\\</p>
+<p style="Normal" xid="123" props="text-align:left; dom-dir:ltr">{\tt llncs.doc}  &amp; general instructions (source of this document),\\</p>
+<p style="Normal" xid="124" props="text-align:left; dom-dir:ltr">{\tt llncsdoc.sty}  &amp; class modifications to help for the instructions\\</p>
+<p style="Normal" xid="125" props="text-align:left; dom-dir:ltr">{\tt llncs.ind} &amp; an external (faked) author index file\\</p>
+<p style="Normal" xid="126" props="text-align:left; dom-dir:ltr">{\tt subjidx.ind} &amp; subject index demo from the Springer book package\\</p>
+<p style="Normal" xid="127" props="text-align:left; dom-dir:ltr">{\tt llncs.dvi}    &amp; the resultig DVI file (remember to use binary transfer!)\\[2pt]</p>
+<p style="Normal" xid="128" props="text-align:left; dom-dir:ltr">{\tt sprmindx.sty} &amp; supplementary style file for MakeIndex\\</p>
+<p style="Normal" xid="129" props="text-align:left; dom-dir:ltr">                   &amp; (usage: {\tt makeindex -s sprmindx.sty &lt;yourfile.idx&gt;})</p>
+<p style="Normal" xid="130" props="text-align:left; dom-dir:ltr">\end{tabular}</p>
+<p style="Normal" xid="131" props="text-align:left; dom-dir:ltr">\end{flushleft}</p>
+<p style="Normal" xid="132">%</p>
+<p style="Normal" xid="133" props="text-align:left; dom-dir:ltr">\subsection{How to Invoke the LLNCS Document Class}</p>
+<p style="Normal" xid="134">%</p>
+<p style="Normal" xid="135" props="text-align:left; dom-dir:ltr">The LLNCS class is an extension of the standard \LaTeX{} ``article''</p>
+<p style="Normal" xid="136" props="text-align:left; dom-dir:ltr">document class. Therefore you may use all ``article'' commands for the</p>
+<p style="Normal" xid="137" props="text-align:left; dom-dir:ltr">body of your contribution to prepare your manuscript.</p>
+<p style="Normal" xid="138" props="text-align:left; dom-dir:ltr">LLNCS class is invoked by replacing ``article'' by ``llncs'' in the</p>
+<p style="Normal" xid="139" props="text-align:left; dom-dir:ltr">first line of your document:</p>
+<p style="Normal" xid="140" props="text-align:left; dom-dir:ltr">\begin{verbatim}</p>
+<p style="Normal" xid="141" props="text-align:left; dom-dir:ltr">\documentclass{llncs}</p>
+<p style="Normal" xid="142">%</p>
+<p style="Normal" xid="143" props="text-align:left; dom-dir:ltr">\begin{document}</p>
+<p style="Normal" xid="144" props="text-align:left; dom-dir:ltr">  &lt;Your contribution&gt;</p>
+<p style="Normal" xid="145" props="text-align:left; dom-dir:ltr">\end{document}</p>
+<p style="Normal" xid="146" props="text-align:left; dom-dir:ltr">\end{verbatim}</p>
+<p style="Normal" xid="147">%</p>
+<p style="Normal" xid="148" props="text-align:left; dom-dir:ltr">\subsection{Contributions Already Coded with \protect\LaTeX{} without</p>
+<p style="Normal" xid="149" props="text-align:left; dom-dir:ltr">the LLNCS document class}</p>
+<p style="Normal" xid="150">%</p>
+<p style="Normal" xid="151" props="text-align:left; dom-dir:ltr">If your file is already coded with \LaTeX{} you can easily</p>
+<p style="Normal" xid="152" props="text-align:left; dom-dir:ltr">adapt it a posteriori to the LLNCS document class.</p>
+<p style="Normal" xid="153"><c></c></p>
+<p style="Normal" xid="154" props="text-align:left; dom-dir:ltr">Please refrain from using any \LaTeX{} or \TeX{} commands</p>
+<p style="Normal" xid="155" props="text-align:left; dom-dir:ltr">that affect the layout or formatting of your document (i.e. commands</p>
+<p style="Normal" xid="156" props="text-align:left; dom-dir:ltr">like \verb|\textheight|, \verb|\vspace|, \verb|\headsep| etc.).</p>
+<p style="Normal" xid="157" props="text-align:left; dom-dir:ltr">There may nevertheless be exceptional occasions on which to</p>
+<p style="Normal" xid="158" props="text-align:left; dom-dir:ltr">use some of them.</p>
+<p style="Normal" xid="159"><c></c></p>
+<p style="Normal" xid="160" props="text-align:left; dom-dir:ltr">The LLNCS document class has been carefully designed to produce the</p>
+<p style="Normal" xid="161" props="text-align:left; dom-dir:ltr">right layout from your \LaTeX{} input. If there is anything specific you</p>
+<p style="Normal" xid="162" props="text-align:left; dom-dir:ltr">would like to do and for which the style file does not provide a</p>
+<p style="Normal" xid="163" props="text-align:left; dom-dir:ltr">command, {\em please contact us}. Same holds for any error and bug you</p>
+<p style="Normal" xid="164" props="text-align:left; dom-dir:ltr">discover (there is however no reward for this -- sorry).</p>
+<p style="Normal" xid="165">%</p>
+<p style="Normal" xid="166" props="text-align:left; dom-dir:ltr">\section{General Rules for Coding Formulas}</p>
+<p style="Normal" xid="167">%</p>
+<p style="Normal" xid="168" props="text-align:left; dom-dir:ltr">With mathematical formulas you may proceed as described</p>
+<p style="Normal" xid="169" props="text-align:left; dom-dir:ltr">in Sect.\,3.3 of the {\em \LaTeX{} User's Guide \&amp; Reference</p>
+<p style="Normal" xid="170" props="text-align:left; dom-dir:ltr">Manual\/} by Leslie Lamport (2nd~ed. 1994), Addison-Wesley Publishing</p>
+<p style="Normal" xid="171" props="text-align:left; dom-dir:ltr">Company, Inc.</p>
+<p style="Normal" xid="172"><c></c></p>
+<p style="Normal" xid="173" props="text-align:left; dom-dir:ltr">Equations are automatically numbered sequentially throughout your</p>
+<p style="Normal" xid="174" props="text-align:left; dom-dir:ltr">contribution using arabic numerals in parentheses on the right-hand</p>
+<p style="Normal" xid="175" props="text-align:left; dom-dir:ltr">side.</p>
+<p style="Normal" xid="176"><c></c></p>
+<p style="Normal" xid="177" props="text-align:left; dom-dir:ltr">When you are working in math mode everything is typeset in italics.</p>
+<p style="Normal" xid="178" props="text-align:left; dom-dir:ltr">Sometimes you need to insert non-mathematical elements (e.g.\</p>
+<p style="Normal" xid="179" props="text-align:left; dom-dir:ltr">words or phrases). Such insertions should be coded in roman</p>
+<p style="Normal" xid="180" props="text-align:left; dom-dir:ltr">(with \verb|\mbox|) as illustrated in the following example:</p>
+<p style="Normal" xid="181" props="text-align:left; dom-dir:ltr">\begin{flushleft}</p>
+<p style="Normal" xid="182" props="text-align:left; dom-dir:ltr">{\itshape Sample Input}</p>
+<p style="Normal" xid="183" props="text-align:left; dom-dir:ltr">\end{flushleft}</p>
+<p style="Normal" xid="184" props="text-align:left; dom-dir:ltr">\begin{verbatim}</p>
+<p style="Normal" xid="185" props="text-align:left; dom-dir:ltr">\begin{equation}</p>
+<p style="Normal" xid="186" props="text-align:left; dom-dir:ltr">  \left(\frac{a^{2} + b^{2}}{c^{3}} \right) = 1 \quad</p>
+<p style="Normal" xid="187" props="text-align:left; dom-dir:ltr">  \mbox{ if } c\neq 0 \mbox{ and if } a,b,c\in \bbbr \enspace .</p>
+<p style="Normal" xid="188" props="text-align:left; dom-dir:ltr">\end{equation}</p>
+<p style="Normal" xid="189" props="text-align:left; dom-dir:ltr">\end{verbatim}</p>
+<p style="Normal" xid="190" props="text-align:left; dom-dir:ltr">{\itshape Sample Output}</p>
+<p style="Normal" xid="191" props="text-align:left; dom-dir:ltr">\begin{equation}</p>
+<p style="Normal" xid="192" props="text-align:left; dom-dir:ltr">  \left(\frac{a^{2} + b^{2}}{c^{3}} \right) = 1 \quad</p>
+<p style="Normal" xid="193" props="text-align:left; dom-dir:ltr">  \mbox{ if } c\neq 0 \mbox{ and if } a,b,c\in \bbbr \enspace .</p>
+<p style="Normal" xid="194" props="text-align:left; dom-dir:ltr">\end{equation}</p>
+<p style="Normal" xid="195"><c></c></p>
+<p style="Normal" xid="196" props="text-align:left; dom-dir:ltr">If you wish to start a new paragraph immediately after a displayed</p>
+<p style="Normal" xid="197" props="text-align:left; dom-dir:ltr">equation, insert a blank line so as to produce the required</p>
+<p style="Normal" xid="198" props="text-align:left; dom-dir:ltr">indentation. If there is no new paragraph either do not insert</p>
+<p style="Normal" xid="199" props="text-align:left; dom-dir:ltr">a blank line or code \verb|\noindent| immediately before</p>
+<p style="Normal" xid="200" props="text-align:left; dom-dir:ltr">continuing the text.</p>
+<p style="Normal" xid="201"><c></c></p>
+<p style="Normal" xid="202" props="text-align:left; dom-dir:ltr">Please punctuate a displayed equation in the same way as other</p>
+<p style="Normal" xid="203" props="text-align:left; dom-dir:ltr">ordinary text but with an \verb|\enspace| before end punctuation.</p>
+<p style="Normal" xid="204"><c></c></p>
+<p style="Normal" xid="205" props="text-align:left; dom-dir:ltr">Note that the sizes of the parentheses or other delimiter</p>
+<p style="Normal" xid="206" props="text-align:left; dom-dir:ltr">symbols used in equations should ideally match the height of the</p>
+<p style="Normal" xid="207" props="text-align:left; dom-dir:ltr">formulas being enclosed. This is automatically taken care of by</p>
+<p style="Normal" xid="208" props="text-align:left; dom-dir:ltr">the following \LaTeX{} commands:\\[2mm]</p>
+<p style="Normal" xid="209" props="text-align:left; dom-dir:ltr">\verb|\left(| or \verb|\left[| and</p>
+<p style="Normal" xid="210" props="text-align:left; dom-dir:ltr">\verb|\right)| or \verb|\right]|.</p>
+<p style="Normal" xid="211">%</p>
+<p style="Normal" xid="212" props="text-align:left; dom-dir:ltr">\subsection{Italic and Roman Type in Math Mode}</p>
+<p style="Normal" xid="213">%</p>
+<p style="Normal" xid="214" props="text-align:left; dom-dir:ltr">\begin{alpherate}</p>
+<p style="Normal" xid="215" props="text-align:left; dom-dir:ltr">\item</p>
+<p style="Normal" xid="216" props="text-align:left; dom-dir:ltr">In math mode \LaTeX{} treats all letters as though they</p>
+<p style="Normal" xid="217" props="text-align:left; dom-dir:ltr">were mathematical or physical variables, hence they are typeset as</p>
+<p style="Normal" xid="218" props="text-align:left; dom-dir:ltr">characters of their own in</p>
+<p style="Normal" xid="219" props="text-align:left; dom-dir:ltr">italics. However, for certain components of formulas, like short texts,</p>
+<p style="Normal" xid="220" props="text-align:left; dom-dir:ltr">this would be incorrect and therefore coding in roman is required.</p>
+<p style="Normal" xid="221" props="text-align:left; dom-dir:ltr">Roman should also be used for</p>
+<p style="Normal" xid="222" props="text-align:left; dom-dir:ltr">subscripts and superscripts {\em in formulas\/} where these are</p>
+<p style="Normal" xid="223" props="text-align:left; dom-dir:ltr">merely labels and not in themselves variables,</p>
+<p style="Normal" xid="224" props="text-align:left; dom-dir:ltr">e.g. $T_{\mathrm{eff}}$ \emph{not} $T_{eff}$,</p>
+<p style="Normal" xid="225" props="text-align:left; dom-dir:ltr">$T_{\mathrm K}$ \emph{not} $T_K$ (K = Kelvin),</p>
+<p style="Normal" xid="226" props="text-align:left; dom-dir:ltr">$m_{\mathrm e}$ \emph{not} $m_e$ (e = electron).</p>
+<p style="Normal" xid="227" props="text-align:left; dom-dir:ltr">However, do not code for roman</p>
+<p style="Normal" xid="228" props="text-align:left; dom-dir:ltr">if the sub/superscripts represent variables,</p>
+<p style="Normal" xid="229" props="text-align:left; dom-dir:ltr">e.g.\ $\sum_{i=1}^{n} a_{i}$.</p>
+<p style="Normal" xid="230" props="text-align:left; dom-dir:ltr">\item</p>
+<p style="Normal" xid="231" props="text-align:left; dom-dir:ltr">Please ensure that {\em physical units\/} (e.g.\ pc, erg s$^{-1}$</p>
+<p style="Normal" xid="232" props="text-align:left; dom-dir:ltr">K, cm$^{-3}$, W m$^{-2}$ Hz$^{-1}$, m kg s$^{-2}$ A$^{-2}$) and</p>
+<p style="Normal" xid="233" props="text-align:left; dom-dir:ltr">{\em abbreviations\/} such as Ord, Var, GL, SL, sgn, const.\</p>
+<p style="Normal" xid="234" props="text-align:left; dom-dir:ltr">are always set in roman type. To ensure</p>
+<p style="Normal" xid="235" props="text-align:left; dom-dir:ltr">this use the \verb|\mathrm| command: \verb|\mathrm{Hz}|.</p>
+<p style="Normal" xid="236" props="text-align:left; dom-dir:ltr">On p.\ 44 of the {\em \LaTeX{} User's Guide \&amp; Reference</p>
+<p style="Normal" xid="237" props="text-align:left; dom-dir:ltr">Manual\/} by Leslie Lamport you will find the names of</p>
+<p style="Normal" xid="238" props="text-align:left; dom-dir:ltr">common mathe\-matical functions, such as log, sin, exp, max and sup.</p>
+<p style="Normal" xid="239" props="text-align:left; dom-dir:ltr">These should be coded as \verb|\log|,</p>
+<p style="Normal" xid="240" props="text-align:left; dom-dir:ltr">\verb|\sin|, \verb|\exp|, \verb|\max|, \verb|\sup|</p>
+<p style="Normal" xid="241" props="text-align:left; dom-dir:ltr">and will appear in roman automatically.</p>
+<p style="Normal" xid="242" props="text-align:left; dom-dir:ltr">\item</p>
+<p style="Normal" xid="243" props="text-align:left; dom-dir:ltr">Chemical symbols and formulas should be coded for roman,</p>
+<p style="Normal" xid="244" props="text-align:left; dom-dir:ltr">e.g.\ Fe not $Fe$, H$_2$O not {\em H$_2$O}.</p>
+<p style="Normal" xid="245" props="text-align:left; dom-dir:ltr">\item</p>
+<p style="Normal" xid="246" props="text-align:left; dom-dir:ltr">Familiar foreign words and phrases, e.g.\ et al.,</p>
+<p style="Normal" xid="247" props="text-align:left; dom-dir:ltr">a priori, in situ, brems\-strah\-lung, eigenvalues should not be</p>
+<p style="Normal" xid="248" props="text-align:left; dom-dir:ltr">italicized.</p>
+<p style="Normal" xid="249" props="text-align:left; dom-dir:ltr">\end{alpherate}</p>
+<p style="Normal" xid="250">%</p>
+<p style="Normal" xid="251" props="text-align:left; dom-dir:ltr">\section{How to Edit Your Input (Source) File}</p>
+<p style="Normal" xid="252" props="text-align:left; dom-dir:ltr">\label{refedit}</p>
+<p style="Normal" xid="253">%</p>
+<p style="Normal" xid="254" props="text-align:left; dom-dir:ltr">\subsection{Headings}\label{headings}</p>
+<p style="Normal" xid="255">%</p>
+<p style="Normal" xid="256" props="text-align:left; dom-dir:ltr">All words in headings should be capitalized except for conjunctions,</p>
+<p style="Normal" xid="257" props="text-align:left; dom-dir:ltr">prepositions (e.g.\ on, of, by, and, or, but, from, with, without,</p>
+<p style="Normal" xid="258" props="text-align:left; dom-dir:ltr">under) and definite and indefinite articles (the, a, an) unless they</p>
+<p style="Normal" xid="259" props="text-align:left; dom-dir:ltr">appear at the beginning. Formula letters must be typeset as in the text.</p>
+<p style="Normal" xid="260">%</p>
+<p style="Normal" xid="261" props="text-align:left; dom-dir:ltr">\subsection{Capitalization and Non-capitalization}</p>
+<p style="Normal" xid="262">%</p>
+<p style="Normal" xid="263" props="text-align:left; dom-dir:ltr">\begin{alpherate}</p>
+<p style="Normal" xid="264" props="text-align:left; dom-dir:ltr">\item</p>
+<p style="Normal" xid="265" props="text-align:left; dom-dir:ltr">The following should always be capitalized:</p>
+<p style="Normal" xid="266" props="text-align:left; dom-dir:ltr">\begin{itemize}</p>
+<p style="Normal" xid="267" props="text-align:left; dom-dir:ltr">\item</p>
+<p style="Normal" xid="268" props="text-align:left; dom-dir:ltr">Headings (see preceding Sect.\,\ref{headings})</p>
+<p style="Normal" xid="269" props="text-align:left; dom-dir:ltr">\item</p>
+<p style="Normal" xid="270" props="text-align:left; dom-dir:ltr">Abbreviations and expressions</p>
+<p style="Normal" xid="271" props="text-align:left; dom-dir:ltr">in the text such as  Fig(s)., Table(s), Sect(s)., Chap(s).,</p>
+<p style="Normal" xid="272" props="text-align:left; dom-dir:ltr">Theorem, Corollary, Definition etc. when used with numbers, e.g.\</p>
+<p style="Normal" xid="273" props="text-align:left; dom-dir:ltr">Fig.\,3, Table\,1, Theorem 2.</p>
+<p style="Normal" xid="274" props="text-align:left; dom-dir:ltr">\end{itemize}</p>
+<p style="Normal" xid="275" props="text-align:left; dom-dir:ltr">Please follow the special rules in Sect.\,\ref{abbrev} for referring to</p>
+<p style="Normal" xid="276" props="text-align:left; dom-dir:ltr">equations.</p>
+<p style="Normal" xid="277" props="text-align:left; dom-dir:ltr">\item</p>
+<p style="Normal" xid="278" props="text-align:left; dom-dir:ltr">The following should {\em not\/} be capitalized:</p>
+<p style="Normal" xid="279" props="text-align:left; dom-dir:ltr">\begin{itemize}</p>
+<p style="Normal" xid="280" props="text-align:left; dom-dir:ltr">\item</p>
+<p style="Normal" xid="281" props="text-align:left; dom-dir:ltr">The words figure(s), table(s), equation(s), theorem(s) in the text when</p>
+<p style="Normal" xid="282" props="text-align:left; dom-dir:ltr">used without an accompanying number.</p>
+<p style="Normal" xid="283" props="text-align:left; dom-dir:ltr">\item</p>
+<p style="Normal" xid="284" props="text-align:left; dom-dir:ltr">Figure legends and table captions except for names and abbreviations.</p>
+<p style="Normal" xid="285" props="text-align:left; dom-dir:ltr">\end{itemize}</p>
+<p style="Normal" xid="286" props="text-align:left; dom-dir:ltr">\end{alpherate}</p>
+<p style="Normal" xid="287">%</p>
+<p style="Normal" xid="288" props="text-align:left; dom-dir:ltr">\subsection{Abbreviation of Words}\label{abbrev}</p>
+<p style="Normal" xid="289">%</p>
+<p style="Normal" xid="290" props="text-align:left; dom-dir:ltr">\begin{alpherate}</p>
+<p style="Normal" xid="291" props="text-align:left; dom-dir:ltr">\item</p>
+<p style="Normal" xid="292" props="text-align:left; dom-dir:ltr">The following {\em should} be abbreviated when they appear in running</p>
+<p style="Normal" xid="293" props="text-align:left; dom-dir:ltr">text {\em unless\/} they come at the beginning of a sentence: Chap.,</p>
+<p style="Normal" xid="294" props="text-align:left; dom-dir:ltr">Sect., Fig.; e.g.\ The results are depicted in Fig.\,5. Figure 9 reveals</p>
+<p style="Normal" xid="295" props="text-align:left; dom-dir:ltr">that \dots .\\</p>
+<p style="Normal" xid="296" props="text-align:left; dom-dir:ltr">{\em Please note\/}: Equations should usually be referred to solely by</p>
+<p style="Normal" xid="297" props="text-align:left; dom-dir:ltr">their number in parentheses: e.g.\ (14). However, when the reference</p>
+<p style="Normal" xid="298" props="text-align:left; dom-dir:ltr">comes at the beginning of a sentence, the unabbreviated word</p>
+<p style="Normal" xid="299" props="text-align:left; dom-dir:ltr">``Equation'' should be used: e.g.\ Equation (14) is very important.</p>
+<p style="Normal" xid="300" props="text-align:left; dom-dir:ltr">However, (15) makes it clear that \dots .</p>
+<p style="Normal" xid="301" props="text-align:left; dom-dir:ltr">\item</p>
+<p style="Normal" xid="302" props="text-align:left; dom-dir:ltr">If abbreviations of names or concepts are used</p>
+<p style="Normal" xid="303" props="text-align:left; dom-dir:ltr">throughout the text, they should be defined at first occurrence,</p>
+<p style="Normal" xid="304" props="text-align:left; dom-dir:ltr">e.g.\ Plurisubharmonic (PSH) Functions, Strong Optimization (SOPT)</p>
+<p style="Normal" xid="305" props="text-align:left; dom-dir:ltr">Problem.</p>
+<p style="Normal" xid="306" props="text-align:left; dom-dir:ltr">\end{alpherate}</p>
+<p style="Normal" xid="307">%</p>
+<p style="Normal" xid="308" props="text-align:left; dom-dir:ltr">\section{How to Code the Beginning of Your Contribution}</p>
+<p style="Normal" xid="309" props="text-align:left; dom-dir:ltr">\label{contbegin}</p>
+<p style="Normal" xid="310">%</p>
+<p style="Normal" xid="311" props="text-align:left; dom-dir:ltr">The title of a single contribution (it is mandatory) should be coded as</p>
+<p style="Normal" xid="312" props="text-align:left; dom-dir:ltr">follows:</p>
+<p style="Normal" xid="313" props="text-align:left; dom-dir:ltr">\begin{verbatim}</p>
+<p style="Normal" xid="314" props="text-align:left; dom-dir:ltr">\title{&lt;Your contribution title&gt;}</p>
+<p style="Normal" xid="315" props="text-align:left; dom-dir:ltr">\end{verbatim}</p>
+<p style="Normal" xid="316" props="text-align:left; dom-dir:ltr">All words in titles should be capitalized except for conjunctions,</p>
+<p style="Normal" xid="317" props="text-align:left; dom-dir:ltr">prepositions (e.g.\ on, of, by, and, or, but, from, with, without,</p>
+<p style="Normal" xid="318" props="text-align:left; dom-dir:ltr">under) and definite and indefinite articles (the, a, an) unless they</p>
+<p style="Normal" xid="319" props="text-align:left; dom-dir:ltr">appear at the beginning. Formula letters must be typeset as in the text.</p>
+<p style="Normal" xid="320" props="text-align:left; dom-dir:ltr">Titles have no end punctuation.</p>
+<p style="Normal" xid="321"><c></c></p>
+<p style="Normal" xid="322" props="text-align:left; dom-dir:ltr">If a long \verb|\title| must be divided please use the code \verb|\\|</p>
+<p style="Normal" xid="323" props="text-align:left; dom-dir:ltr">(for new line).</p>
+<p style="Normal" xid="324"><c></c></p>
+<p style="Normal" xid="325" props="text-align:left; dom-dir:ltr">If you are to produce running heads for a specific volume the standard</p>
+<p style="Normal" xid="326" props="text-align:left; dom-dir:ltr">(of no such running heads) is overwritten with the \verb|[runningheads]|</p>
+<p style="Normal" xid="327" props="text-align:left; dom-dir:ltr">option in the \verb|\documentclass| line. For long titles that do not</p>
+<p style="Normal" xid="328" props="text-align:left; dom-dir:ltr">fit in the single line of the running head a warning is generated.</p>
+<p style="Normal" xid="329" props="text-align:left; dom-dir:ltr">You can specify an abbreviated title for the running head on odd pages</p>
+<p style="Normal" xid="330" props="text-align:left; dom-dir:ltr">with the command</p>
+<p style="Normal" xid="331" props="text-align:left; dom-dir:ltr">\begin{verbatim}</p>
+<p style="Normal" xid="332" props="text-align:left; dom-dir:ltr">\titlerunning{&lt;Your abbreviated contribution title&gt;}</p>
+<p style="Normal" xid="333" props="text-align:left; dom-dir:ltr">\end{verbatim}</p>
+<p style="Normal" xid="334"><c></c></p>
+<p style="Normal" xid="335" props="text-align:left; dom-dir:ltr">There is also a possibility to change the text of the title that goes</p>
+<p style="Normal" xid="336" props="text-align:left; dom-dir:ltr">into the table of contents (that's for volume editors only -- there is</p>
+<p style="Normal" xid="337" props="text-align:left; dom-dir:ltr">no table of contents for a single contribution). For this use the</p>
+<p style="Normal" xid="338" props="text-align:left; dom-dir:ltr">command</p>
+<p style="Normal" xid="339" props="text-align:left; dom-dir:ltr">\begin{verbatim}</p>
+<p style="Normal" xid="340" props="text-align:left; dom-dir:ltr">\toctitle{&lt;Your changed title for the table of contents&gt;}</p>
+<p style="Normal" xid="341" props="text-align:left; dom-dir:ltr">\end{verbatim}</p>
+<p style="Normal" xid="342"><c></c></p>
+<p style="Normal" xid="343" props="text-align:left; dom-dir:ltr">An optional subtitle may follow then:</p>
+<p style="Normal" xid="344" props="text-align:left; dom-dir:ltr">\begin{verbatim}</p>
+<p style="Normal" xid="345" props="text-align:left; dom-dir:ltr">\subtitle{&lt;subtitle of your contribution&gt;}</p>
+<p style="Normal" xid="346" props="text-align:left; dom-dir:ltr">\end{verbatim}</p>
+<p style="Normal" xid="347"><c></c></p>
+<p style="Normal" xid="348" props="text-align:left; dom-dir:ltr">Now the name(s) of the author(s) must be given:</p>
+<p style="Normal" xid="349" props="text-align:left; dom-dir:ltr">\begin{verbatim}</p>
+<p style="Normal" xid="350" props="text-align:left; dom-dir:ltr">\author{&lt;author(s) name(s)&gt;}</p>
+<p style="Normal" xid="351" props="text-align:left; dom-dir:ltr">\end{verbatim}</p>
+<p style="Normal" xid="352" props="text-align:left; dom-dir:ltr">Numbers referring to different addresses or affiliations are</p>
+<p style="Normal" xid="353" props="text-align:left; dom-dir:ltr">to be attached to each author with the \verb|\inst{&lt;no&gt;}| command.</p>
+<p style="Normal" xid="354" props="text-align:left; dom-dir:ltr">If there is more than one author, the order is up to you;</p>
+<p style="Normal" xid="355" props="text-align:left; dom-dir:ltr">the \verb|\and| command provides for the separation.</p>
+<p style="Normal" xid="356"><c></c></p>
+<p style="Normal" xid="357" props="text-align:left; dom-dir:ltr">If you have done this correctly, this entry now reads, for example:</p>
+<p style="Normal" xid="358" props="text-align:left; dom-dir:ltr">\begin{verbatim}</p>
+<p style="Normal" xid="359" props="text-align:left; dom-dir:ltr">\author{Ivar Ekeland\inst{1} \and Roger Temam\inst{2}}</p>
+<p style="Normal" xid="360" props="text-align:left; dom-dir:ltr">\end{verbatim}</p>
+<p style="Normal" xid="361" props="text-align:left; dom-dir:ltr">The first name\footnote{Other initials are optional</p>
+<p style="Normal" xid="362" props="text-align:left; dom-dir:ltr">and may be inserted if this is the usual</p>
+<p style="Normal" xid="363" props="text-align:left; dom-dir:ltr">way of writing your name, e.g.\ Alfred J.~Holmes, E.~Henry Green.}</p>
+<p style="Normal" xid="364" props="text-align:left; dom-dir:ltr">is followed by the surname.</p>
+<p style="Normal" xid="365"><c></c></p>
+<p style="Normal" xid="366" props="text-align:left; dom-dir:ltr">As for the title there exist two additional commands (again for volume</p>
+<p style="Normal" xid="367" props="text-align:left; dom-dir:ltr">editors only) for a different author list. One for the running head</p>
+<p style="Normal" xid="368" props="text-align:left; dom-dir:ltr">(on odd pages) -- if there is any:</p>
+<p style="Normal" xid="369" props="text-align:left; dom-dir:ltr">\begin{verbatim}</p>
+<p style="Normal" xid="370" props="text-align:left; dom-dir:ltr">\authorrunning{&lt;abbreviated author list&gt;}</p>
+<p style="Normal" xid="371" props="text-align:left; dom-dir:ltr">\end{verbatim}</p>
+<p style="Normal" xid="372" props="text-align:left; dom-dir:ltr">And one for the table of contents where the</p>
+<p style="Normal" xid="373" props="text-align:left; dom-dir:ltr">affiliation of each author is simply added in braces.</p>
+<p style="Normal" xid="374" props="text-align:left; dom-dir:ltr">\begin{verbatim}</p>
+<p style="Normal" xid="375" props="text-align:left; dom-dir:ltr">\tocauthor{&lt;enhanced author list for the table of contents&gt;}</p>
+<p style="Normal" xid="376" props="text-align:left; dom-dir:ltr">\end{verbatim}</p>
+<p style="Normal" xid="377"><c></c></p>
+<p style="Normal" xid="378" props="text-align:left; dom-dir:ltr">Next the address(es) of institute(s), company etc. is (are) required.</p>
+<p style="Normal" xid="379" props="text-align:left; dom-dir:ltr">If there is more than one address, the entries are numbered</p>
+<p style="Normal" xid="380" props="text-align:left; dom-dir:ltr">automatically with \verb|\and|, in the order in which you type them.</p>
+<p style="Normal" xid="381" props="text-align:left; dom-dir:ltr">Please make sure that the numbers match those placed next to</p>
+<p style="Normal" xid="382" props="text-align:left; dom-dir:ltr">to the authors' names to reflect the affiliation.</p>
+<p style="Normal" xid="383" props="text-align:left; dom-dir:ltr">\begin{verbatim}</p>
+<p style="Normal" xid="384" props="text-align:left; dom-dir:ltr">\institute{&lt;name of an institute&gt;</p>
+<p style="Normal" xid="385" props="text-align:left; dom-dir:ltr">\and &lt;name of the next institute&gt;</p>
+<p style="Normal" xid="386" props="text-align:left; dom-dir:ltr">\and &lt;name of the next institute&gt;}</p>
+<p style="Normal" xid="387" props="text-align:left; dom-dir:ltr">\end{verbatim}</p>
+<p style="Normal" xid="388"><c></c></p>
+<p style="Normal" xid="389" props="text-align:left; dom-dir:ltr">In addition, you can use</p>
+<p style="Normal" xid="390" props="text-align:left; dom-dir:ltr">\begin{verbatim}</p>
+<p style="Normal" xid="391" props="text-align:left; dom-dir:ltr">\email{&lt;email address&gt;}</p>
+<p style="Normal" xid="392" props="text-align:left; dom-dir:ltr">\end{verbatim}</p>
+<p style="Normal" xid="393" props="text-align:left; dom-dir:ltr">to provide your email address within \verb|\institute|. If you need to</p>
+<p style="Normal" xid="394" props="text-align:left; dom-dir:ltr">typeset the tilde character -- e.g. for your web page in your unix</p>
+<p style="Normal" xid="395" props="text-align:left; dom-dir:ltr">system's home directory -- the \verb|\homedir| command will happily do</p>
+<p style="Normal" xid="396" props="text-align:left; dom-dir:ltr">this. Please note that, if your email address is given in your paper,</p>
+<p style="Normal" xid="397" props="text-align:left; dom-dir:ltr">it will also be included in the meta data of the online version.</p>
+<p style="Normal" xid="398" props="text-align:left; dom-dir:ltr">\enlargethispage*{6mm}</p>
+<p style="Normal" xid="399"><c></c></p>
+<p style="Normal" xid="400" props="text-align:left; dom-dir:ltr">\medskip</p>
+<p style="Normal" xid="401" props="text-align:left; dom-dir:ltr">If footnote like things are needed anywhere in the contribution heading</p>
+<p style="Normal" xid="402" props="text-align:left; dom-dir:ltr">please code</p>
+<p style="Normal" xid="403" props="text-align:left; dom-dir:ltr">(immediately after the word where the footnote indicator should be</p>
+<p style="Normal" xid="404" props="text-align:left; dom-dir:ltr">placed):</p>
+<p style="Normal" xid="405" props="text-align:left; dom-dir:ltr">\begin{verbatim}</p>
+<p style="Normal" xid="406" props="text-align:left; dom-dir:ltr">\thanks{&lt;text&gt;}</p>
+<p style="Normal" xid="407" props="text-align:left; dom-dir:ltr">\end{verbatim}</p>
+<p style="Normal" xid="408" props="text-align:left; dom-dir:ltr">\verb|\thanks| may only appear in \verb|\title|, \verb|\author|</p>
+<p style="Normal" xid="409" props="text-align:left; dom-dir:ltr">and \verb|\institute| to footnote anything. If there are two or more</p>
+<p style="Normal" xid="410" props="text-align:left; dom-dir:ltr">footnotes or affiliation marks to a specific item separate them with</p>
+<p style="Normal" xid="411" props="text-align:left; dom-dir:ltr">\verb|\fnmsep| (i.e. {\itshape f}oot\emph note \emph mark</p>
+<p style="Normal" xid="412" props="text-align:left; dom-dir:ltr">\emph{sep}arator).</p>
+<p style="Normal" xid="413"><c></c></p>
+<p style="Normal" xid="414" props="text-align:left; dom-dir:ltr">\medskip\noindent</p>
+<p style="Normal" xid="415" props="text-align:left; dom-dir:ltr">The command</p>
+<p style="Normal" xid="416" props="text-align:left; dom-dir:ltr">\begin{verbatim}</p>
+<p style="Normal" xid="417" props="text-align:left; dom-dir:ltr">\maketitle</p>
+<p style="Normal" xid="418" props="text-align:left; dom-dir:ltr">\end{verbatim}</p>
+<p style="Normal" xid="419" props="text-align:left; dom-dir:ltr">then formats the complete heading of your article. If you leave</p>
+<p style="Normal" xid="420" props="text-align:left; dom-dir:ltr">it out the work done so far will produce \emph{no} text.</p>
+<p style="Normal" xid="421"><c></c></p>
+<p style="Normal" xid="422" props="text-align:left; dom-dir:ltr">Then the abstract should follow. Simply code</p>
+<p style="Normal" xid="423" props="text-align:left; dom-dir:ltr">\begin{verbatim}</p>
+<p style="Normal" xid="424" props="text-align:left; dom-dir:ltr">\begin{abstract}</p>
+<p style="Normal" xid="425" props="text-align:left; dom-dir:ltr">&lt;Text of the summary of your article&gt;</p>
+<p style="Normal" xid="426" props="text-align:left; dom-dir:ltr">\end{abstract}</p>
+<p style="Normal" xid="427" props="text-align:left; dom-dir:ltr">\end{verbatim}</p>
+<p style="Normal" xid="428" props="text-align:left; dom-dir:ltr">or refer to the demonstration file {\tt llncs.dem} for an example or</p>
+<p style="Normal" xid="429" props="text-align:left; dom-dir:ltr">to the {\em Sample Input\/} on p.~\pageref{samppage}.</p>
+<p style="Normal" xid="430"><c></c></p>
+<p style="Normal" xid="431" props="text-align:left; dom-dir:ltr">\subsubsection{Remark to Running Heads and the Table of Contents}</p>
+<p style="Normal" xid="432" props="text-align:left; dom-dir:ltr">\leavevmode\\[\medskipamount]</p>
+<p style="Normal" xid="433" props="text-align:left; dom-dir:ltr">If you are the author of a single contribution you normally have no</p>
+<p style="Normal" xid="434" props="text-align:left; dom-dir:ltr">running heads and no table of contents. Both are done only by the editor</p>
+<p style="Normal" xid="435" props="text-align:left; dom-dir:ltr">of the volume or at the printers.</p>
+<p style="Normal" xid="436">%</p>
+<p style="Normal" xid="437" props="text-align:left; dom-dir:ltr">\section{Special Commands for the Volume Editor}</p>
+<p style="Normal" xid="438" props="text-align:left; dom-dir:ltr">The volume editor can produce a complete camera ready output including</p>
+<p style="Normal" xid="439" props="text-align:left; dom-dir:ltr">running heads, a table of contents, preliminary text (frontmatter), and</p>
+<p style="Normal" xid="440" props="text-align:left; dom-dir:ltr">index or glossary. For activating the running heads there is the class</p>
+<p style="Normal" xid="441" props="text-align:left; dom-dir:ltr">option \verb|[runningheads]|.</p>
+<p style="Normal" xid="442"><c></c></p>
+<p style="Normal" xid="443" props="text-align:left; dom-dir:ltr">The table of contents of the volume is printed wherever</p>
+<p style="Normal" xid="444" props="text-align:left; dom-dir:ltr">\verb|\tableofcontents| is placed. A simple compilation of all</p>
+<p style="Normal" xid="445" props="text-align:left; dom-dir:ltr">contributions (fields \verb|\title| and \verb|\author|) is done. If you</p>
+<p style="Normal" xid="446" props="text-align:left; dom-dir:ltr">wish to change this automatically produced list use the commands</p>
+<p style="Normal" xid="447" props="text-align:left; dom-dir:ltr">\begin{verbatim}</p>
+<p style="Normal" xid="448" props="text-align:left; dom-dir:ltr">\titlerunning  \toctitle</p>
+<p style="Normal" xid="449" props="text-align:left; dom-dir:ltr">\authorrunning \tocauthor</p>
+<p style="Normal" xid="450" props="text-align:left; dom-dir:ltr">\end{verbatim}</p>
+<p style="Normal" xid="451" props="text-align:left; dom-dir:ltr">to enhance the information in the specific contributions. See the</p>
+<p style="Normal" xid="452" props="text-align:left; dom-dir:ltr">demonstration file \verb|llncs.dem| for examples.</p>
+<p style="Normal" xid="453"><c></c></p>
+<p style="Normal" xid="454" props="text-align:left; dom-dir:ltr">An additional structure can be added to the table of contents with the</p>
+<p style="Normal" xid="455" props="text-align:left; dom-dir:ltr">\verb|\addtocmark{&lt;text&gt;}| command. It has an optional numerical</p>
+<p style="Normal" xid="456" props="text-align:left; dom-dir:ltr">argument, a digit from 1 through 3. 3 (the default) makes an unnumbered</p>
+<p style="Normal" xid="457" props="text-align:left; dom-dir:ltr">chapter like entry in the table of contents. If you code</p>
+<p style="Normal" xid="458" props="text-align:left; dom-dir:ltr">\verb|\addtocmark[2]{text}| the corresponding page number is listed</p>
+<p style="Normal" xid="459" props="text-align:left; dom-dir:ltr">also, \verb|\addtocmark[1]{text}| even introduces a chapter number</p>
+<p style="Normal" xid="460" props="text-align:left; dom-dir:ltr">beyond it.</p>
+<p style="Normal" xid="461">%</p>
+<p style="Normal" xid="462" props="text-align:left; dom-dir:ltr">\section{How to Code Your Text}</p>
+<p style="Normal" xid="463">%</p>
+<p style="Normal" xid="464" props="text-align:left; dom-dir:ltr">The contribution title and all headings should be capitalized</p>
+<p style="Normal" xid="465" props="text-align:left; dom-dir:ltr">except for conjunctions, prepositions (e.g.\ on, of, by, and, or, but,</p>
+<p style="Normal" xid="466" props="text-align:left; dom-dir:ltr">from, with, without, under) and definite and indefinite articles (the,</p>
+<p style="Normal" xid="467" props="text-align:left; dom-dir:ltr">a, an) unless they appear at the beginning. Formula letters must be</p>
+<p style="Normal" xid="468" props="text-align:left; dom-dir:ltr">typeset as in the text.</p>
+<p style="Normal" xid="469"><c></c></p>
+<p style="Normal" xid="470" props="text-align:left; dom-dir:ltr">Headings will be automatically numbered by the following codes.\\[2mm]</p>
+<p style="Normal" xid="471" props="text-align:left; dom-dir:ltr">{\itshape Sample Input}</p>
+<p style="Normal" xid="472" props="text-align:left; dom-dir:ltr">\begin{verbatim}</p>
+<p style="Normal" xid="473" props="text-align:left; dom-dir:ltr">\section{This is a First-Order Title}</p>
+<p style="Normal" xid="474" props="text-align:left; dom-dir:ltr">\subsection{This is a Second-Order Title}</p>
+<p style="Normal" xid="475" props="text-align:left; dom-dir:ltr">\subsubsection{This is a Third-Order Title.}</p>
+<p style="Normal" xid="476" props="text-align:left; dom-dir:ltr">\paragraph{This is a Fourth-Order Title.}</p>
+<p style="Normal" xid="477" props="text-align:left; dom-dir:ltr">\end{verbatim}</p>
+<p style="Normal" xid="478" props="text-align:left; dom-dir:ltr">\verb|\section| and \verb|\subsection| have no end punctuation.\\</p>
+<p style="Normal" xid="479" props="text-align:left; dom-dir:ltr">\verb|\subsubsection| and \verb|\paragraph|</p>
+<p style="Normal" xid="480" props="text-align:left; dom-dir:ltr">need to be punctuated at the end.</p>
+<p style="Normal" xid="481"><c></c></p>
+<p style="Normal" xid="482" props="text-align:left; dom-dir:ltr">In addition to the above-mentioned headings your text may be structured</p>
+<p style="Normal" xid="483" props="text-align:left; dom-dir:ltr">by subsections indicated by run-in headings (theorem-like environments).</p>
+<p style="Normal" xid="484" props="text-align:left; dom-dir:ltr">All the theorem-like environments are numbered automatically</p>
+<p style="Normal" xid="485" props="text-align:left; dom-dir:ltr">throughout the sections of your document -- each with its own counter.</p>
+<p style="Normal" xid="486" props="text-align:left; dom-dir:ltr">If you want the theorem-like environments to use the same counter</p>
+<p style="Normal" xid="487" props="text-align:left; dom-dir:ltr">just specify the documentclass option \verb|envcountsame|:</p>
+<p style="Normal" xid="488" props="text-align:left; dom-dir:ltr">\begin{verbatim}</p>
+<p style="Normal" xid="489" props="text-align:left; dom-dir:ltr">\documentclass[envcountsame]{llncs}</p>
+<p style="Normal" xid="490" props="text-align:left; dom-dir:ltr">\end{verbatim}</p>
+<p style="Normal" xid="491" props="text-align:left; dom-dir:ltr">If your first call for a theorem-like environment then is e.g.</p>
+<p style="Normal" xid="492" props="text-align:left; dom-dir:ltr">\verb|\begin{lemma}|, it will be numbered 1; if corollary follows,</p>
+<p style="Normal" xid="493" props="text-align:left; dom-dir:ltr">this will be numbered 2; if you then call lemma again, this will be</p>
+<p style="Normal" xid="494" props="text-align:left; dom-dir:ltr">numbered 3.</p>
+<p style="Normal" xid="495"><c></c></p>
+<p style="Normal" xid="496" props="text-align:left; dom-dir:ltr">But in case you want to reset such counters to 1 in each section,</p>
+<p style="Normal" xid="497" props="text-align:left; dom-dir:ltr">please specify the documentclass option \verb|envcountreset|:</p>
+<p style="Normal" xid="498" props="text-align:left; dom-dir:ltr">\begin{verbatim}</p>
+<p style="Normal" xid="499" props="text-align:left; dom-dir:ltr">\documentclass[envcountreset]{llncs}</p>
+<p style="Normal" xid="500" props="text-align:left; dom-dir:ltr">\end{verbatim}</p>
+<p style="Normal" xid="501"><c></c></p>
+<p style="Normal" xid="502" props="text-align:left; dom-dir:ltr">Even a numbering on section level (including the section counter) is</p>
+<p style="Normal" xid="503" props="text-align:left; dom-dir:ltr">possible with the documentclass option \verb|envcountsect|.</p>
+<p style="Normal" xid="504"><c></c></p>
+<p style="Normal" xid="505" props="text-align:left; dom-dir:ltr">\section{Predefined Theorem like Environments}\label{builtintheo}</p>
+<p style="Normal" xid="506" props="text-align:left; dom-dir:ltr">The following variety of run-in headings are at your disposal:</p>
+<p style="Normal" xid="507" props="text-align:left; dom-dir:ltr">\begin{alpherate}</p>
+<p style="Normal" xid="508" props="text-align:left; dom-dir:ltr">\item</p>
+<p style="Normal" xid="509" props="text-align:left; dom-dir:ltr">{\bfseries Bold} run-in headings with italicized text</p>
+<p style="Normal" xid="510" props="text-align:left; dom-dir:ltr">as built-in environments:</p>
+<p style="Normal" xid="511" props="text-align:left; dom-dir:ltr">\begin{verbatim}</p>
+<p style="Normal" xid="512" props="text-align:left; dom-dir:ltr">\begin{corollary} &lt;text&gt; \end{corollary}</p>
+<p style="Normal" xid="513" props="text-align:left; dom-dir:ltr">\begin{lemma} &lt;text&gt; \end{lemma}</p>
+<p style="Normal" xid="514" props="text-align:left; dom-dir:ltr">\begin{proposition} &lt;text&gt; \end{proposition}</p>
+<p style="Normal" xid="515" props="text-align:left; dom-dir:ltr">\begin{theorem} &lt;text&gt; \end{theorem}</p>
+<p style="Normal" xid="516" props="text-align:left; dom-dir:ltr">\end{verbatim}</p>
+<p style="Normal" xid="517" props="text-align:left; dom-dir:ltr">\item</p>
+<p style="Normal" xid="518" props="text-align:left; dom-dir:ltr">The following generally appears as {\itshape italic} run-in heading:</p>
+<p style="Normal" xid="519" props="text-align:left; dom-dir:ltr">\begin{verbatim}</p>
+<p style="Normal" xid="520" props="text-align:left; dom-dir:ltr">\begin{proof} &lt;text&gt;    \qed    \end{proof}</p>
+<p style="Normal" xid="521" props="text-align:left; dom-dir:ltr">\end{verbatim}</p>
+<p style="Normal" xid="522" props="text-align:left; dom-dir:ltr">It is unnumbered and may contain an eye catching square (call for that</p>
+<p style="Normal" xid="523" props="text-align:left; dom-dir:ltr">with \verb|\qed|) before the environment ends.</p>
+<p style="Normal" xid="524" props="text-align:left; dom-dir:ltr">\item</p>
+<p style="Normal" xid="525" props="text-align:left; dom-dir:ltr">Further {\itshape italic} or {\bfseries bold} run-in headings with roman</p>
+<p style="Normal" xid="526" props="text-align:left; dom-dir:ltr">environment body may also occur:</p>
+<p style="Normal" xid="527" props="text-align:left; dom-dir:ltr">\begin{verbatim}</p>
+<p style="Normal" xid="528" props="text-align:left; dom-dir:ltr">\begin{definition} &lt;text&gt; \end{definition}</p>
+<p style="Normal" xid="529" props="text-align:left; dom-dir:ltr">\begin{example} &lt;text&gt; \end{example}</p>
+<p style="Normal" xid="530" props="text-align:left; dom-dir:ltr">\begin{exercise} &lt;text&gt; \end{exercise}</p>
+<p style="Normal" xid="531" props="text-align:left; dom-dir:ltr">\begin{note} &lt;text&gt; \end{note}</p>
+<p style="Normal" xid="532" props="text-align:left; dom-dir:ltr">\begin{problem} &lt;text&gt; \end{problem}</p>
+<p style="Normal" xid="533" props="text-align:left; dom-dir:ltr">\begin{question} &lt;text&gt; \end{question}</p>
+<p style="Normal" xid="534" props="text-align:left; dom-dir:ltr">\begin{remark} &lt;text&gt; \end{remark}</p>
+<p style="Normal" xid="535" props="text-align:left; dom-dir:ltr">\begin{solution} &lt;text&gt; \end{solution}</p>
+<p style="Normal" xid="536" props="text-align:left; dom-dir:ltr">\end{verbatim}</p>
+<p style="Normal" xid="537" props="text-align:left; dom-dir:ltr">\end{alpherate}</p>
+<p style="Normal" xid="538"><c></c></p>
+<p style="Normal" xid="539" props="text-align:left; dom-dir:ltr">\section{Defining your Own Theorem like Environments}</p>
+<p style="Normal" xid="540" props="text-align:left; dom-dir:ltr">We have enhanced the standard \verb|\newtheorem| command and slightly</p>
+<p style="Normal" xid="541" props="text-align:left; dom-dir:ltr">changed its syntax to get two new commands \verb|\spnewtheorem| and</p>
+<p style="Normal" xid="542" props="text-align:left; dom-dir:ltr">\verb|\spnewtheorem*| that now can be used to define additional</p>
+<p style="Normal" xid="543" props="text-align:left; dom-dir:ltr">environments. They require two additional arguments namely the type</p>
+<p style="Normal" xid="544" props="text-align:left; dom-dir:ltr">style in which the keyword of the environment appears and second the</p>
+<p style="Normal" xid="545" props="text-align:left; dom-dir:ltr">style for the text of your new environment.</p>
+<p style="Normal" xid="546"><c></c></p>
+<p style="Normal" xid="547" props="text-align:left; dom-dir:ltr">\verb|\spnewtheorem| can be used in two ways.</p>
+<p style="Normal" xid="548" props="text-align:left; dom-dir:ltr">\subsection{Method 1 {\itshape (preferred)}}</p>
+<p style="Normal" xid="549" props="text-align:left; dom-dir:ltr">You may want to create an environment that shares its counter</p>
+<p style="Normal" xid="550" props="text-align:left; dom-dir:ltr">with another environment, say {\em main theorem\/} to be numbered like</p>
+<p style="Normal" xid="551" props="text-align:left; dom-dir:ltr">the predefined {\em theorem\/}. In this case, use the syntax</p>
+<p style="Normal" xid="552" props="text-align:left; dom-dir:ltr">\begin{verbatim}</p>
+<p style="Normal" xid="553" props="text-align:left; dom-dir:ltr">\spnewtheorem{&lt;env_nam&gt;}[&lt;num_like&gt;]{&lt;caption&gt;}</p>
+<p style="Normal" xid="554" props="text-align:left; dom-dir:ltr">{&lt;cap_font&gt;}{&lt;body_font&gt;}</p>
+<p style="Normal" xid="555" props="text-align:left; dom-dir:ltr">\end{verbatim}</p>
+<p style="Normal" xid="556"><c></c></p>
+<p style="Normal" xid="557" props="text-align:left; dom-dir:ltr">\noindent</p>
+<p style="Normal" xid="558" props="text-align:left; dom-dir:ltr">Here the environment with which the new environment should share its</p>
+<p style="Normal" xid="559" props="text-align:left; dom-dir:ltr">counter is specified with the optional argument \verb|[&lt;num_like&gt;]|.</p>
+<p style="Normal" xid="560"><c></c></p>
+<p style="Normal" xid="561" props="text-align:left; dom-dir:ltr">\paragraph{Sample Input}</p>
+<p style="Normal" xid="562" props="text-align:left; dom-dir:ltr">\begin{verbatim}</p>
+<p style="Normal" xid="563" props="text-align:left; dom-dir:ltr">\spnewtheorem{mainth}[theorem]{Main Theorem}{\bfseries}{\itshape}</p>
+<p style="Normal" xid="564" props="text-align:left; dom-dir:ltr">\begin{theorem} The early bird gets the worm. \end{theorem}</p>
+<p style="Normal" xid="565" props="text-align:left; dom-dir:ltr">\begin{mainth} The early worm gets eaten. \end{mainth}</p>
+<p style="Normal" xid="566" props="text-align:left; dom-dir:ltr">\end{verbatim}</p>
+<p style="Normal" xid="567" props="text-align:left; dom-dir:ltr">\medskip\noindent</p>
+<p style="Normal" xid="568" props="text-align:left; dom-dir:ltr">{\em Sample Output}</p>
+<p style="Normal" xid="569"><c></c></p>
+<p style="Normal" xid="570" props="text-align:left; dom-dir:ltr">\medskip\noindent</p>
+<p style="Normal" xid="571" props="text-align:left; dom-dir:ltr">{\bfseries Theorem 3.}\enspace {\em The early bird gets the worm.}</p>
+<p style="Normal" xid="572"><c></c></p>
+<p style="Normal" xid="573" props="text-align:left; dom-dir:ltr">\medskip\noindent</p>
+<p style="Normal" xid="574" props="text-align:left; dom-dir:ltr">{\bfseries Main Theorem 4.} The early worm gets eaten.</p>
+<p style="Normal" xid="575"><c></c></p>
+<p style="Normal" xid="576" props="text-align:left; dom-dir:ltr">\bigskip</p>
+<p style="Normal" xid="577" props="text-align:left; dom-dir:ltr">The sharing of the default counter (\verb|[theorem]|) is desired. If you</p>
+<p style="Normal" xid="578" props="text-align:left; dom-dir:ltr">omit the optional second argument of \verb|\spnewtheorem| a separate</p>
+<p style="Normal" xid="579" props="text-align:left; dom-dir:ltr">counter for your new environment is used throughout your document.</p>
+<p style="Normal" xid="580"><c></c></p>
+<p style="Normal" xid="581" props="text-align:left; dom-dir:ltr">\subsection[Method 2]{Method 2 {\itshape (assumes {\tt[envcountsect]}</p>
+<p style="Normal" xid="582" props="text-align:left; dom-dir:ltr">documentstyle option)}}</p>
+<p style="Normal" xid="583" props="text-align:left; dom-dir:ltr">\begin{verbatim}</p>
+<p style="Normal" xid="584" props="text-align:left; dom-dir:ltr">\spnewtheorem{&lt;env_nam&gt;}{&lt;caption&gt;}[&lt;within&gt;]</p>
+<p style="Normal" xid="585" props="text-align:left; dom-dir:ltr">{&lt;cap_font&gt;}{&lt;body_font&gt;}</p>
+<p style="Normal" xid="586" props="text-align:left; dom-dir:ltr">\end{verbatim}</p>
+<p style="Normal" xid="587"><c></c></p>
+<p style="Normal" xid="588" props="text-align:left; dom-dir:ltr">\noindent</p>
+<p style="Normal" xid="589" props="text-align:left; dom-dir:ltr">This defines a new environment \verb|&lt;env_nam&gt;| which prints the caption</p>
+<p style="Normal" xid="590" props="text-align:left; dom-dir:ltr">\verb|&lt;caption&gt;| in the font \verb|&lt;cap_font&gt;| and the text itself in</p>
+<p style="Normal" xid="591" props="text-align:left; dom-dir:ltr">the font \verb|&lt;body_font&gt;|. The environment is numbered beginning anew</p>
+<p style="Normal" xid="592" props="text-align:left; dom-dir:ltr">with every new sectioning element you specify with the optional</p>
+<p style="Normal" xid="593" props="text-align:left; dom-dir:ltr">parameter \verb|&lt;within&gt;|.</p>
+<p style="Normal" xid="594"><c></c></p>
+<p style="Normal" xid="595" props="text-align:left; dom-dir:ltr">\medskip\noindent</p>
+<p style="Normal" xid="596" props="text-align:left; dom-dir:ltr">\paragraph{Example} \leavevmode</p>
+<p style="Normal" xid="597"><c></c></p>
+<p style="Normal" xid="598" props="text-align:left; dom-dir:ltr">\medskip\noindent</p>
+<p style="Normal" xid="599" props="text-align:left; dom-dir:ltr">\verb|\spnewtheorem{joke}{Joke}[subsection]{\bfseries}{\rmfamily}|</p>
+<p style="Normal" xid="600"><c></c></p>
+<p style="Normal" xid="601" props="text-align:left; dom-dir:ltr">\medskip</p>
+<p style="Normal" xid="602" props="text-align:left; dom-dir:ltr">\noindent defines a new environment called \verb|joke| which prints the</p>
+<p style="Normal" xid="603" props="text-align:left; dom-dir:ltr">caption {\bfseries Joke} in boldface and the text in roman. The jokes are</p>
+<p style="Normal" xid="604" props="text-align:left; dom-dir:ltr">numbered starting from 1 at the beginning of every subsection with the</p>
+<p style="Normal" xid="605" props="text-align:left; dom-dir:ltr">number of the subsection preceding the number of the joke e.g. 7.2.1 for</p>
+<p style="Normal" xid="606" props="text-align:left; dom-dir:ltr">the first joke in subsection 7.2.</p>
+<p style="Normal" xid="607"><c></c></p>
+<p style="Normal" xid="608" props="text-align:left; dom-dir:ltr">\subsection{Unnumbered Environments}</p>
+<p style="Normal" xid="609" props="text-align:left; dom-dir:ltr">If you wish to have an unnumbered environment, please</p>
+<p style="Normal" xid="610" props="text-align:left; dom-dir:ltr">use the syntax</p>
+<p style="Normal" xid="611" props="text-align:left; dom-dir:ltr">\begin{verbatim}</p>
+<p style="Normal" xid="612" props="text-align:left; dom-dir:ltr">\spnewtheorem*{&lt;env_nam&gt;}{&lt;caption&gt;}{&lt;cap_font&gt;}{&lt;body_font&gt;}</p>
+<p style="Normal" xid="613" props="text-align:left; dom-dir:ltr">\end{verbatim}</p>
+<p style="Normal" xid="614"><c></c></p>
+<p style="Normal" xid="615" props="text-align:left; dom-dir:ltr">\section{Program Codes}</p>
+<p style="Normal" xid="616" props="text-align:left; dom-dir:ltr">In case you want to show pieces of program code, just use the</p>
+<p style="Normal" xid="617" props="text-align:left; dom-dir:ltr">\verb|verbatim| environment or the \verb|verbatim| package of \LaTeX.</p>
+<p style="Normal" xid="618" props="text-align:left; dom-dir:ltr">(There also exist various pretty printers for some programming</p>
+<p style="Normal" xid="619" props="text-align:left; dom-dir:ltr">languages.)</p>
+<p style="Normal" xid="620">%</p>
+<p style="Normal" xid="621" props="text-align:left; dom-dir:ltr">\noindent</p>
+<p style="Normal" xid="622" props="text-align:left; dom-dir:ltr">\subsection*{Sample Input {\rmfamily(of a simple</p>
+<p style="Normal" xid="623" props="text-align:left; dom-dir:ltr">contribution)}}\label{samppage}</p>
+<p style="Normal" xid="624" props="text-align:left; dom-dir:ltr">\begin{verbatim}</p>
+<p style="Normal" xid="625" props="text-align:left; dom-dir:ltr">\title{Hamiltonian Mechanics}</p>
+<p style="Normal" xid="626"><c></c></p>
+<p style="Normal" xid="627" props="text-align:left; dom-dir:ltr">\author{Ivar Ekeland\inst{1} \and Roger Temam\inst{2}}</p>
+<p style="Normal" xid="628"><c></c></p>
+<p style="Normal" xid="629" props="text-align:left; dom-dir:ltr">\institute{Princeton University, Princeton NJ 08544, USA</p>
+<p style="Normal" xid="630" props="text-align:left; dom-dir:ltr">\and</p>
+<p style="Normal" xid="631" props="text-align:left; dom-dir:ltr">Universit\'{e} de Paris-Sud,</p>
+<p style="Normal" xid="632" props="text-align:left; dom-dir:ltr">Laboratoire d'Analyse Num\'{e}rique, B\^{a}timent 425,\\</p>
+<p style="Normal" xid="633" props="text-align:left; dom-dir:ltr">F-91405 Orsay Cedex, France}</p>
+<p style="Normal" xid="634"><c></c></p>
+<p style="Normal" xid="635" props="text-align:left; dom-dir:ltr">\maketitle</p>
+<p style="Normal" xid="636">%</p>
+<p style="Normal" xid="637" props="text-align:left; dom-dir:ltr">\begin{abstract}</p>
+<p style="Normal" xid="638" props="text-align:left; dom-dir:ltr">This paragraph shall summarize the contents of the paper</p>
+<p style="Normal" xid="639" props="text-align:left; dom-dir:ltr">in short terms.</p>
+<p style="Normal" xid="640" props="text-align:left; dom-dir:ltr">\end{abstract}</p>
+<p style="Normal" xid="641">%</p>
+<p style="Normal" xid="642" props="text-align:left; dom-dir:ltr">\section{Fixed-Period Problems: The Sublinear Case}</p>
+<p style="Normal" xid="643">%</p>
+<p style="Normal" xid="644" props="text-align:left; dom-dir:ltr">With this chapter, the preliminaries are over, and we begin the</p>
+<p style="Normal" xid="645" props="text-align:left; dom-dir:ltr">search for periodic solutions \dots</p>
+<p style="Normal" xid="646">%</p>
+<p style="Normal" xid="647" props="text-align:left; dom-dir:ltr">\subsection{Autonomous Systems}</p>
+<p style="Normal" xid="648">%</p>
+<p style="Normal" xid="649" props="text-align:left; dom-dir:ltr">In this section we will consider the case when the Hamiltonian</p>
+<p style="Normal" xid="650" props="text-align:left; dom-dir:ltr">$H(x)$ \dots</p>
+<p style="Normal" xid="651">%</p>
+<p style="Normal" xid="652" props="text-align:left; dom-dir:ltr">\subsubsection*{The General Case: Nontriviality.}</p>
+<p style="Normal" xid="653">%</p>
+<p style="Normal" xid="654" props="text-align:left; dom-dir:ltr">We assume that $H$ is</p>
+<p style="Normal" xid="655" props="text-align:left; dom-dir:ltr">$\left(A_{\infty}, B_{\infty}\right)$-subqua\-dra\-tic</p>
+<p style="Normal" xid="656" props="text-align:left; dom-dir:ltr">at infinity, for some constant \dots</p>
+<p style="Normal" xid="657">%</p>
+<p style="Normal" xid="658" props="text-align:left; dom-dir:ltr">\paragraph{Notes and Comments.}</p>
+<p style="Normal" xid="659" props="text-align:left; dom-dir:ltr">The first results on subharmonics were \dots</p>
+<p style="Normal" xid="660">%</p>
+<p style="Normal" xid="661" props="text-align:left; dom-dir:ltr">\begin{proposition}</p>
+<p style="Normal" xid="662" props="text-align:left; dom-dir:ltr">Assume $H'(0)=0$ and $ H(0)=0$. Set \dots</p>
+<p style="Normal" xid="663" props="text-align:left; dom-dir:ltr">\end{proposition}</p>
+<p style="Normal" xid="664" props="text-align:left; dom-dir:ltr">\begin{proof}[of proposition]</p>
+<p style="Normal" xid="665" props="text-align:left; dom-dir:ltr">Condition (8) means that, for every $\delta'&gt;\delta$, there is</p>
+<p style="Normal" xid="666" props="text-align:left; dom-dir:ltr">some $\varepsilon&gt;0$ such that \dots \qed</p>
+<p style="Normal" xid="667" props="text-align:left; dom-dir:ltr">\end{proof}</p>
+<p style="Normal" xid="668">%</p>
+<p style="Normal" xid="669" props="text-align:left; dom-dir:ltr">\begin{example}[\rmfamily (External forcing)]</p>
+<p style="Normal" xid="670" props="text-align:left; dom-dir:ltr">Consider the system \dots</p>
+<p style="Normal" xid="671" props="text-align:left; dom-dir:ltr">\end{example}</p>
+<p style="Normal" xid="672" props="text-align:left; dom-dir:ltr">\begin{corollary}</p>
+<p style="Normal" xid="673" props="text-align:left; dom-dir:ltr">Assume $H$ is $C^{2}$ and</p>
+<p style="Normal" xid="674" props="text-align:left; dom-dir:ltr">$\left(a_{\infty}, b_{\infty}\right)$-subquadratic</p>
+<p style="Normal" xid="675" props="text-align:left; dom-dir:ltr">at infinity. Let \dots</p>
+<p style="Normal" xid="676" props="text-align:left; dom-dir:ltr">\end{corollary}</p>
+<p style="Normal" xid="677" props="text-align:left; dom-dir:ltr">\begin{lemma}</p>
+<p style="Normal" xid="678" props="text-align:left; dom-dir:ltr">Assume that $H$ is $C^{2}$ on $\bbbr^{2n}\backslash \{0\}$</p>
+<p style="Normal" xid="679" props="text-align:left; dom-dir:ltr">and that $H''(x)$ is \dots</p>
+<p style="Normal" xid="680" props="text-align:left; dom-dir:ltr">\end{lemma}</p>
+<p style="Normal" xid="681" props="text-align:left; dom-dir:ltr">\begin{theorem}[(Ghoussoub-Preiss)]</p>
+<p style="Normal" xid="682" props="text-align:left; dom-dir:ltr">Let $X$ be a Banach Space and $\Phi:X\to\bbbr$ \dots</p>
+<p style="Normal" xid="683" props="text-align:left; dom-dir:ltr">\end{theorem}</p>
+<p style="Normal" xid="684" props="text-align:left; dom-dir:ltr">\begin{definition}</p>
+<p style="Normal" xid="685" props="text-align:left; dom-dir:ltr">We shall say that a $C^{1}$ function $\Phi:X\to\bbbr$</p>
+<p style="Normal" xid="686" props="text-align:left; dom-dir:ltr">satisfies \dots</p>
+<p style="Normal" xid="687" props="text-align:left; dom-dir:ltr">\end{definition}</p>
+<p style="Normal" xid="688" props="text-align:left; dom-dir:ltr">\end{verbatim}</p>
+<p style="Normal" xid="689" props="text-align:left; dom-dir:ltr">{\itshape Sample Output\/} (follows on the next page together with</p>
+<p style="Normal" xid="690" props="text-align:left; dom-dir:ltr">examples of the above run-in headings)</p>
+<p style="Normal" xid="691" props="text-align:left; dom-dir:ltr">\newcounter{save}\setcounter{save}{\value{section}}</p>
+<p style="Normal" xid="692" props="text-align:left; dom-dir:ltr">{\def\addtocontents#1#2{}%</p>
+<p style="Normal" xid="693" props="text-align:left; dom-dir:ltr">\def\addcontentsline#1#2#3{}%</p>
+<p style="Normal" xid="694" props="text-align:left; dom-dir:ltr">\def\markboth#1#2{}%</p>
+<p style="Normal" xid="695">%</p>
+<p style="Normal" xid="696" props="text-align:left; dom-dir:ltr">\title{Hamiltonian Mechanics}</p>
+<p style="Normal" xid="697"><c></c></p>
+<p style="Normal" xid="698" props="text-align:left; dom-dir:ltr">\author{Ivar Ekeland\inst{1} \and Roger Temam\inst{2}}</p>
+<p style="Normal" xid="699"><c></c></p>
+<p style="Normal" xid="700" props="text-align:left; dom-dir:ltr">\institute{Princeton University, Princeton NJ 08544, USA</p>
+<p style="Normal" xid="701" props="text-align:left; dom-dir:ltr">\and</p>
+<p style="Normal" xid="702" props="text-align:left; dom-dir:ltr">Universit\'{e} de Paris-Sud,</p>
+<p style="Normal" xid="703" props="text-align:left; dom-dir:ltr">Laboratoire d'Analyse Num\'{e}rique, B\^{a}timent 425,\\</p>
+<p style="Normal" xid="704" props="text-align:left; dom-dir:ltr">F-91405 Orsay Cedex, France}</p>
+<p style="Normal" xid="705"><c></c></p>
+<p style="Normal" xid="706" props="text-align:left; dom-dir:ltr">\maketitle</p>
+<p style="Normal" xid="707">%</p>
+<p style="Normal" xid="708" props="text-align:left; dom-dir:ltr">\begin{abstract}</p>
+<p style="Normal" xid="709" props="text-align:left; dom-dir:ltr">This paragraph shall summarize the contents of the paper</p>
+<p style="Normal" xid="710" props="text-align:left; dom-dir:ltr">in short terms.</p>
+<p style="Normal" xid="711" props="text-align:left; dom-dir:ltr">\end{abstract}</p>
+<p style="Normal" xid="712">%</p>
+<p style="Normal" xid="713" props="text-align:left; dom-dir:ltr">\section{Fixed-Period Problems: The Sublinear Case}</p>
+<p style="Normal" xid="714">%</p>
+<p style="Normal" xid="715" props="text-align:left; dom-dir:ltr">With this chapter, the preliminaries are over, and we begin the search</p>
+<p style="Normal" xid="716" props="text-align:left; dom-dir:ltr">for periodic solutions \dots</p>
+<p style="Normal" xid="717">%</p>
+<p style="Normal" xid="718" props="text-align:left; dom-dir:ltr">\subsection{Autonomous Systems}</p>
+<p style="Normal" xid="719">%</p>
+<p style="Normal" xid="720" props="text-align:left; dom-dir:ltr">In this section we will consider the case when the Hamiltonian</p>
+<p style="Normal" xid="721" props="text-align:left; dom-dir:ltr">$H(x)$ \dots</p>
+<p style="Normal" xid="722">%</p>
+<p style="Normal" xid="723" props="text-align:left; dom-dir:ltr">\subsubsection{The General Case: Nontriviality.}</p>
+<p style="Normal" xid="724">%</p>
+<p style="Normal" xid="725" props="text-align:left; dom-dir:ltr">We assume that $H$ is</p>
+<p style="Normal" xid="726" props="text-align:left; dom-dir:ltr">$\left(A_{\infty}, B_{\infty}\right)$-subqua\-dra\-tic at</p>
+<p style="Normal" xid="727" props="text-align:left; dom-dir:ltr">infinity, for some constant \dots</p>
+<p style="Normal" xid="728">%</p>
+<p style="Normal" xid="729" props="text-align:left; dom-dir:ltr">\paragraph{Notes and Comments.}</p>
+<p style="Normal" xid="730" props="text-align:left; dom-dir:ltr">The first results on subharmonics were \dots</p>
+<p style="Normal" xid="731">%</p>
+<p style="Normal" xid="732" props="text-align:left; dom-dir:ltr">\begin{proposition}</p>
+<p style="Normal" xid="733" props="text-align:left; dom-dir:ltr">Assume $H'(0)=0$ and $ H(0)=0$. Set \dots</p>
+<p style="Normal" xid="734" props="text-align:left; dom-dir:ltr">\end{proposition}</p>
+<p style="Normal" xid="735" props="text-align:left; dom-dir:ltr">\begin{proof}[of proposition]</p>
+<p style="Normal" xid="736" props="text-align:left; dom-dir:ltr">Condition (8) means that, for every $\delta'&gt;\delta$, there is</p>
+<p style="Normal" xid="737" props="text-align:left; dom-dir:ltr">some $\varepsilon&gt;0$ such that \dots \qed</p>
+<p style="Normal" xid="738" props="text-align:left; dom-dir:ltr">\end{proof}</p>
+<p style="Normal" xid="739">%</p>
+<p style="Normal" xid="740" props="text-align:left; dom-dir:ltr">\begin{example}[{{\rmfamily External forcing}}]</p>
+<p style="Normal" xid="741" props="text-align:left; dom-dir:ltr">Consider the system \dots</p>
+<p style="Normal" xid="742" props="text-align:left; dom-dir:ltr">\end{example}</p>
+<p style="Normal" xid="743" props="text-align:left; dom-dir:ltr">\begin{corollary}</p>
+<p style="Normal" xid="744" props="text-align:left; dom-dir:ltr">Assume $H$ is $C^{2}$ and</p>
+<p style="Normal" xid="745" props="text-align:left; dom-dir:ltr">$\left(a_{\infty}, b_{\infty}\right)$-subquadratic</p>
+<p style="Normal" xid="746" props="text-align:left; dom-dir:ltr">at infinity. Let \dots</p>
+<p style="Normal" xid="747" props="text-align:left; dom-dir:ltr">\end{corollary}</p>
+<p style="Normal" xid="748" props="text-align:left; dom-dir:ltr">\begin{lemma}</p>
+<p style="Normal" xid="749" props="text-align:left; dom-dir:ltr">Assume that $H$ is $C^{2}$ on $\bbbr^{2n}\backslash \{0\}$</p>
+<p style="Normal" xid="750" props="text-align:left; dom-dir:ltr">and that $H''(x)$ is \dots</p>
+<p style="Normal" xid="751" props="text-align:left; dom-dir:ltr">\end{lemma}</p>
+<p style="Normal" xid="752" props="text-align:left; dom-dir:ltr">\begin{theorem}[Ghoussoub-Preiss]</p>
+<p style="Normal" xid="753" props="text-align:left; dom-dir:ltr">Let $X$ be a Banach Space and $\Phi:X\to\bbbr$ \dots</p>
+<p style="Normal" xid="754" props="text-align:left; dom-dir:ltr">\end{theorem}</p>
+<p style="Normal" xid="755" props="text-align:left; dom-dir:ltr">\begin{definition}</p>
+<p style="Normal" xid="756" props="text-align:left; dom-dir:ltr">We shall say that a $C^{1}$ function $\Phi:X\to\bbbr$ satisfies \dots</p>
+<p style="Normal" xid="757" props="text-align:left; dom-dir:ltr">\end{definition}</p>
+<p style="Normal" xid="758">%</p>
+<p style="Normal" xid="759" props="text-align:left; dom-dir:ltr">}\setcounter{section}{\value{save}}</p>
+<p style="Normal" xid="760" props="text-align:left; dom-dir:ltr">\section{Fine Tuning of the Text}</p>
+<p style="Normal" xid="761">%</p>
+<p style="Normal" xid="762" props="text-align:left; dom-dir:ltr">The following should be used to improve the readability of the text:</p>
+<p style="Normal" xid="763" props="text-align:left; dom-dir:ltr">\begin{flushleft}</p>
+<p style="Normal" xid="764" props="text-align:left; dom-dir:ltr">\begin{tabular}{@{}p{.19\textwidth}p{.79\textwidth}}</p>
+<p style="Normal" xid="765" props="text-align:left; dom-dir:ltr">\verb|\,|   &amp; a thin space, e.g.\ between numbers or between units</p>
+<p style="Normal" xid="766" props="text-align:left; dom-dir:ltr">              and num\-bers; a line division will not be made</p>
+<p style="Normal" xid="767" props="text-align:left; dom-dir:ltr">              following this space\\</p>
+<p style="Normal" xid="768" props="text-align:left; dom-dir:ltr">\verb|--|   &amp; en dash; two strokes, without a space at either end\\</p>
+<p style="Normal" xid="769" props="text-align:left; dom-dir:ltr">\verb*| -- |&amp; en dash; two strokes, with  a space at either end\\</p>
+<p style="Normal" xid="770" props="text-align:left; dom-dir:ltr">\verb|-|    &amp; hyphen; one stroke, no space at either end\\</p>
+<p style="Normal" xid="771" props="text-align:left; dom-dir:ltr">\verb|$-$|  &amp; minus, in the text {\em only} \\[8mm]</p>
+<p style="Normal" xid="772" props="text-align:left; dom-dir:ltr">{\em Input} &amp; \verb|21\,$^{\circ}$C etc.,|\\</p>
+<p style="Normal" xid="773" props="text-align:left; dom-dir:ltr">            &amp;  \verb|Dr h.\,c.\,Rockefellar-Smith \dots|\\</p>
+<p style="Normal" xid="774" props="text-align:left; dom-dir:ltr">            &amp; \verb|20,000\,km and  Prof.\,Dr Mallory \dots|\\</p>
+<p style="Normal" xid="775" props="text-align:left; dom-dir:ltr">            &amp; \verb|1950--1985 \dots|\\</p>
+<p style="Normal" xid="776" props="text-align:left; dom-dir:ltr">            &amp; \verb|this -- written on a computer -- is now printed|\\</p>
+<p style="Normal" xid="777" props="text-align:left; dom-dir:ltr">            &amp; \verb|$-30$\,K \dots|\\[3mm]</p>
+<p style="Normal" xid="778" props="text-align:left; dom-dir:ltr">{\em Output}&amp; 21\,$^{\circ}$C etc., Dr h.\,c.\,Rockefellar-Smith \dots\\</p>
+<p style="Normal" xid="779" props="text-align:left; dom-dir:ltr">            &amp; 20,000\,km and  Prof.\,Dr Mallory \dots\\</p>
+<p style="Normal" xid="780" props="text-align:left; dom-dir:ltr">            &amp; 1950--1985 \dots\\</p>
+<p style="Normal" xid="781" props="text-align:left; dom-dir:ltr">            &amp; this -- written on a computer -- is now printed\\</p>
+<p style="Normal" xid="782" props="text-align:left; dom-dir:ltr">            &amp; $-30$\,K \dots</p>
+<p style="Normal" xid="783" props="text-align:left; dom-dir:ltr">\end{tabular}</p>
+<p style="Normal" xid="784" props="text-align:left; dom-dir:ltr">\end{flushleft}</p>
+<p style="Normal" xid="785">%</p>
+<p style="Normal" xid="786" props="text-align:left; dom-dir:ltr">\section {Special Typefaces}</p>
+<p style="Normal" xid="787">%</p>
+<p style="Normal" xid="788" props="text-align:left; dom-dir:ltr">Normal type (roman text) need not be coded. {\itshape Italic}</p>
+<p style="Normal" xid="789" props="text-align:left; dom-dir:ltr">(\verb|{\em &lt;text&gt;}| better still \verb|\emph{&lt;text&gt;}|) or, if</p>
+<p style="Normal" xid="790" props="text-align:left; dom-dir:ltr">necessary, {\bfseries boldface} should be used for emphasis.\\[6pt]</p>
+<p style="Normal" xid="791" props="text-align:left; dom-dir:ltr">\begin{minipage}[t]{\textwidth}</p>
+<p style="Normal" xid="792" props="text-align:left; dom-dir:ltr">\begin{flushleft}</p>
+<p style="Normal" xid="793" props="text-align:left; dom-dir:ltr">\begin{tabular}{@{}p{.25\textwidth}@{\hskip6pt}p{.73\textwidth}@{}}</p>
+<p style="Normal" xid="794" props="text-align:left; dom-dir:ltr">\verb|{\itshape Text}|   &amp; {\itshape Italicized Text}\\[2pt]</p>
+<p style="Normal" xid="795" props="text-align:left; dom-dir:ltr">\verb|{\em Text}|   &amp; {\em Emphasized Text --</p>
+<p style="Normal" xid="796" props="text-align:left; dom-dir:ltr">   if you would like to emphasize a {\em definition} within an</p>
+<p style="Normal" xid="797" props="text-align:left; dom-dir:ltr">   italicized text (e.g.\ of a {\em theorem)} you should code the</p>
+<p style="Normal" xid="798" props="text-align:left; dom-dir:ltr">   expression to be emphasized by} \verb|\em|.\\[2pt]</p>
+<p style="Normal" xid="799" props="text-align:left; dom-dir:ltr">\verb|{\bfseries Text}|&amp; {\bfseries Important Text}\\[2pt]</p>
+<p style="Normal" xid="800" props="text-align:left; dom-dir:ltr">\verb|\vec{Symbol}| &amp; Vectors may only appear in math mode. The default</p>
+<p style="Normal" xid="801" props="text-align:left; dom-dir:ltr">   \LaTeX{} vector symbol has been adapted\footnotemark\</p>
+<p style="Normal" xid="802" props="text-align:left; dom-dir:ltr"> to LLNCS conventions.\\[2pt]</p>
+<p style="Normal" xid="803" props="text-align:left; dom-dir:ltr"> &amp; \verb|$\vec{A \times B\cdot C}| yields $\vec{A\times B\cdot C}$\\</p>
+<p style="Normal" xid="804" props="text-align:left; dom-dir:ltr"> &amp; \verb|$\vec{A}^{T} \otimes \vec{B} \otimes|\\</p>
+<p style="Normal" xid="805" props="text-align:left; dom-dir:ltr"> &amp; \verb|\vec{\hat{D}}$|yields $\vec{A}^{T} \otimes \vec{B} \otimes</p>
+<p style="Normal" xid="806" props="text-align:left; dom-dir:ltr">\vec{\hat{D}}$</p>
+<p style="Normal" xid="807" props="text-align:left; dom-dir:ltr">\end{tabular}</p>
+<p style="Normal" xid="808" props="text-align:left; dom-dir:ltr">\end{flushleft}</p>
+<p style="Normal" xid="809" props="text-align:left; dom-dir:ltr">\end{minipage}</p>
+<p style="Normal" xid="810"><c></c></p>
+<p style="Normal" xid="811" props="text-align:left; dom-dir:ltr">\footnotetext{If you absolutely must revive the original \LaTeX{}</p>
+<p style="Normal" xid="812" props="text-align:left; dom-dir:ltr">design of the vector symbol (as an arrow accent), please specify the</p>
+<p style="Normal" xid="813" props="text-align:left; dom-dir:ltr">option \texttt{[orivec]} in the \texttt{documentclass} line.}</p>
+<p style="Normal" xid="814" props="text-align:left; dom-dir:ltr">\newpage</p>
+<p style="Normal" xid="815">%</p>
+<p style="Normal" xid="816" props="text-align:left; dom-dir:ltr">\section {Footnotes}</p>
+<p style="Normal" xid="817">%</p>
+<p style="Normal" xid="818" props="text-align:left; dom-dir:ltr">Footnotes within the text should be coded:</p>
+<p style="Normal" xid="819" props="text-align:left; dom-dir:ltr">\begin{verbatim}</p>
+<p style="Normal" xid="820" props="text-align:left; dom-dir:ltr">\footnote{Text}</p>
+<p style="Normal" xid="821" props="text-align:left; dom-dir:ltr">\end{verbatim}</p>
+<p style="Normal" xid="822" props="text-align:left; dom-dir:ltr">{\itshape Sample Input}</p>
+<p style="Normal" xid="823" props="text-align:left; dom-dir:ltr">\begin{flushleft}</p>
+<p style="Normal" xid="824" props="text-align:left; dom-dir:ltr">Text with a footnote\verb|\footnote{The |{\tt footnote is automatically</p>
+<p style="Normal" xid="825" props="text-align:left; dom-dir:ltr">numbered.}\verb|}| and text continues \dots</p>
+<p style="Normal" xid="826" props="text-align:left; dom-dir:ltr">\end{flushleft}</p>
+<p style="Normal" xid="827" props="text-align:left; dom-dir:ltr">{\itshape Sample Output}</p>
+<p style="Normal" xid="828" props="text-align:left; dom-dir:ltr">\begin{flushleft}</p>
+<p style="Normal" xid="829" props="text-align:left; dom-dir:ltr">Text with a footnote\footnote{The footnote is automatically numbered.}</p>
+<p style="Normal" xid="830" props="text-align:left; dom-dir:ltr">and text continues \dots</p>
+<p style="Normal" xid="831" props="text-align:left; dom-dir:ltr">\end{flushleft}</p>
+<p style="Normal" xid="832">%</p>
+<p style="Normal" xid="833" props="text-align:left; dom-dir:ltr">\section {Lists}</p>
+<p style="Normal" xid="834">%</p>
+<p style="Normal" xid="835" props="text-align:left; dom-dir:ltr">Please code lists as described below:\\[2mm]</p>
+<p style="Normal" xid="836" props="text-align:left; dom-dir:ltr">{\itshape Sample  Input}</p>
+<p style="Normal" xid="837" props="text-align:left; dom-dir:ltr">\begin{verbatim}</p>
+<p style="Normal" xid="838" props="text-align:left; dom-dir:ltr">\begin{enumerate}</p>
+<p style="Normal" xid="839" props="text-align:left; dom-dir:ltr">  \item First item</p>
+<p style="Normal" xid="840" props="text-align:left; dom-dir:ltr">  \item Second item</p>
+<p style="Normal" xid="841" props="text-align:left; dom-dir:ltr">  \begin{enumerate}</p>
+<p style="Normal" xid="842" props="text-align:left; dom-dir:ltr">    \item First nested item</p>
+<p style="Normal" xid="843" props="text-align:left; dom-dir:ltr">    \item Second nested item</p>
+<p style="Normal" xid="844" props="text-align:left; dom-dir:ltr">  \end{enumerate}</p>
+<p style="Normal" xid="845" props="text-align:left; dom-dir:ltr">  \item Third item</p>
+<p style="Normal" xid="846" props="text-align:left; dom-dir:ltr">\end{enumerate}</p>
+<p style="Normal" xid="847" props="text-align:left; dom-dir:ltr">\end{verbatim}</p>
+<p style="Normal" xid="848" props="text-align:left; dom-dir:ltr">{\itshape Sample Output}</p>
+<p style="Normal" xid="849" props="text-align:left; dom-dir:ltr"> \begin{enumerate}</p>
+<p style="Normal" xid="850" props="text-align:left; dom-dir:ltr">\item First item</p>
+<p style="Normal" xid="851" props="text-align:left; dom-dir:ltr">\item Second item</p>
+<p style="Normal" xid="852" props="text-align:left; dom-dir:ltr">  \begin{enumerate}</p>
+<p style="Normal" xid="853" props="text-align:left; dom-dir:ltr">    \item First nested item</p>
+<p style="Normal" xid="854" props="text-align:left; dom-dir:ltr">    \item Second nested item</p>
+<p style="Normal" xid="855" props="text-align:left; dom-dir:ltr">  \end{enumerate}</p>
+<p style="Normal" xid="856" props="text-align:left; dom-dir:ltr">\item Third item</p>
+<p style="Normal" xid="857" props="text-align:left; dom-dir:ltr">\end{enumerate}</p>
+<p style="Normal" xid="858">%</p>
+<p style="Normal" xid="859" props="text-align:left; dom-dir:ltr">\section {Figures}</p>
+<p style="Normal" xid="860">%</p>
+<p style="Normal" xid="861" props="text-align:left; dom-dir:ltr">Figure environments should be inserted after (not in)</p>
+<p style="Normal" xid="862" props="text-align:left; dom-dir:ltr">the  paragraph in which the figure is first mentioned.</p>
+<p style="Normal" xid="863" props="text-align:left; dom-dir:ltr">They will be numbered automatically.</p>
+<p style="Normal" xid="864"><c></c></p>
+<p style="Normal" xid="865" props="text-align:left; dom-dir:ltr">Preferably the images should be enclosed as PostScript files -- best as</p>
+<p style="Normal" xid="866" props="text-align:left; dom-dir:ltr">EPS data using the epsfig package.</p>
+<p style="Normal" xid="867"><c></c></p>
+<p style="Normal" xid="868" props="text-align:left; dom-dir:ltr">If you cannot include them into your output this way and use other</p>
+<p style="Normal" xid="869" props="text-align:left; dom-dir:ltr">techniques for a separate production,</p>
+<p style="Normal" xid="870" props="text-align:left; dom-dir:ltr">the figures (line drawings and those containing halftone inserts</p>
+<p style="Normal" xid="871" props="text-align:left; dom-dir:ltr">as well as halftone figures) {\em should not be pasted into your</p>
+<p style="Normal" xid="872" props="text-align:left; dom-dir:ltr">laserprinter output}. They should be enclosed separately in camera-ready</p>
+<p style="Normal" xid="873" props="text-align:left; dom-dir:ltr">form (original artwork, glossy prints, photographs and/or slides). The</p>
+<p style="Normal" xid="874" props="text-align:left; dom-dir:ltr">lettering should be suitable for reproduction, and after a</p>
+<p style="Normal" xid="875" props="text-align:left; dom-dir:ltr">probably necessary reduction the height of capital letters should be at</p>
+<p style="Normal" xid="876" props="text-align:left; dom-dir:ltr">least 1.8\,mm and not more than 2.5\,mm.</p>
+<p style="Normal" xid="877" props="text-align:left; dom-dir:ltr">Check that lines and other details are uniformly black and</p>
+<p style="Normal" xid="878" props="text-align:left; dom-dir:ltr">that the lettering on figures is clearly legible.</p>
+<p style="Normal" xid="879"><c></c></p>
+<p style="Normal" xid="880" props="text-align:left; dom-dir:ltr">To leave the desired amount of space for the height of</p>
+<p style="Normal" xid="881" props="text-align:left; dom-dir:ltr">your figures, please use the coding described below.</p>
+<p style="Normal" xid="882" props="text-align:left; dom-dir:ltr">As can be seen in the output, we will automatically</p>
+<p style="Normal" xid="883" props="text-align:left; dom-dir:ltr">provide 1\,cm space above and below the figure,</p>
+<p style="Normal" xid="884" props="text-align:left; dom-dir:ltr">so that you should only leave the space equivalent to the size of the</p>
+<p style="Normal" xid="885" props="text-align:left; dom-dir:ltr">figure itself. Please note that ``\verb|x|'' in the following</p>
+<p style="Normal" xid="886" props="text-align:left; dom-dir:ltr">coding stands for the actual height of the figure:</p>
+<p style="Normal" xid="887" props="text-align:left; dom-dir:ltr">\begin{verbatim}</p>
+<p style="Normal" xid="888" props="text-align:left; dom-dir:ltr">\begin{figure}</p>
+<p style="Normal" xid="889" props="text-align:left; dom-dir:ltr">\vspace{x cm}</p>
+<p style="Normal" xid="890" props="text-align:left; dom-dir:ltr">\caption[ ]{...text of caption...}          (Do type [ ])</p>
+<p style="Normal" xid="891" props="text-align:left; dom-dir:ltr">\end{figure}</p>
+<p style="Normal" xid="892" props="text-align:left; dom-dir:ltr">\end{verbatim}</p>
+<p style="Normal" xid="893" props="text-align:left; dom-dir:ltr">\begin{flushleft}</p>
+<p style="Normal" xid="894" props="text-align:left; dom-dir:ltr">{\itshape Sample Input}</p>
+<p style="Normal" xid="895" props="text-align:left; dom-dir:ltr">\end{flushleft}</p>
+<p style="Normal" xid="896" props="text-align:left; dom-dir:ltr">\begin{verbatim}</p>
+<p style="Normal" xid="897" props="text-align:left; dom-dir:ltr">\begin{figure}</p>
+<p style="Normal" xid="898" props="text-align:left; dom-dir:ltr">\vspace{2.5cm}</p>
+<p style="Normal" xid="899" props="text-align:left; dom-dir:ltr">\caption{This is the caption of the figure displaying a white</p>
+<p style="Normal" xid="900" props="text-align:left; dom-dir:ltr">eagle and a white horse on a snow field}</p>
+<p style="Normal" xid="901" props="text-align:left; dom-dir:ltr">\end{figure}</p>
+<p style="Normal" xid="902" props="text-align:left; dom-dir:ltr">\end{verbatim}</p>
+<p style="Normal" xid="903" props="text-align:left; dom-dir:ltr">\begin{flushleft}</p>
+<p style="Normal" xid="904" props="text-align:left; dom-dir:ltr">{\itshape Sample Output}</p>
+<p style="Normal" xid="905" props="text-align:left; dom-dir:ltr">\end{flushleft}</p>
+<p style="Normal" xid="906" props="text-align:left; dom-dir:ltr">\begin{figure}</p>
+<p style="Normal" xid="907" props="text-align:left; dom-dir:ltr">\vspace{2.5cm}</p>
+<p style="Normal" xid="908" props="text-align:left; dom-dir:ltr">\caption{This is the caption of the figure displaying a white eagle and</p>
+<p style="Normal" xid="909" props="text-align:left; dom-dir:ltr">a white horse on a snow field}</p>
+<p style="Normal" xid="910" props="text-align:left; dom-dir:ltr">\end{figure}</p>
+<p style="Normal" xid="911">%</p>
+<p style="Normal" xid="912" props="text-align:left; dom-dir:ltr">\section{Tables}</p>
+<p style="Normal" xid="913">%</p>
+<p style="Normal" xid="914" props="text-align:left; dom-dir:ltr">Table captions should be treated</p>
+<p style="Normal" xid="915" props="text-align:left; dom-dir:ltr">in the same way as figure legends, except that</p>
+<p style="Normal" xid="916" props="text-align:left; dom-dir:ltr">the table captions appear {\itshape above} the tables. The tables</p>
+<p style="Normal" xid="917" props="text-align:left; dom-dir:ltr">will be numbered automatically.</p>
+<p style="Normal" xid="918">%</p>
+<p style="Normal" xid="919" props="text-align:left; dom-dir:ltr">\subsection{Tables Coded with \protect\LaTeX{}}</p>
+<p style="Normal" xid="920">%</p>
+<p style="Normal" xid="921" props="text-align:left; dom-dir:ltr">Please use the following coding:\\[2mm]</p>
+<p style="Normal" xid="922" props="text-align:left; dom-dir:ltr">{\itshape Sample Input}</p>
+<p style="Normal" xid="923" props="text-align:left; dom-dir:ltr">\begin{verbatim}</p>
+<p style="Normal" xid="924" props="text-align:left; dom-dir:ltr">\begin{table}</p>
+<p style="Normal" xid="925" props="text-align:left; dom-dir:ltr">\caption{Critical $N$ values}</p>
+<p style="Normal" xid="926" props="text-align:left; dom-dir:ltr">\begin{tabular}{llllll}</p>
+<p style="Normal" xid="927" props="text-align:left; dom-dir:ltr">\hline\noalign{\smallskip}</p>
+<p style="Normal" xid="928" props="text-align:left; dom-dir:ltr">${\mathrm M}_\odot$ &amp; $\beta_{0}$ &amp; $T_{\mathrm c6}$ &amp; $\gamma$</p>
+<p style="Normal" xid="929" props="text-align:left; dom-dir:ltr">  &amp; $N_{\mathrm{crit}}^{\mathrm L}$</p>
+<p style="Normal" xid="930" props="text-align:left; dom-dir:ltr">  &amp; $N_{\mathrm{crit}}^{\mathrm{Te}}$\\</p>
+<p style="Normal" xid="931" props="text-align:left; dom-dir:ltr">\noalign{\smallskip}</p>
+<p style="Normal" xid="932" props="text-align:left; dom-dir:ltr">\hline</p>
+<p style="Normal" xid="933" props="text-align:left; dom-dir:ltr">\noalign{\smallskip}</p>
+<p style="Normal" xid="934"> 30 &amp; 0.82 &amp; 38.4 &amp; 35.7 &amp; 154 &amp; 320 \\</p>
+<p style="Normal" xid="935"> 60 &amp; 0.67 &amp; 42.1 &amp; 34.7 &amp; 138 &amp; 340 \\</p>
+<p style="Normal" xid="936">120 &amp; 0.52 &amp; 45.1 &amp; 34.0 &amp; 124 &amp; 370 \\</p>
+<p style="Normal" xid="937" props="text-align:left; dom-dir:ltr">\hline</p>
+<p style="Normal" xid="938" props="text-align:left; dom-dir:ltr">\end{tabular}</p>
+<p style="Normal" xid="939" props="text-align:left; dom-dir:ltr">\end{table}</p>
+<p style="Normal" xid="940" props="text-align:left; dom-dir:ltr">\end{verbatim}</p>
+<p style="Normal" xid="941"><c></c></p>
+<p style="Normal" xid="942" props="text-align:left; dom-dir:ltr">\medskip\noindent{\itshape Sample Output}</p>
+<p style="Normal" xid="943" props="text-align:left; dom-dir:ltr">\begin{table}</p>
+<p style="Normal" xid="944" props="text-align:left; dom-dir:ltr">\caption{Critical $N$ values}</p>
+<p style="Normal" xid="945" props="text-align:left; dom-dir:ltr">\begin{center}</p>
+<p style="Normal" xid="946" props="text-align:left; dom-dir:ltr">\renewcommand{\arraystretch}{1.4}</p>
+<p style="Normal" xid="947" props="text-align:left; dom-dir:ltr">\setlength\tabcolsep{3pt}</p>
+<p style="Normal" xid="948" props="text-align:left; dom-dir:ltr">\begin{tabular}{llllll}</p>
+<p style="Normal" xid="949" props="text-align:left; dom-dir:ltr">\hline\noalign{\smallskip}</p>
+<p style="Normal" xid="950" props="text-align:left; dom-dir:ltr">${\mathrm M}_\odot$ &amp; $\beta_{0}$ &amp; $T_{\mathrm c6}$ &amp; $\gamma$</p>
+<p style="Normal" xid="951" props="text-align:left; dom-dir:ltr">  &amp; $N_{\mathrm{crit}}^{\mathrm L}$</p>
+<p style="Normal" xid="952" props="text-align:left; dom-dir:ltr">  &amp; $N_{\mathrm{crit}}^{\mathrm{Te}}$\\</p>
+<p style="Normal" xid="953" props="text-align:left; dom-dir:ltr">\noalign{\smallskip}</p>
+<p style="Normal" xid="954" props="text-align:left; dom-dir:ltr">\hline</p>
+<p style="Normal" xid="955" props="text-align:left; dom-dir:ltr">\noalign{\smallskip}</p>
+<p style="Normal" xid="956"> 30 &amp; 0.82 &amp; 38.4 &amp; 35.7 &amp; 154 &amp; 320 \\</p>
+<p style="Normal" xid="957"> 60 &amp; 0.67 &amp; 42.1 &amp; 34.7 &amp; 138 &amp; 340 \\</p>
+<p style="Normal" xid="958">120 &amp; 0.52 &amp; 45.1 &amp; 34.0 &amp; 124 &amp; 370 \\</p>
+<p style="Normal" xid="959" props="text-align:left; dom-dir:ltr">\hline</p>
+<p style="Normal" xid="960" props="text-align:left; dom-dir:ltr">\end{tabular}</p>
+<p style="Normal" xid="961" props="text-align:left; dom-dir:ltr">\end{center}</p>
+<p style="Normal" xid="962" props="text-align:left; dom-dir:ltr">\end{table}</p>
+<p style="Normal" xid="963"><c></c></p>
+<p style="Normal" xid="964" props="text-align:left; dom-dir:ltr">Before continuing your text you need an empty line. \dots</p>
+<p style="Normal" xid="965"><c></c></p>
+<p style="Normal" xid="966" props="text-align:left; dom-dir:ltr">\vspace{3mm}</p>
+<p style="Normal" xid="967" props="text-align:left; dom-dir:ltr">For further information you will find a complete description of</p>
+<p style="Normal" xid="968" props="text-align:left; dom-dir:ltr">the tabular environment</p>
+<p style="Normal" xid="969" props="text-align:left; dom-dir:ltr">on p.~62~ff. and p.~204 of the {\em \LaTeX{} User's Guide \&amp; Reference</p>
+<p style="Normal" xid="970" props="text-align:left; dom-dir:ltr">Manual\/} by Leslie Lamport.</p>
+<p style="Normal" xid="971">%</p>
+<p style="Normal" xid="972" props="text-align:left; dom-dir:ltr">\subsection{Tables Not Coded with \protect\LaTeX{}}</p>
+<p style="Normal" xid="973">%</p>
+<p style="Normal" xid="974" props="text-align:left; dom-dir:ltr">If you do not wish to code your table using \LaTeX{}</p>
+<p style="Normal" xid="975" props="text-align:left; dom-dir:ltr">but prefer to have it reproduced separately,</p>
+<p style="Normal" xid="976" props="text-align:left; dom-dir:ltr">proceed as for figures and use the following coding:\\[2mm]</p>
+<p style="Normal" xid="977" props="text-align:left; dom-dir:ltr">{\itshape Sample Input}</p>
+<p style="Normal" xid="978" props="text-align:left; dom-dir:ltr">\begin{verbatim}</p>
+<p style="Normal" xid="979" props="text-align:left; dom-dir:ltr">\begin{table}</p>
+<p style="Normal" xid="980" props="text-align:left; dom-dir:ltr">\caption{text of your caption}</p>
+<p style="Normal" xid="981" props="text-align:left; dom-dir:ltr">\vspace{x cm}     % the actual height needed for your table</p>
+<p style="Normal" xid="982" props="text-align:left; dom-dir:ltr">\end{table}</p>
+<p style="Normal" xid="983" props="text-align:left; dom-dir:ltr">\end{verbatim}</p>
+<p style="Normal" xid="984">%</p>
+<p style="Normal" xid="985" props="text-align:left; dom-dir:ltr">\subsection{Signs and Characters}</p>
+<p style="Normal" xid="986">%</p>
+<p style="Normal" xid="987" props="text-align:left; dom-dir:ltr">\subsubsection*{Special Signs.}</p>
+<p style="Normal" xid="988">%</p>
+<p style="Normal" xid="989" props="text-align:left; dom-dir:ltr">You may need to use special signs.  The available ones are listed in the</p>
+<p style="Normal" xid="990" props="text-align:left; dom-dir:ltr">{\em \LaTeX{} User's Guide \&amp; Reference Manual\/} by Leslie Lamport,</p>
+<p style="Normal" xid="991" props="text-align:left; dom-dir:ltr">pp.~41\,ff.</p>
+<p style="Normal" xid="992" props="text-align:left; dom-dir:ltr">We have created further symbols for math mode (enclosed in \$):</p>
+<p style="Normal" xid="993" props="text-align:left; dom-dir:ltr">\begin{center}</p>
+<p style="Normal" xid="994" props="text-align:left; dom-dir:ltr">\begin{tabular}{l@{\hspace{1em}yields\hspace{1em}}</p>
+<p style="Normal" xid="995" props="text-align:left; dom-dir:ltr">c@{\hspace{3em}}l@{\hspace{1em}yields\hspace{1em}}c}</p>
+<p style="Normal" xid="996" props="text-align:left; dom-dir:ltr">\verb|\grole| &amp; $\grole$ &amp; \verb|\getsto| &amp; $\getsto$\\</p>
+<p style="Normal" xid="997" props="text-align:left; dom-dir:ltr">\verb|\lid|   &amp; $\lid$   &amp; \verb|\gid|    &amp; $\gid$</p>
+<p style="Normal" xid="998" props="text-align:left; dom-dir:ltr">\end{tabular}</p>
+<p style="Normal" xid="999" props="text-align:left; dom-dir:ltr">\end{center}</p>
+<p style="Normal" xid="1000">%</p>
+<p style="Normal" xid="1001" props="text-align:left; dom-dir:ltr">\subsubsection*{Gothic (Fraktur).}</p>
+<p style="Normal" xid="1002">%</p>
+<p style="Normal" xid="1003" props="text-align:left; dom-dir:ltr">If gothic letters are {\itshape necessary}, please use those of the</p>
+<p style="Normal" xid="1004" props="text-align:left; dom-dir:ltr">relevant \AmSTeX{} alphabet which are available using the amstex</p>
+<p style="Normal" xid="1005" props="text-align:left; dom-dir:ltr">package of the American Mathematical Society.</p>
+<p style="Normal" xid="1006"><c></c></p>
+<p style="Normal" xid="1007" props="text-align:left; dom-dir:ltr">In \LaTeX{} only the following gothic letters are available:</p>
+<p style="Normal" xid="1008" props="text-align:left; dom-dir:ltr">\verb|$\Re$| yields $\Re$ and \verb|$\Im$| yields $\Im$. These should</p>
+<p style="Normal" xid="1009" props="text-align:left; dom-dir:ltr">{\itshape not\/} be used when you need gothic letters for your contribution.</p>
+<p style="Normal" xid="1010" props="text-align:left; dom-dir:ltr">Use \AmSTeX{} gothic as explained above. For the real and the imaginary</p>
+<p style="Normal" xid="1011" props="text-align:left; dom-dir:ltr">parts of a complex number within math mode you should use instead:</p>
+<p style="Normal" xid="1012" props="text-align:left; dom-dir:ltr">\verb|$\mathrm{Re}$| (which yields Re) or \verb|$\mathrm{Im}$| (which</p>
+<p style="Normal" xid="1013" props="text-align:left; dom-dir:ltr">yields Im).</p>
+<p style="Normal" xid="1014">%</p>
+<p style="Normal" xid="1015" props="text-align:left; dom-dir:ltr">\subsubsection*{Script.}</p>
+<p style="Normal" xid="1016">%</p>
+<p style="Normal" xid="1017" props="text-align:left; dom-dir:ltr">For script capitals use the coding</p>
+<p style="Normal" xid="1018" props="text-align:left; dom-dir:ltr">\begin{center}</p>
+<p style="Normal" xid="1019" props="text-align:left; dom-dir:ltr">\begin{tabular}{l@{\hspace{1em}which yields\hspace{1em}}c}</p>
+<p style="Normal" xid="1020" props="text-align:left; dom-dir:ltr">\verb|$\mathcal{AB}$| &amp; $\mathcal{AB}$</p>
+<p style="Normal" xid="1021" props="text-align:left; dom-dir:ltr">\end{tabular}</p>
+<p style="Normal" xid="1022" props="text-align:left; dom-dir:ltr">\end{center}</p>
+<p style="Normal" xid="1023" props="text-align:left; dom-dir:ltr">(see p.~42 of  the \LaTeX{} book).</p>
+<p style="Normal" xid="1024">%</p>
+<p style="Normal" xid="1025" props="text-align:left; dom-dir:ltr">\subsubsection*{Special Roman.}</p>
+<p style="Normal" xid="1026">%</p>
+<p style="Normal" xid="1027" props="text-align:left; dom-dir:ltr">If you need other symbols than those below, you could use</p>
+<p style="Normal" xid="1028" props="text-align:left; dom-dir:ltr">the blackboard bold characters of \AmSTeX{},  but there might arise</p>
+<p style="Normal" xid="1029" props="text-align:left; dom-dir:ltr">capacity problems</p>
+<p style="Normal" xid="1030" props="text-align:left; dom-dir:ltr">in loading additional \AmSTeX{} fonts. Therefore  we created</p>
+<p style="Normal" xid="1031" props="text-align:left; dom-dir:ltr">the blackboard bold characters listed below.</p>
+<p style="Normal" xid="1032" props="text-align:left; dom-dir:ltr">Some of them are not esthetically</p>
+<p style="Normal" xid="1033" props="text-align:left; dom-dir:ltr">satisfactory. This need not deter you from using them:</p>
+<p style="Normal" xid="1034" props="text-align:left; dom-dir:ltr">in the final printed form they will be</p>
+<p style="Normal" xid="1035" props="text-align:left; dom-dir:ltr">replaced by the well-designed MT (monotype) characters of</p>
+<p style="Normal" xid="1036" props="text-align:left; dom-dir:ltr">the phototypesetting machine.</p>
+<p style="Normal" xid="1037" props="text-align:left; dom-dir:ltr">\begin{flushleft}</p>
+<p style="Normal" xid="1038" props="text-align:left; dom-dir:ltr">\begin{tabular}{@{}ll@{ yields }</p>
+<p style="Normal" xid="1039" props="text-align:left; dom-dir:ltr">c@{\hspace{1.em}}ll@{ yields }c}</p>
+<p style="Normal" xid="1040" props="text-align:left; dom-dir:ltr">\verb|\bbbc| &amp; (complex numbers)   &amp; $\bbbc$</p>
+<p style="Normal" xid="1041" props="text-align:left; dom-dir:ltr">  &amp; \verb|\bbbf| &amp; (blackboard bold F) &amp; $\bbbf$\\</p>
+<p style="Normal" xid="1042" props="text-align:left; dom-dir:ltr">\verb|\bbbh| &amp; (blackboard bold H) &amp; $\bbbh$</p>
+<p style="Normal" xid="1043" props="text-align:left; dom-dir:ltr">  &amp; \verb|\bbbk| &amp; (blackboard bold K) &amp; $\bbbk$\\</p>
+<p style="Normal" xid="1044" props="text-align:left; dom-dir:ltr">\verb|\bbbm| &amp; (blackboard bold M) &amp; $\bbbm$</p>
+<p style="Normal" xid="1045" props="text-align:left; dom-dir:ltr">  &amp; \verb|\bbbn| &amp; (natural numbers N) &amp; $\bbbn$\\</p>
+<p style="Normal" xid="1046" props="text-align:left; dom-dir:ltr">\verb|\bbbp| &amp; (blackboard bold P) &amp; $\bbbp$</p>
+<p style="Normal" xid="1047" props="text-align:left; dom-dir:ltr">  &amp; \verb|\bbbq| &amp; (rational numbers)  &amp; $\bbbq$\\</p>
+<p style="Normal" xid="1048" props="text-align:left; dom-dir:ltr">\verb|\bbbr| &amp; (real numbers)      &amp; $\bbbr$</p>
+<p style="Normal" xid="1049" props="text-align:left; dom-dir:ltr">  &amp; \verb|\bbbs| &amp; (blackboard bold S) &amp; $\bbbs$\\</p>
+<p style="Normal" xid="1050" props="text-align:left; dom-dir:ltr">\verb|\bbbt| &amp; (blackboard bold T) &amp; $\bbbt$</p>
+<p style="Normal" xid="1051" props="text-align:left; dom-dir:ltr">  &amp; \verb|\bbbz| &amp; (whole numbers)     &amp; $\bbbz$\\</p>
+<p style="Normal" xid="1052" props="text-align:left; dom-dir:ltr">\verb|\bbbone| &amp; (symbol one)      &amp; $\bbbone$</p>
+<p style="Normal" xid="1053" props="text-align:left; dom-dir:ltr">\end{tabular}</p>
+<p style="Normal" xid="1054" props="text-align:left; dom-dir:ltr">\end{flushleft}</p>
+<p style="Normal" xid="1055" props="text-align:left; dom-dir:ltr">\begin{displaymath}</p>
+<p style="Normal" xid="1056" props="text-align:left; dom-dir:ltr">\begin{array}{c}</p>
+<p style="Normal" xid="1057" props="text-align:left; dom-dir:ltr">\bbbc^{\bbbc^{\bbbc}} \otimes</p>
+<p style="Normal" xid="1058" props="text-align:left; dom-dir:ltr">\bbbf_{\bbbf_{\bbbf}} \otimes</p>
+<p style="Normal" xid="1059" props="text-align:left; dom-dir:ltr">\bbbh_{\bbbh_{\bbbh}} \otimes</p>
+<p style="Normal" xid="1060" props="text-align:left; dom-dir:ltr">\bbbk_{\bbbk_{\bbbk}} \otimes</p>
+<p style="Normal" xid="1061" props="text-align:left; dom-dir:ltr">\bbbm^{\bbbm^{\bbbm}} \otimes</p>
+<p style="Normal" xid="1062" props="text-align:left; dom-dir:ltr">\bbbn_{\bbbn_{\bbbn}} \otimes</p>
+<p style="Normal" xid="1063" props="text-align:left; dom-dir:ltr">\bbbp^{\bbbp^{\bbbp}}\\[2mm]</p>
+<p style="Normal" xid="1064" props="text-align:left; dom-dir:ltr">\otimes</p>
+<p style="Normal" xid="1065" props="text-align:left; dom-dir:ltr">\bbbq_{\bbbq_{\bbbq}} \otimes</p>
+<p style="Normal" xid="1066" props="text-align:left; dom-dir:ltr">\bbbr^{\bbbr^{\bbbr}} \otimes</p>
+<p style="Normal" xid="1067" props="text-align:left; dom-dir:ltr">\bbbs^{\bbbs_{\bbbs}} \otimes</p>
+<p style="Normal" xid="1068" props="text-align:left; dom-dir:ltr">\bbbt^{\bbbt^{\bbbt}} \otimes</p>
+<p style="Normal" xid="1069" props="text-align:left; dom-dir:ltr">\bbbz \otimes</p>
+<p style="Normal" xid="1070" props="text-align:left; dom-dir:ltr">\bbbone^{\bbbone_{\bbbone}}</p>
+<p style="Normal" xid="1071" props="text-align:left; dom-dir:ltr">\end{array}</p>
+<p style="Normal" xid="1072" props="text-align:left; dom-dir:ltr">\end{displaymath}</p>
+<p style="Normal" xid="1073">%</p>
+<p style="Normal" xid="1074" props="text-align:left; dom-dir:ltr">\section{References}</p>
+<p style="Normal" xid="1075" props="text-align:left; dom-dir:ltr">\label{refer}</p>
+<p style="Normal" xid="1076">%</p>
+<p style="Normal" xid="1077" props="text-align:left; dom-dir:ltr">There are three reference systems available; only one, of course,</p>
+<p style="Normal" xid="1078" props="text-align:left; dom-dir:ltr">should be used for your contribution. With each system (by</p>
+<p style="Normal" xid="1079" props="text-align:left; dom-dir:ltr">number only, by letter-number or by author-year) a reference list</p>
+<p style="Normal" xid="1080" props="text-align:left; dom-dir:ltr">containing all citations in the</p>
+<p style="Normal" xid="1081" props="text-align:left; dom-dir:ltr">text, should be included at the end of your contribution placing the</p>
+<p style="Normal" xid="1082" props="text-align:left; dom-dir:ltr">\LaTeX{} environment \verb|thebibliography| there.</p>
+<p style="Normal" xid="1083" props="text-align:left; dom-dir:ltr">For an overall information on that environment</p>
+<p style="Normal" xid="1084" props="text-align:left; dom-dir:ltr">see the {\em \LaTeX{} User's Guide \&amp; Reference</p>
+<p style="Normal" xid="1085" props="text-align:left; dom-dir:ltr">Manual\/} by Leslie Lamport, p.~71.</p>
+<p style="Normal" xid="1086"><c></c></p>
+<p style="Normal" xid="1087" props="text-align:left; dom-dir:ltr">There is a special {\sc Bib}\TeX{} style for LLNCS that works along</p>
+<p style="Normal" xid="1088" props="text-align:left; dom-dir:ltr">with the class: \verb|splncs.bst|</p>
+<p style="Normal" xid="1089" props="text-align:left; dom-dir:ltr">-- call for it with a line \verb|\bibliographystyle{splncs}|.</p>
+<p style="Normal" xid="1090" props="text-align:left; dom-dir:ltr">If you plan to use another {\sc Bib}\TeX{} style you are customed to,</p>
+<p style="Normal" xid="1091" props="text-align:left; dom-dir:ltr">please specify the option \verb|[oribibl]| in the</p>
+<p style="Normal" xid="1092" props="text-align:left; dom-dir:ltr">\verb|documentclass| line, like:</p>
+<p style="Normal" xid="1093" props="text-align:left; dom-dir:ltr">\begin{verbatim}</p>
+<p style="Normal" xid="1094" props="text-align:left; dom-dir:ltr">\documentclass[oribibl]{llncs}</p>
+<p style="Normal" xid="1095" props="text-align:left; dom-dir:ltr">\end{verbatim}</p>
+<p style="Normal" xid="1096" props="text-align:left; dom-dir:ltr">This will retain the original \LaTeX{} code for the bibliographic</p>
+<p style="Normal" xid="1097" props="text-align:left; dom-dir:ltr">environment and the \verb|\cite| mechanism that many {\sc Bib}\TeX{}</p>
+<p style="Normal" xid="1098" props="text-align:left; dom-dir:ltr">applications rely on.</p>
+<p style="Normal" xid="1099">%</p>
+<p style="Normal" xid="1100" props="text-align:left; dom-dir:ltr">\subsection{References by Letter-Number or by Number Only}</p>
+<p style="Normal" xid="1101">%</p>
+<p style="Normal" xid="1102" props="text-align:left; dom-dir:ltr">References are cited in the text -- using the \verb|\cite|</p>
+<p style="Normal" xid="1103" props="text-align:left; dom-dir:ltr">command of \LaTeX{} -- by number or by letter-number in square</p>
+<p style="Normal" xid="1104" props="text-align:left; dom-dir:ltr">brackets, e.g.\ [1] or [E1, S2], [P1], according to your use of the</p>
+<p style="Normal" xid="1105" props="text-align:left; dom-dir:ltr">\verb|\bibitem| command in the \verb|thebibliography| environment. The</p>
+<p style="Normal" xid="1106" props="text-align:left; dom-dir:ltr">coding is as follows: if you choose your own label for the sources by</p>
+<p style="Normal" xid="1107" props="text-align:left; dom-dir:ltr">giving an optional argument to the \verb|\bibitem| command the citations</p>
+<p style="Normal" xid="1108" props="text-align:left; dom-dir:ltr">in the text are marked with the label you supplied. Otherwise a simple</p>
+<p style="Normal" xid="1109" props="text-align:left; dom-dir:ltr">numbering is done, which is preferred.</p>
+<p style="Normal" xid="1110" props="text-align:left; dom-dir:ltr">\begin{verbatim}</p>
+<p style="Normal" xid="1111" props="text-align:left; dom-dir:ltr">The results in this section are a refined version</p>
+<p style="Normal" xid="1112" props="text-align:left; dom-dir:ltr">of \cite{clar:eke}; the minimality result of Proposition~14</p>
+<p style="Normal" xid="1113" props="text-align:left; dom-dir:ltr">was the first of its kind.</p>
+<p style="Normal" xid="1114" props="text-align:left; dom-dir:ltr">\end{verbatim}</p>
+<p style="Normal" xid="1115" props="text-align:left; dom-dir:ltr">The above input produces the citation: ``\dots\ refined version of</p>
+<p style="Normal" xid="1116" props="text-align:left; dom-dir:ltr">[CE1]; the min\-i\-mality\dots''. Then the \verb|\bibitem| entry of</p>
+<p style="Normal" xid="1117" props="text-align:left; dom-dir:ltr">the \verb|thebibliography| environment should read:</p>
+<p style="Normal" xid="1118" props="text-align:left; dom-dir:ltr">\begin{verbatim}</p>
+<p style="Normal" xid="1119" props="text-align:left; dom-dir:ltr">\begin{thebibliography}{[MT1]}</p>
+<p style="Normal" xid="1120">.</p>
+<p style="Normal" xid="1121">.</p>
+<p style="Normal" xid="1122" props="text-align:left; dom-dir:ltr">\bibitem[CE1]{clar:eke}</p>
+<p style="Normal" xid="1123" props="text-align:left; dom-dir:ltr">Clarke, F., Ekeland, I.:</p>
+<p style="Normal" xid="1124" props="text-align:left; dom-dir:ltr">Nonlinear oscillations and boundary-value problems for</p>
+<p style="Normal" xid="1125" props="text-align:left; dom-dir:ltr">Hamiltonian systems.</p>
+<p style="Normal" xid="1126" props="text-align:left; dom-dir:ltr">Arch. Rat. Mech. Anal. 78, 315--333 (1982)</p>
+<p style="Normal" xid="1127">.</p>
+<p style="Normal" xid="1128">.</p>
+<p style="Normal" xid="1129" props="text-align:left; dom-dir:ltr">\end{thebibliography}</p>
+<p style="Normal" xid="1130" props="text-align:left; dom-dir:ltr">\end{verbatim}</p>
+<p style="Normal" xid="1131" props="text-align:left; dom-dir:ltr">The complete bibliography looks like this:</p>
+<p style="Normal" xid="1132">%</p>
+<p style="Normal" xid="1133" props="text-align:left; dom-dir:ltr">\begin{thebibliography}{[MT1]}</p>
+<p style="Normal" xid="1134">%</p>
+<p style="Normal" xid="1135" props="text-align:left; dom-dir:ltr">\bibitem[CE1]{clar:eke}</p>
+<p style="Normal" xid="1136" props="text-align:left; dom-dir:ltr">Clarke, F., Ekeland, I.:</p>
+<p style="Normal" xid="1137" props="text-align:left; dom-dir:ltr">Nonlinear oscillations and</p>
+<p style="Normal" xid="1138" props="text-align:left; dom-dir:ltr">boundary-value problems for Hamiltonian systems.</p>
+<p style="Normal" xid="1139" props="text-align:left; dom-dir:ltr">Arch. Rat. Mech. Anal. 78, 315--333 (1982)</p>
+<p style="Normal" xid="1140">%</p>
+<p style="Normal" xid="1141" props="text-align:left; dom-dir:ltr">\bibitem[CE2]{clar:eke:2}</p>
+<p style="Normal" xid="1142" props="text-align:left; dom-dir:ltr">Clarke, F., Ekeland, I.:</p>
+<p style="Normal" xid="1143" props="text-align:left; dom-dir:ltr">Solutions p\'{e}riodiques, du</p>
+<p style="Normal" xid="1144" props="text-align:left; dom-dir:ltr">p\'{e}riode donn\'{e}e, des \'{e}quations hamiltoniennes.</p>
+<p style="Normal" xid="1145" props="text-align:left; dom-dir:ltr">Note CRAS Paris 287, 1013--1015 (1978)</p>
+<p style="Normal" xid="1146">%</p>
+<p style="Normal" xid="1147" props="text-align:left; dom-dir:ltr">\bibitem[MT1]{mich:tar}</p>
+<p style="Normal" xid="1148" props="text-align:left; dom-dir:ltr">Michalek, R., Tarantello, G.:</p>
+<p style="Normal" xid="1149" props="text-align:left; dom-dir:ltr">Subharmonic solutions with prescribed minimal</p>
+<p style="Normal" xid="1150" props="text-align:left; dom-dir:ltr">period for nonautonomous Hamiltonian systems.</p>
+<p style="Normal" xid="1151" props="text-align:left; dom-dir:ltr">J. Diff. Eq. 72, 28--55 (1988)</p>
+<p style="Normal" xid="1152">%</p>
+<p style="Normal" xid="1153" props="text-align:left; dom-dir:ltr">\bibitem[Ta1]{tar}</p>
+<p style="Normal" xid="1154" props="text-align:left; dom-dir:ltr">Tarantello, G.:</p>
+<p style="Normal" xid="1155" props="text-align:left; dom-dir:ltr">Subharmonic solutions for Hamiltonian</p>
+<p style="Normal" xid="1156" props="text-align:left; dom-dir:ltr">systems via a $\bbbz_{p}$ pseudoindex theory.</p>
+<p style="Normal" xid="1157" props="text-align:left; dom-dir:ltr">Annali di Matematica Pura (to appear)</p>
+<p style="Normal" xid="1158">%</p>
+<p style="Normal" xid="1159" props="text-align:left; dom-dir:ltr">\bibitem[Ra1]{rab}</p>
+<p style="Normal" xid="1160" props="text-align:left; dom-dir:ltr">Rabinowitz, P.:</p>
+<p style="Normal" xid="1161" props="text-align:left; dom-dir:ltr">On subharmonic solutions of a Hamiltonian system.</p>
+<p style="Normal" xid="1162" props="text-align:left; dom-dir:ltr">Comm. Pure Appl. Math. 33, 609--633 (1980)</p>
+<p style="Normal" xid="1163" props="text-align:left; dom-dir:ltr">\end{thebibliography}</p>
+<p style="Normal" xid="1164">%</p>
+<p style="Normal" xid="1165" props="text-align:left; dom-dir:ltr">\subsubsection*{Number-Only System.}</p>
+<p style="Normal" xid="1166">%</p>
+<p style="Normal" xid="1167" props="text-align:left; dom-dir:ltr">For this preferred system do not use the optional argument</p>
+<p style="Normal" xid="1168" props="text-align:left; dom-dir:ltr">in the \verb|\bibitem| command: then, only numbers will</p>
+<p style="Normal" xid="1169" props="text-align:left; dom-dir:ltr">appear for the citations in the text (enclosed in square brackets)</p>
+<p style="Normal" xid="1170" props="text-align:left; dom-dir:ltr">as well as for the marks in your</p>
+<p style="Normal" xid="1171" props="text-align:left; dom-dir:ltr">bibliography (here the number is only end-punctuated without</p>
+<p style="Normal" xid="1172" props="text-align:left; dom-dir:ltr">square brackets).</p>
+<p style="Normal" xid="1173"><c></c></p>
+<p style="Normal" xid="1174" props="text-align:left; dom-dir:ltr">Subsequent citation numbers in the text are collapsed to ranges.</p>
+<p style="Normal" xid="1175" props="text-align:left; dom-dir:ltr">Non-numeric and undefined labels are handled correctly but no sorting is</p>
+<p style="Normal" xid="1176" props="text-align:left; dom-dir:ltr">done.</p>
+<p style="Normal" xid="1177"><c></c></p>
+<p style="Normal" xid="1178" props="text-align:left; dom-dir:ltr">E.g., \verb|\cite{n1,n3,n2,n3,n4,n5,foo,n1,n2,n3,?,n4,n5}| -- where</p>
+<p style="Normal" xid="1179" props="text-align:left; dom-dir:ltr">\verb|n|$x$ is the key of the $x^{\mathrm{th}}$ \verb|\bibitem|</p>
+<p style="Normal" xid="1180" props="text-align:left; dom-dir:ltr">command in sequence, \verb|foo| is the key of a \verb|\bibitem| with an</p>
+<p style="Normal" xid="1181" props="text-align:left; dom-dir:ltr">optional argument, and \verb|?| is an undefined reference -- gives</p>
+<p style="Normal" xid="1182" props="text-align:left; dom-dir:ltr">1,3,2-5,foo,1-3,?,4,5 as the citation reference.</p>
+<p style="Normal" xid="1183"><c></c></p>
+<p style="Normal" xid="1184" props="text-align:left; dom-dir:ltr">\begin{verbatim}</p>
+<p style="Normal" xid="1185" props="text-align:left; dom-dir:ltr">\begin{thebibliography}{1}</p>
+<p style="Normal" xid="1186" props="text-align:left; dom-dir:ltr">\bibitem {clar:eke}</p>
+<p style="Normal" xid="1187" props="text-align:left; dom-dir:ltr">Clarke, F., Ekeland, I.:</p>
+<p style="Normal" xid="1188" props="text-align:left; dom-dir:ltr">Nonlinear oscillations and boundary-value problems for</p>
+<p style="Normal" xid="1189" props="text-align:left; dom-dir:ltr">Hamiltonian systems.</p>
+<p style="Normal" xid="1190" props="text-align:left; dom-dir:ltr">Arch. Rat. Mech. Anal. 78, 315--333 (1982)</p>
+<p style="Normal" xid="1191" props="text-align:left; dom-dir:ltr">\end{thebibliography}</p>
+<p style="Normal" xid="1192" props="text-align:left; dom-dir:ltr">\end{verbatim}</p>
+<p style="Normal" xid="1193">%</p>
+<p style="Normal" xid="1194" props="text-align:left; dom-dir:ltr">\subsection{Author-Year System}</p>
+<p style="Normal" xid="1195">%</p>
+<p style="Normal" xid="1196" props="text-align:left; dom-dir:ltr">References are cited in the text by name and year in parentheses</p>
+<p style="Normal" xid="1197" props="text-align:left; dom-dir:ltr">and should look as follows:</p>
+<p style="Normal" xid="1198" props="text-align:left; dom-dir:ltr">(Smith 1970, 1980), (Ekeland et al. 1985, Theorem 2), (Jones and Jaffe</p>
+<p style="Normal" xid="1199" props="text-align:left; dom-dir:ltr">1986; Farrow 1988, Chap.\,2). If the name is part of the sentence</p>
+<p style="Normal" xid="1200" props="text-align:left; dom-dir:ltr">only the year may appear in parentheses,</p>
+<p style="Normal" xid="1201" props="text-align:left; dom-dir:ltr">e.g.\ Ekeland et al. (1985, Sect.\,2.1)</p>
+<p style="Normal" xid="1202" props="text-align:left; dom-dir:ltr">The reference list should contain all citations occurring in the text,</p>
+<p style="Normal" xid="1203" props="text-align:left; dom-dir:ltr">ordered alphabetically by surname (with initials following). If there</p>
+<p style="Normal" xid="1204" props="text-align:left; dom-dir:ltr">are several works by the same author(s) the references should be listed</p>
+<p style="Normal" xid="1205" props="text-align:left; dom-dir:ltr">in the appropriate order indicated below:</p>
+<p style="Normal" xid="1206" props="text-align:left; dom-dir:ltr">\begin{alpherate}</p>
+<p style="Normal" xid="1207" props="text-align:left; dom-dir:ltr">\setlength{\hfuzz}{5pt}</p>
+<p style="Normal" xid="1208" props="text-align:left; dom-dir:ltr">\item</p>
+<p style="Normal" xid="1209" props="text-align:left; dom-dir:ltr">One author: list works chronologically;</p>
+<p style="Normal" xid="1210" props="text-align:left; dom-dir:ltr">\item</p>
+<p style="Normal" xid="1211" props="text-align:left; dom-dir:ltr">Author and same co-author(s): list works chronologically;</p>
+<p style="Normal" xid="1212" props="text-align:left; dom-dir:ltr">\item</p>
+<p style="Normal" xid="1213" props="text-align:left; dom-dir:ltr">Author and different co-authors: list works alphabetically</p>
+<p style="Normal" xid="1214" props="text-align:left; dom-dir:ltr">according to co-authors.</p>
+<p style="Normal" xid="1215" props="text-align:left; dom-dir:ltr">\end{alpherate}</p>
+<p style="Normal" xid="1216" props="text-align:left; dom-dir:ltr">If there are several works by the same author(s) and in the same year,</p>
+<p style="Normal" xid="1217" props="text-align:left; dom-dir:ltr">but which are cited separately, they should be distinguished by the use</p>
+<p style="Normal" xid="1218" props="text-align:left; dom-dir:ltr">of ``a'', ``b'' etc., e.g.\ (Smith 1982a), (Ekeland et al. 1982b).</p>
+<p style="Normal" xid="1219">%</p>
+<p style="Normal" xid="1220" props="text-align:left; dom-dir:ltr">\subsubsection*{How to Code Author-Year System.}</p>
+<p style="Normal" xid="1221">%</p>
+<p style="Normal" xid="1222" props="text-align:left; dom-dir:ltr">If you want to use this system you have to specify the option</p>
+<p style="Normal" xid="1223" props="text-align:left; dom-dir:ltr">\verb|[citeauthoryear]| in the \verb|documentclass|, like:</p>
+<p style="Normal" xid="1224" props="text-align:left; dom-dir:ltr">\begin{verbatim}</p>
+<p style="Normal" xid="1225" props="text-align:left; dom-dir:ltr">\documentclass[citeauthoryear]{llncs}</p>
+<p style="Normal" xid="1226" props="text-align:left; dom-dir:ltr">\end{verbatim}</p>
+<p style="Normal" xid="1227" props="text-align:left; dom-dir:ltr">Write your citations in the text explicitly except for the year, leaving</p>
+<p style="Normal" xid="1228" props="text-align:left; dom-dir:ltr">that up to \LaTeX{} with the \verb|\cite| command. Then give only the</p>
+<p style="Normal" xid="1229" props="text-align:left; dom-dir:ltr">appropriate year as the optional argument (i.e. the label in square</p>
+<p style="Normal" xid="1230" props="text-align:left; dom-dir:ltr">brackets) with the \verb|\bibitem| command(s).\\[2mm]</p>
+<p style="Normal" xid="1231" props="text-align:left; dom-dir:ltr">{\itshape Sample Input}</p>
+<p style="Normal" xid="1232" props="text-align:left; dom-dir:ltr">\begin{verbatim}</p>
+<p style="Normal" xid="1233" props="text-align:left; dom-dir:ltr">The results in this section are a refined version</p>
+<p style="Normal" xid="1234" props="text-align:left; dom-dir:ltr">of Clarke and Ekeland (\cite{clar:eke}); the minimality result of</p>
+<p style="Normal" xid="1235" props="text-align:left; dom-dir:ltr">Proposition~14 was the first of its kind.</p>
+<p style="Normal" xid="1236" props="text-align:left; dom-dir:ltr">\end{verbatim}</p>
+<p style="Normal" xid="1237" props="text-align:left; dom-dir:ltr">The above input produces the citation: ``\dots\ refined version of</p>
+<p style="Normal" xid="1238" props="text-align:left; dom-dir:ltr">Clarke and Ekeland (1982); the minimality\dots''. Then the</p>
+<p style="Normal" xid="1239" props="text-align:left; dom-dir:ltr">\verb|\bibitem| entry of \verb|clar:eke| in the \verb|thebibliography|</p>
+<p style="Normal" xid="1240" props="text-align:left; dom-dir:ltr">environment should read:</p>
+<p style="Normal" xid="1241" props="text-align:left; dom-dir:ltr">\begin{verbatim}</p>
+<p style="Normal" xid="1242" props="text-align:left; dom-dir:ltr">\begin{thebibliography}{}  % (do not forget {})</p>
+<p style="Normal" xid="1243">.</p>
+<p style="Normal" xid="1244">.</p>
+<p style="Normal" xid="1245" props="text-align:left; dom-dir:ltr">\bibitem[1982]{clar:eke}</p>
+<p style="Normal" xid="1246" props="text-align:left; dom-dir:ltr">Clarke, F., Ekeland, I.:</p>
+<p style="Normal" xid="1247" props="text-align:left; dom-dir:ltr">Nonlinear oscillations and boundary-value problems for</p>
+<p style="Normal" xid="1248" props="text-align:left; dom-dir:ltr">Hamiltonian systems.</p>
+<p style="Normal" xid="1249" props="text-align:left; dom-dir:ltr">Arch. Rat. Mech. Anal. 78, 315--333 (1982)</p>
+<p style="Normal" xid="1250">.</p>
+<p style="Normal" xid="1251">.</p>
+<p style="Normal" xid="1252" props="text-align:left; dom-dir:ltr">\end{thebibliography}</p>
+<p style="Normal" xid="1253" props="text-align:left; dom-dir:ltr">\end{verbatim}</p>
+<p style="Normal" xid="1254" props="text-align:left; dom-dir:ltr">{\itshape Sample Output}</p>
+<p style="Normal" xid="1255" props="text-align:left; dom-dir:ltr">\bibauthoryear</p>
+<p style="Normal" xid="1256">%</p>
+<p style="Normal" xid="1257" props="text-align:left; dom-dir:ltr">\end{document}</p>
+<p style="Normal" xid="1258"></p>
+</section>
+</abiword>

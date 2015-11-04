@@ -11,7 +11,7 @@ namespace ant_colony {
 			return *this;
 		}
 		
-		IPath& PathIterator::operator*() const {
+		const IPath& PathIterator::operator*() const {
 			return *path;
 		}
 		
