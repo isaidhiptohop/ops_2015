@@ -8,19 +8,23 @@
 namespace ant_colony {
 
 	class Landscape : public ILandscape {
-		std::vector<std::shared_ptr<IPath>> adjacence;
+		std::vector<std::shared_ptr<Path>> adjacence;
 		double ** nextPheromonUpdate;
 		int size;
+		std::vector<int> destinations;
 		
 		void deallocNextPheromonUpdate();
 		
 		public:
 		Landscape();
-		Landscape(double ** adjacence, int size);
-		void setAdjacence(double ** adjacence, int size, double ** pheromone = nullptr);
+		Landscape(const double *const* adjacence, int size, int colonyPostion, int foodPostion, double ** pheromone = nullptr);
+		void setAdjacence(const double *const* adjacence, int size, double ** pheromone = nullptr);
 		IPathIterator* getPaths(int position) const override;
 		void update() override;
-		void setPheromonUpdate(int from, int to) override;
+		int movedPath(int from, int to) override;
+		std::vector<std::vector<double>> getPheromone() override;
+		
+		unsigned int getSize() const override;
 		
 		virtual ~Landscape();
 	};

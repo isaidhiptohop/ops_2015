@@ -10,7 +10,8 @@ namespace ant_colony {
 	IAntColony::IAntColony() {}
 	IAntColony::~IAntColony() {}
 	
-	IPath::IPath() : cost{0}, pheromon{0}, source{0}, destination{0} {}
+	IPath::IPath() : IPath(0,0,0,0) {}
+	IPath::IPath(double cost, double pheromon, int source, int destination) : cost{cost}, pheromon{pheromon}, source{source}, destination{destination} {}
 	IPath::~IPath() {}
 	
 	IPathIterator::IPathIterator() {}
