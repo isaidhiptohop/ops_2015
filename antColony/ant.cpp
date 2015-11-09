@@ -5,7 +5,7 @@ namespace ant_colony {
 	
 	Ant::~Ant() {}
 	
-	int Ant::move(ILandscape& landscape, double pheromonWeighting, double pathWeighting) {
+	int Ant::move(ILandscape& landscape, std::default_random_engine& generator, double pheromonWeighting, double pathWeighting) {
 		bool pathToLast = false;
 		//as parameters
 		//double pheromonWeighting = 4;

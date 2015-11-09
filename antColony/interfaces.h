@@ -2,6 +2,7 @@
 #define ANT_COLONY_INTERFACES_H
 
 #include<vector>
+#include<random>
 
 namespace ant_colony {
 	class IAnt;
@@ -15,7 +16,7 @@ namespace ant_colony {
 		protected:
 		IAnt();
 		public:
-		virtual int move(ILandscape& landscape, double pheromonWeighting = 1, double pathWeighting = 1) = 0;
+		virtual int move(ILandscape& landscape, std::default_random_engine& generator, double pheromonWeighting = 1, double pathWeighting = 1) = 0;
 		virtual void setDestination(int) = 0;
 		virtual ~IAnt();
 	};

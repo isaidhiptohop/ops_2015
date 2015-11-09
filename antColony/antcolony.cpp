@@ -4,7 +4,7 @@ namespace ant_colony {
 	AntColony::AntColony(int antNumber) : AntColony(antNumber, nullptr, 0, -1, -1) {
 	}
 	
-	AntColony::AntColony(int antNumber, const double *const* adjacence, int size, int colonyPosition, int foodPosition) : ants(antNumber), landscape(new Landscape(adjacence, size, colonyPosition, foodPosition)), history{{std::vector<int>()}} {
+	AntColony::AntColony(int antNumber, const double *const* adjacence, int size, int colonyPosition, int foodPosition) : ants(antNumber), landscape(new Landscape(adjacence, size, colonyPosition, foodPosition)), history{{std::vector<int>()}}, generator(std::chrono::system_clock::now().time_since_epoch().count()) {
 		for(int i = 0; i < antNumber; ++i) {
 			ants[i] = std::unique_ptr<IAnt>(new Ant());
 		}
@@ -19,7 +19,7 @@ namespace ant_colony {
 		for(unsigned int i = 0; i < steps; ++i) {
 			std::vector<int> current(landscape->getSize(), 0);
 			for(auto it = ants.begin(); it != ants.end(); ++it) {
-				int pos = (*it)->move(*landscape,1,1);
+				int pos = (*it)->move(*landscape, generator, 1, 1); //TODO: Add weights
 				++current[pos];
 			}
 			landscape->update();
