@@ -11,7 +11,7 @@ namespace ant_colony {
 		public:
 		PathIterator(Path * path);
 		IPathIterator& operator++() override;
-		const IPath& operator*() const override;
+		IPath& operator*() const override;
 		operator bool() const override;
 		~PathIterator();
 	};

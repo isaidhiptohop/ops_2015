@@ -2,11 +2,13 @@
 
 namespace ant_colony {
 
-	Landscape::Landscape() : adjacence{}, nextPheromonUpdate{nullptr}, size{0} {
+	Landscape::Landscape() : Landscape(nullptr, 0, -1,-1) {
 	}
 	
-	Landscape::Landscape(double ** adjacence, int size) :Landscape() {
-		setAdjacence(adjacence, size);
+	Landscape::Landscape(const double *const* adjacence, int size, int colonyPosition, int foodPosition, double ** pheromone) 
+						:adjacence{}, nextPheromonUpdate{nullptr}, size{size}, destinations{colonyPosition, foodPosition} {
+		if(adjacence) 
+			setAdjacence(adjacence, size);
 	}
 	
 	Landscape::~Landscape() {
@@ -21,7 +23,7 @@ namespace ant_colony {
 	}
 	
 	
-	void Landscape::setAdjacence(double ** adjacence, int size, double ** pheromone) {
+	void Landscape::setAdjacence(const double *const* adjacence, int size, double ** pheromone) {
 		this->adjacence.clear(); //delete previous adjacence matrix
 		this->deallocNextPheromonUpdate(); //delete previous pheromone update matrix
 		this->nextPheromonUpdate = new double*[size]; //recreate new matrix
@@ -37,22 +39,59 @@ namespace ant_colony {
 			for(int n = 0; n < size; ++n) { //for every row in adjacence matrix
 				if(i != n && adjacence[i][n] > 0) { //if valid path is given
 					list = new Path(adjacence[i][n], pheromone ? pheromone[i][n] : 0, i, n, list); //add path to list
+					
 				}
 			} //end row for
-			this->adjacence.push_back(std::shared_ptr<IPath>(list)); //add linked list to adjacence matrix
+			this->adjacence.push_back(std::shared_ptr<Path>(list)); //add linked list to adjacence matrix
 		}
 		this->size = size; //save new size
 	}
 	
 	IPathIterator* Landscape::getPaths(int position) const {
-		return new PathIterator(static_cast<Path*>(adjacence[position].get()));
+		return new PathIterator(adjacence[position].get());
 	}
 	
 	void Landscape::update() {
+		for(int i = 0; i < size; ++i) {
+			IPathIterator& it = *(this->getPaths(i));
+			for(;it; ++it) {
+				IPath& p = *it;
+				p.pheromon+= this->nextPheromonUpdate[i][p.destination];
+				this->nextPheromonUpdate[i][p.destination] = 0;
+			}
+			delete &it;
+		}
+		//TODO: pheromone decay
 	}
 	
-	void Landscape::setPheromonUpdate(int from, int to) {
-		
+	int Landscape::movedPath(int from, int to) {
+		//TODO: update correctly
+		this->nextPheromonUpdate[from][to] += 1;
+		this->nextPheromonUpdate[to][from] += 1;
+		int ret = -1;
+		for (unsigned int i = 0; i< destinations.size(); ++i) {
+			if(destinations[i] == to) {
+				ret = destinations[(i+1)%destinations.size()];
+				break;
+			}
+		}
+		return ret;
+	}
+	
+	unsigned int Landscape::getSize() const {
+		return this->size;
+	}
+	
+	std::vector<std::vector<double>> Landscape::getPheromone() {
+		std::vector<std::vector<double>> pheromones(size, std::vector<double>(size, 0));
+		for(unsigned int i = 0; i < adjacence.size(); ++i) {
+			IPathIterator * it = this->getPaths(i);
+			for(; *it; ++(*it)) {
+				pheromones[i][(**it).destination] = (**it).pheromon;
+			}
+			delete it;
+		}
+		return pheromones;
 	}
 	
 }

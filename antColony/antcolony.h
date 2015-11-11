@@ -3,17 +3,22 @@
 
 #include<vector>
 #include<memory>
+#include<random>
+#include<chrono>
 #include "interfaces.h"
 #include "landscape.h"
+#include "ant.h"
 
 namespace ant_colony {
 
 	class AntColony : public IAntColony {
-		//std::vector<std::unique_ptr<int>> ants;
+		std::vector<std::unique_ptr<IAnt>> ants;
 		ILandscape * landscape;
 		std::vector<std::vector<int>> history;
+		std::default_random_engine generator;
 		public:
-		AntColony();
+		AntColony(int antNumber);
+		AntColony(int antNumber, const double *const* adjacence, int size, int colonyPosition, int foodPosition);
 		std::vector<std::vector<int>> nextStep(unsigned int steps = 1) override;
 		std::vector<std::vector<int>> getAntMoves() const override;
 		ILandscape& getLandscape() const override;
