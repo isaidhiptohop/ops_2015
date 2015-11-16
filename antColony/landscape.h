@@ -4,6 +4,7 @@
 #include<memory>
 #include "interfaces.h"
 #include "pathiterator.h"
+#include "exceptions.h"
 
 namespace ant_colony {
 
@@ -12,16 +13,17 @@ namespace ant_colony {
 		double ** nextPheromonUpdate;
 		int size;
 		std::vector<int> destinations;
+		double updateFactor, decayFactor;
 		
 		void deallocNextPheromonUpdate();
 		
 		public:
 		Landscape();
-		Landscape(const double *const* adjacence, int size, int colonyPostion, int foodPostion, double ** pheromone = nullptr);
+		Landscape(const double *const* adjacence, int size, int colonyPostion, int foodPostion, double updateFactor = 1, double decayFactor = 0.02, double ** pheromone = nullptr);
 		void setAdjacence(const double *const* adjacence, int size, double ** pheromone = nullptr);
 		IPathIterator* getPaths(int position) const override;
 		void update() override;
-		int movedPath(int from, int to) override;
+		bool movedPath(int from, int to) override;
 		std::vector<std::vector<double>> getPheromone() override;
 		
 		unsigned int getSize() const override;

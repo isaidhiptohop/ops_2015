@@ -5,8 +5,8 @@ namespace ant_colony {
 	Landscape::Landscape() : Landscape(nullptr, 0, -1,-1) {
 	}
 	
-	Landscape::Landscape(const double *const* adjacence, int size, int colonyPosition, int foodPosition, double ** pheromone) 
-						:adjacence{}, nextPheromonUpdate{nullptr}, size{size}, destinations{colonyPosition, foodPosition} {
+	Landscape::Landscape(const double *const* adjacence, int size, int colonyPosition, int foodPosition, double updateFactor, double decayFactor, double ** pheromone) 
+						:adjacence{}, nextPheromonUpdate{nullptr}, size{size}, destinations{colonyPosition, foodPosition}, updateFactor{updateFactor}, decayFactor{decayFactor} {
 		if(adjacence) 
 			setAdjacence(adjacence, size);
 	}
@@ -56,22 +56,36 @@ namespace ant_colony {
 			IPathIterator& it = *(this->getPaths(i));
 			for(;it; ++it) {
 				IPath& p = *it;
+				p.pheromon *= (1 - decayFactor);
 				p.pheromon+= this->nextPheromonUpdate[i][p.destination];
 				this->nextPheromonUpdate[i][p.destination] = 0;
 			}
 			delete &it;
 		}
-		//TODO: pheromone decay
 	}
 	
-	int Landscape::movedPath(int from, int to) {
-		//TODO: update correctly
-		this->nextPheromonUpdate[from][to] += 1;
-		this->nextPheromonUpdate[to][from] += 1;
-		int ret = -1;
+	bool Landscape::movedPath(int from, int to) {
+		//TODO: make more performant
+		double cost = 0; 
+		IPathIterator * it = this->getPaths(from);
+		for(; *it; ++(*it)) {
+			if((**it).destination == to) {
+				cost = (**it).cost;
+				break;
+			}
+		}
+		delete it;
+		
+		if(cost == 0) 
+			throw AntException("Path not found. Matrix maybe corrupted.");
+		
+		double diff = updateFactor / cost;
+		this->nextPheromonUpdate[from][to] += diff;
+		this->nextPheromonUpdate[to][from] += diff;
+		int ret = false;
 		for (unsigned int i = 0; i< destinations.size(); ++i) {
 			if(destinations[i] == to) {
-				ret = destinations[(i+1)%destinations.size()];
+				ret = true;
 				break;
 			}
 		}
