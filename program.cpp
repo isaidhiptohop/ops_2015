@@ -20,15 +20,15 @@ void printLandscape(ILandscape & landscape) {
 
 int main() {
 	std::cout << "main()" << std::endl;
-	double  arr[][4] = {{0,1,1,2},
-						{1,0,1,1},
-						{1,1,0,1},
-						{2,1,1,0}};
+	double  arr[][4] = {{0,1,1,1},
+						{1,0,0,1},
+						{1,0,0,1},
+						{1,1,1,0}};
 	double * arr1[] = {arr[0],arr[1],arr[2],arr[3]};
 	double ** matrix = arr1;			
-	IAntColony * col = new AntColony(400, matrix, 4, 0, 3, 1, 0.9);
-	col->setPheromonWeight(1.1);
-	col->setCostWeight(1.1);
+	IAntColony * col = new AntColony(20, matrix, 4, 0, 3, 1, 0.2);
+	col->setPheromonWeight(2);
+	col->setCostWeight(-1);
 	while(true) {
 		int steps;
 		cout << "enter steps: ";

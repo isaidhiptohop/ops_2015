@@ -4,7 +4,7 @@ namespace ant_colony {
 	AntColony::AntColony(int antNumber) : AntColony(antNumber, nullptr, 0, -1, -1) {
 	}
 	
-	AntColony::AntColony(int antNumber, const double *const* adjacence, int size, int colonyPosition, int foodPosition, double updateFactor, double decayFactor) : ants(antNumber), landscape(new Landscape(adjacence, size, colonyPosition, foodPosition, updateFactor, decayFactor)), history{{std::vector<int>()}}, generator(std::chrono::system_clock::now().time_since_epoch().count()), pheromonWeight{1}, costWeight{1} {
+	AntColony::AntColony(int antNumber, const double *const* adjacence, int size, int colonyPosition, int foodPosition, double updateFactor, double decayFactor) : ants(antNumber), landscape(new Landscape(adjacence, size, colonyPosition, foodPosition, updateFactor, decayFactor)), history{{std::vector<int>()}}, generator(std::chrono::system_clock::now().time_since_epoch().count()), pheromonWeight{1}, costWeight{-1} {
 		for(int i = 0; i < antNumber; ++i) {
 			ants[i] = std::unique_ptr<IAnt>(new Ant());
 		}
@@ -38,7 +38,7 @@ namespace ant_colony {
 	}
 	
 	void AntColony::setCostWeight(double value) {
-		if(value >= 0) 
+		if(value <= -1) 
 			costWeight = value;
 	}
 	void AntColony::setPheromonWeight(double value) {
