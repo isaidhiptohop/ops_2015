@@ -1,7 +1,7 @@
 #include"ant.h"
 
 namespace ant_colony {
-	Ant::Ant() : position{0},destination{-1},lastPosition{-1}, distribution{std::uniform_real_distribution<double>(0.0,1.0)} {}
+	Ant::Ant() : position{0},lastPosition{-1}, distribution{std::uniform_real_distribution<double>(0.0,1.0)} {}
 	
 	Ant::~Ant() {}
 	
@@ -30,9 +30,8 @@ namespace ant_colony {
 			if(dest==lastPosition)
 				pathToLast = true;
 			else {
-				//temp weightingCost for this knot, NOT WORKING! always calculates 0
-				//double wCost = pow((*iterator).pheromon,pheromonWeighting)*pow((*iterator).cost,pathWeighting);
-				double wCost = 1;
+				double wCost = pow((*iterator).pheromon + 1,pheromonWeighting)*pow((*iterator).cost,pathWeighting);
+				//double wCost = 1;
 				//add to sum
 				sumWeightingCosts+=wCost;
 				//add to list
@@ -110,21 +109,14 @@ namespace ant_colony {
 				choosenKnot = position;
 				lastPosition = -1;
 			}
+		} else {
+			lastPosition = position;
 		}
-		int ret = landscape.movedPath(position,choosenKnot);
-		if(ret > 0) {
-			destination = ret;
+		bool ret = landscape.movedPath(position,choosenKnot);
+		if(ret) {
 			lastPosition = -1;
 		}
 		position = choosenKnot;
 		return choosenKnot;
-	}
-	
-	//setter with not negativ test
-	void Ant::setDestination(int dest){
-		if(dest>=0)
-			destination = dest;
-		else
-			throw AntException("no valid destination given"); // todo fehlermeldung
 	}
 }

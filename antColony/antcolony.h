@@ -16,12 +16,18 @@ namespace ant_colony {
 		ILandscape * landscape;
 		std::vector<std::vector<int>> history;
 		std::default_random_engine generator;
+		
+		double pheromonWeight, costWeight;
+		
 		public:
 		AntColony(int antNumber);
-		AntColony(int antNumber, const double *const* adjacence, int size, int colonyPosition, int foodPosition);
+		AntColony(int antNumber, const double *const* adjacence, int size, int colonyPosition, int foodPosition, double updateFactor = 1, double decayFactor = 0.02);
 		std::vector<std::vector<int>> nextStep(unsigned int steps = 1) override;
 		std::vector<std::vector<int>> getAntMoves() const override;
 		ILandscape& getLandscape() const override;
+		
+		void setCostWeight(double value) override;
+		void setPheromonWeight(double value) override;
 		
 		virtual ~AntColony();
 	};

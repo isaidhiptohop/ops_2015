@@ -17,7 +17,6 @@ namespace ant_colony {
 		IAnt();
 		public:
 		virtual int move(ILandscape& landscape, std::default_random_engine& generator, double pheromonWeighting = 1, double pathWeighting = 1) = 0;
-		virtual void setDestination(int) = 0;
 		virtual ~IAnt();
 	};
 
@@ -27,7 +26,7 @@ namespace ant_colony {
 		public:
 		virtual IPathIterator* getPaths(int position) const = 0;
 		virtual void update() = 0;
-		virtual int movedPath(int from, int to) = 0;
+		virtual bool movedPath(int from, int to) = 0;
 		virtual unsigned int getSize() const = 0;
 		virtual std::vector<std::vector<double>> getPheromone() = 0;
 		virtual ~ILandscape();
@@ -41,6 +40,9 @@ namespace ant_colony {
 		virtual std::vector<std::vector<int>> getAntMoves() const = 0;
 		virtual ILandscape& getLandscape() const = 0;
 		virtual ~IAntColony();
+		
+		virtual void setCostWeight(double value) = 0;
+		virtual void setPheromonWeight(double value) = 0;
 	};
 
 	class IPath {
