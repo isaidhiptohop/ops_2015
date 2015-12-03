@@ -2,6 +2,7 @@
 #define ANT_COLONY_LANDSCAPE_H
 
 #include<memory>
+#include<sstream>
 #include "interfaces.h"
 #include "pathiterator.h"
 #include "exceptions.h"
@@ -23,7 +24,8 @@ namespace ant_colony {
 		void setAdjacence(const double *const* adjacence, int size, double ** pheromone = nullptr);
 		IPathIterator* getPaths(int position) const override;
 		void update() override;
-		bool movedPath(int from, int to) override;
+		bool movedPath(int from, int to, bool addPheromon = true) override;
+		unsigned int getDestinationNum() const override;
 		std::vector<std::vector<double>> getPheromone() override;
 		
 		unsigned int getSize() const override;

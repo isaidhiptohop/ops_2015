@@ -1,6 +1,6 @@
 #include "exceptions.h"
 
-AntException::AntException(std::string msg) : msg{msg} {
+AntException::AntException(const std::string msg) : msg{msg} {
 }
 
 AntException::~AntException() {}

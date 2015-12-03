@@ -64,24 +64,28 @@ namespace ant_colony {
 		}
 	}
 	
-	bool Landscape::movedPath(int from, int to) {
+	bool Landscape::movedPath(int from, int to, bool addPheromon) {
 		//TODO: make more performant
-		double cost = 0; 
-		IPathIterator * it = this->getPaths(from);
-		for(; *it; ++(*it)) {
-			if((**it).destination == to) {
-				cost = (**it).cost;
-				break;
+		if(addPheromon) {
+			double cost = 0; 
+			IPathIterator * it = this->getPaths(from);
+			for(; *it; ++(*it)) {
+				if((**it).destination == to) {
+					cost = (**it).cost;
+					break;
+				}
 			}
+			delete it;
+		
+			if(cost == 0) {
+				std::stringstream ss; 
+				ss << "Path not found. Matrix maybe corrupted. From: "<< from << ", To: " << to;
+				throw AntException(ss.str());
+			}
+			double diff = updateFactor / cost;
+			this->nextPheromonUpdate[from][to] += diff;
+			this->nextPheromonUpdate[to][from] += diff;
 		}
-		delete it;
-		
-		if(cost == 0) 
-			throw AntException("Path not found. Matrix maybe corrupted.");
-		
-		double diff = updateFactor / cost;
-		this->nextPheromonUpdate[from][to] += diff;
-		this->nextPheromonUpdate[to][from] += diff;
 		int ret = false;
 		for (unsigned int i = 0; i< destinations.size(); ++i) {
 			if(destinations[i] == to) {
@@ -106,6 +110,11 @@ namespace ant_colony {
 			delete it;
 		}
 		return pheromones;
+	}
+	
+	
+	unsigned int Landscape::getDestinationNum() const {
+		return destinations.size();
 	}
 	
 }

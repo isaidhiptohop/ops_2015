@@ -26,8 +26,9 @@ namespace ant_colony {
 		public:
 		virtual IPathIterator* getPaths(int position) const = 0;
 		virtual void update() = 0;
-		virtual bool movedPath(int from, int to) = 0;
+		virtual bool movedPath(int from, int to, bool addPheromon) = 0;
 		virtual unsigned int getSize() const = 0;
+		virtual unsigned int getDestinationNum() const = 0;
 		virtual std::vector<std::vector<double>> getPheromone() = 0;
 		virtual ~ILandscape();
 	};
