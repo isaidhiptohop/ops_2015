@@ -7,7 +7,7 @@
 class AntException : public std::exception {
 	std::string msg;
 	public:
-	AntException(std::string);
+	AntException(const std::string);
 	const char * what() const noexcept override;
 	virtual ~AntException();
 	

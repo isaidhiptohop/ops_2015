@@ -1,4 +1,5 @@
 #include<iostream>
+#include<iomanip>
 
 #include "antColony/ants.h"
 
@@ -7,12 +8,25 @@
 using namespace antC;
 using namespace std;
 
+void printNum(double num) {
+
+	cout << setprecision(3) << setw(11) << setfill(' ') << num;
+}
+
 void printLandscape(ILandscape & landscape) {
 
 	auto ph = landscape.getPheromone();
+	cout << "     ";
+	for(unsigned int i = 0; i < ph.size(); ++i) {
+		printNum(i);
+	}
+	cout << endl << endl;
+	unsigned int i = 0;
 	for(auto &row : ph) {
+		cout << setw(2) << i << ":  ";
+		++i;
 		for(auto &el : row) {
-			cout << el << "\t";
+			printNum(el);
 		}
 		cout << endl;
 	}
@@ -20,14 +34,36 @@ void printLandscape(ILandscape & landscape) {
 
 int main() {
 	std::cout << "main()" << std::endl;
-	double  arr[][4] = {{0,1,1,1},
+	/*double  arr[][4] = {{0,1,1,1},
 						{1,0,0,1},
 						{1,0,0,1},
 						{1,1,1,0}};
 	double * arr1[] = {arr[0],arr[1],arr[2],arr[3]};
-	double ** matrix = arr1;			
-	IAntColony * col = new AntColony(20, matrix, 4, 0, 3, 1, 0.2);
-	col->setPheromonWeight(2);
+	double ** matrix = arr1;*/
+	
+	double arr [15][15] = { {0,1,1,0,0,0,0,0,0,0,0,0,0,0,0},
+							{1,0,0,1,0,0,0,0,0,0,0,0,0,0,0},
+							{1,0,0,1,1,0,0,0,0,0,0,0,0,0,0},
+							{0,1,1,0,0,0,0,0,1,0,1,0,0,0,0},
+							{0,0,1,0,0,1,1,0,0,0,0,0,0,0,0},
+							{0,0,0,0,1,0,1,1,0,0,0,0,0,0,0},
+							{0,0,0,0,1,1,0,0,1,0,0,0,0,0,0},
+							{0,0,0,0,0,1,0,0,1,1,0,0,0,0,0},
+							{0,0,0,1,0,0,1,1,0,1,1,1,0,0,0},
+							{0,0,0,0,0,0,0,1,1,0,0,1,1,0,0},
+							{0,0,0,1,0,0,0,0,1,0,0,1,0,1,0},
+							{0,0,0,0,0,0,0,0,1,1,1,0,1,1,1},
+							{0,0,0,0,0,0,0,0,0,1,0,1,0,0,1},
+							{0,0,0,0,0,0,0,0,0,0,1,1,0,0,1},
+							{0,0,0,0,0,0,0,0,0,0,0,1,1,1,0} };
+	
+	double * arr1[15];
+	for(int i = 0; i < 15;++i)
+		arr1[i] = arr[i];
+	
+	double ** matrix = arr1;
+	IAntColony * col = new AntColony(40, matrix, 15, 0, 11, 40, 0.05);
+	col->setPheromonWeight(2.5);
 	col->setCostWeight(-1);
 	while(true) {
 		int steps;
