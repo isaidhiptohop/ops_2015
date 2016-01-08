@@ -51,6 +51,8 @@ Thumbs.db
 
 .idea/vcs.xml
 
+.idea/encodings.xml
+
 .idea/workspace.xml
 
 CMakeLists.txt
