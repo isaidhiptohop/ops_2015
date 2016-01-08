@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ant Colony Optimization</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/d3.min.js"></script>
+    <script src="js/antcolony.module.js"></script>
+    <script src="js/antgraph.js"></script>
+    <script>
+
+        function newGraph() {
+
+        }
+
+        function startSimulation() {
+            var instance = new Module.AntColonyJSON("Hello World");
+
+            console.log('antColony result: ' + instance.nextStep(5));
+
+            instance.delete();
+        }
+
+        function nextStep() {
+
+
+        }
+
+    </script>
+
+
+
+</head>
+<body>
+
+<!--
+
+Navigation
+
+glyphicon glyphicon-step-forward
+
+glyphicon glyphicon-trash
+
+-->
+
+<!-- Split button -->
+
+<div class="container" style="width: 800px">
+    <div class="row">
+        <div class="col-md-9"><h3>Ant Colony Optimization Simulator</h3></div>
+        <div class="col-md-3">
+            <div class="btn-toolbar" role="toolbar" style="margin-top: 20px; margin-bottom: 10px">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-danger">
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                    </button>
+                </div>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-success">
+                        <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+                    </button>
+                </div>
+                <div class="btn-group" >
+                    <button type="button" class="btn btn-warning" disabled="disabled">
+                        <span class="glyphicon glyphicon-step-forward" aria-hidden="true"></span>
+                    </button>
+                    <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled="disabled">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">5 Steps</a></li>
+                        <li><a href="#">10 Steps</a></li>
+                        <li><a href="#">20 Steps</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">100 Steps</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+        <script>
+
+            /**
+            var w = 800;
+            var h = 450;
+
+            var svg = d3.select("body").append("svg")
+                    .attr("id", "chart")
+                    .attr("width", w)
+                    .attr("height", h);
+            */
+            /**** MAIN ****/
+
+            var docEl = document.documentElement,
+                    bodyEl = document.getElementsByTagName('body')[0];
+
+            var width = 800;
+            var height = 450;
+
+            var xLoc = width/2 - 25,
+                    yLoc = 100;
+
+            // initial node data
+            var nodes = [{title: "new concept", id: 0, x: xLoc, y: yLoc},
+                {title: "new concept", id: 1, x: xLoc, y: yLoc + 200}];
+            var edges = [{source: nodes[1], target: nodes[0]}];
+
+
+            /** MAIN SVG **/
+            var svg = d3.select("body").append("svg")
+                    .attr("id", "chart")
+                    .attr("width", width)
+                    .attr("height", height);
+            var graph = new AntGraph(svg, nodes, edges);
+            graph.setIdCt(2);
+            graph.updateGraph();
+
+        </script>
+
+<p>Create and move nodes with shift+click</p>
+
+</body>
+</html>
