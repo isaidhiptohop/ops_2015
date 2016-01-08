@@ -9,14 +9,15 @@ void printBoard (Individual<N> * individual);
 int main () {
     const int N = 5;
     Population<N> * pop = new Population<N> (100, 0.5);
-    Individual<N> * fittest = nullptr;
+//    Individual<N> * fittest = nullptr;
 //    pop->print ();
-    while (!fittest) {
-        Individual<N> * winners = pop->tournament ();
+    while (pop->iterate()) {
+        
+/*        Individual<N> * winners = pop->tournament ();
         pop->mutation (winners);
         Individual<N> * children = pop->crossOver (winners);
         pop->merge (winners, children);
-        fittest = pop->getFittest ();
+        fittest = pop->getFittest (); */
 //        if (fittest) printBoard (fittest);
 //        else pop->print ();
 //        std::cin >> k;

@@ -8,12 +8,12 @@
 
 extern std::default_random_engine generator;
 
-template <int N>
 class Individual {
+        static unsigned int N;
         int * chromosom = nullptr;
     
     public:
-        Individual (int * chromosom = nullptr);
+        Individual (unsigned int N, int * chromosom = nullptr);
         Individual (const Individual & individual);
         Individual & operator= (const Individual & individual);
         ~Individual ();
@@ -25,10 +25,10 @@ class Individual {
         void mutate ();
         void print ();
 
-        static void crossOver (const Individual<N> * parent_1, 
-                               const Individual<N> * parent_2,
-                               Individual<N> & children_1, 
-                               Individual<N> & children_2);
+        static void crossOver (const Individual * parent_1, 
+                               const Individual * parent_2,
+                               Individual & children_1, 
+                               Individual & children_2);
 };
 
 #endif // INDIVIDUAL_H

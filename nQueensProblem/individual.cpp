@@ -5,35 +5,32 @@
 //std::default_random_engine generator 
 //    (std::chrono::system_clock::now().time_since_epoch().count());
 
-template <int N>
-Individual<N>::Individual (int * chromosom) {
+Individual::Individual (int * chromosom) {
     this->chromosom = new int [N];
     
     if (chromosom) {
-        for (int i = 0; i < N; i++) {
+        for (unsigned int i = 0; i < N; i++) {
             this->chromosom [i] = chromosom [i];
         }
     }
     else {
         std::uniform_int_distribution<int> distribution (0, N-1);
         
-        for (int i = 0; i < N; i++) {
+        for (unsigned int i = 0; i < N; i++) {
             this->chromosom [i] = distribution (generator);
         }
     }
 }
 
-template <int N>
-Individual<N>::Individual (const Individual & individual) {
-    for (int i = 0; i < N; i++)
+Individual::Individual (const Individual & individual) {
+    for (unsigned int i = 0; i < N; i++)
     {
         this->chromosom [i] = individual.chromosom [i];
     }
 }
 
-template <int N>
-Individual<N> & Individual<N>::operator= (const Individual & individual) {
-    for (int i = 0; i < N; i++)
+Individual & Individual::operator= (const Individual & individual) {
+    for (unsigned int i = 0; i < N; i++)
     {
         this->chromosom [i] = individual.chromosom [i];
     }
@@ -41,30 +38,25 @@ Individual<N> & Individual<N>::operator= (const Individual & individual) {
     return * this;
 }
 
-template <int N>
-Individual<N>::~Individual () { delete [] chromosom; }
+Individual::~Individual () { delete [] chromosom; }
 
-template <int N>
-void Individual<N>::setChromosom (int * array) {
+void Individual::setChromosom (int * array) {
     for (int i = 0; i < N; i++) {
         chromosom [i] = array [i];
     }
 }
 
-template <int N>
-void Individual<N>::getChromosom (int * array) {
+void Individual::getChromosom (int * array) {
     for (int i = 0; i < N; i++) {
         array [i] = chromosom [i];
     }
 }
 
-template <int N>
-int Individual<N>::getChromosom (int i) const {
+int Individual::getChromosom (int i) const {
     return chromosom [i];
 }
 
-template <int N>
-int Individual<N>::getFitness ()
+int Individual::getFitness ()
 {
     int fitness = 0;
     for (int i = 0; i < N; i++) {
@@ -90,8 +82,7 @@ int Individual<N>::getFitness ()
     return fitness;
 }
 
-template <int N>
-void Individual<N>::mutate () {
+void Individual::mutate () {
     std::uniform_int_distribution<int> distribution (0, N-1);
     
     int mutations_amount = distribution (generator);
@@ -108,19 +99,17 @@ void Individual<N>::mutate () {
     delete [] indices;
 }
 
-template <int N>
-void Individual<N>::print ()
+void Individual::print ()
 {
     for (int i = 0; i < N; i++) {
         std::cout << "[" << chromosom [i] << "]\n";
     }
 }
 
-template <int N>
-void Individual<N>::crossOver (const Individual<N> * parent_1, 
-                               const Individual<N> * parent_2,
-                               Individual<N> & children_1, 
-                               Individual<N> & children_2) {
+void Individual::crossOver (const Individual * parent_1, 
+                               const Individual * parent_2,
+                               Individual & children_1, 
+                               Individual & children_2) {
     std::uniform_int_distribution<int> distribution (1, N-1);
     
     int pivot = distribution (generator);

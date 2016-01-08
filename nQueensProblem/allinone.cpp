@@ -6,6 +6,7 @@
 #define FILE_LINE_OUT() (std::cout << __FILE__ << ":" << __LINE__ << std::endl)
 
 bool OUTPUT = false;
+int ALPHA = 4;
 
 extern std::default_random_engine generator;
 
@@ -46,6 +47,8 @@ class Population {
         void print ();
         
 //    private:
+        void getStats (Individual<N> * individuals, int arrSize);
+
         Individual<N> * tournament ();
         void mutation (Individual<N> * gene_pool);
         Individual<N> * crossOver (Individual<N> * gene_pool);
@@ -63,11 +66,14 @@ std::default_random_engine generator
     (std::chrono::system_clock::now().time_since_epoch().count());
 
 int main () {
-    const int N = 5;
-    Population<N> * pop = new Population<N> (100, 0.5);
+    const int N = 9;
+    Population<N> * pop = new Population<N> (N * 10000, 0.05);
     Individual<N> * fittest = nullptr;
+    
+    int iterations = 3;
+    bool is_limited = false;
 //    pop->print ();
-    while (!fittest) {
+    while (!fittest && iterations) {
         fittest = pop->iterate();
 /*        Individual<N> * winners = pop->tournament ();
         pop->mutation (winners);
@@ -77,6 +83,7 @@ int main () {
 //        if (fittest) printBoard (fittest);
 //        else pop->print ();
 //        std::cin >> k;
+        if (is_limited) iterations--;
     }
     
     fittest->print();
@@ -144,6 +151,8 @@ Individual<N>::Individual (int * chromosom) {
 
 template <int N>
 Individual<N>::Individual (const Individual & individual) {
+    this->chromosom = new int [N];
+    
     for (int i = 0; i < N; i++)
     {
         this->chromosom [i] = individual.chromosom [i];
@@ -152,6 +161,8 @@ Individual<N>::Individual (const Individual & individual) {
 
 template <int N>
 Individual<N> & Individual<N>::operator= (const Individual & individual) {
+    this->chromosom = new int [N];
+
     for (int i = 0; i < N; i++)
     {
         this->chromosom [i] = individual.chromosom [i];
@@ -283,10 +294,35 @@ Individual<N> * Population<N>::iterate (int iterations) {
         }
         else {
 //            print ();
+            if (OUTPUT) {
+                std::cout << std::endl 
+                          << "WHOLE POPULATION:" << std::endl;
+            }
+            getStats (individuals, size);
+//            if (OUTPUT) print ();
+
+            if (OUTPUT) std::cout << "WINNERS:" << std::endl;
+
             Individual<N> * winners = tournament ();
+
+            getStats (winners, size/2);
+//            if (OUTPUT) print (winners);
+
             mutation (winners);
+
+            if (OUTPUT) std::cout << "WINNERS AFTER MUTATION:" << std::endl;
+            getStats (winners, size/2);
+//            if (OUTPUT) print (winners);
+            
+            if (OUTPUT) std::cout << "CHILDREN:" << std::endl;
+
             Individual<N> * children = crossOver (winners);
+
+            getStats (children, size/2);
+//            if (OUTPUT) print (children);
+            
             merge (winners, children);
+
             return fittest;
         }
     }
@@ -337,10 +373,29 @@ void Population<N>::print () {
 }
 
 //    private:
+
+template <int N>
+void Population<N>::getStats (Individual<N> * individuals, int arrSize) {
+    int fittest = -N;
+    double avFitness = 0;
+
+    for (int i = 0; i < arrSize; i++) {
+        int fitness = individuals [i].getFitness ();
+        avFitness += fitness;
+        if (fitness > -N) {
+            fittest = fitness;
+        }
+    }
+    
+    if (OUTPUT) std::cout << "fitness: " << fittest << std::endl;
+    if (OUTPUT) std::cout << "average fitness: " << avFitness / arrSize << std::endl;
+}
+
 template <int N>
 Individual<N> * Population<N>::getFittest () {
     for (int i = 0; i < size; i++) {
-        if (individuals [i].getFitness() == 0) {
+        int fitness = individuals [i].getFitness ();
+        if (fitness == 0) {
             return & individuals [i];
         }
     }
@@ -350,6 +405,8 @@ Individual<N> * Population<N>::getFittest () {
 
 template <int N>
 Individual<N> * Population<N>::tournament () {
+    int wins = 0;
+    
     std::uniform_real_distribution<double> distribution (0, 1);
     
     Individual<N> * winners = new Individual<N> [size/2];
@@ -358,14 +415,19 @@ Individual<N> * Population<N>::tournament () {
         int fitness_1 = individuals [i].getFitness();
         int fitness_2 = individuals [i + 1].getFitness();
         
-        double probability;
-        if (fitness_1 > fitness_2) {
-            probability = fitness_2 / (fitness_1 + fitness_2);
+        double probability = pow (fitness_2, ALPHA) / 
+                             double (pow (fitness_1, ALPHA) 
+                                   + pow (fitness_2, ALPHA));
+;
+/*        if (fitness_1 > fitness_2) { // x > y
+            probability = pow (fitness_2, 2) / 
+                          double (pow (fitness_1, 2) + pow (fitness_2, 2));
         }
         else {
-            probability = fitness_1 / (fitness_1 + fitness_2);
+            probability = pow (fitness_1, 2) / 
+                          double (pow (fitness_1, 2) + pow (fitness_2, 2));
         }
-        
+*/        
         double pivot = distribution (generator);
         if (pivot <= probability) {
             winners [i/2] = individuals [i];
@@ -373,8 +435,31 @@ Individual<N> * Population<N>::tournament () {
         else {
             winners [i/2] = individuals [i + 1];
         }
+        
+        if (fitness_1 > fitness_2) {
+            if (pivot <= probability) {
+                wins++;
+            }
+        }
+        else {
+            if (pivot > probability) {
+                wins++;
+            }
+        }
+        
+        if (false) {
+            std::cout << "fitnesses: " << fitness_1 
+                      << " " << fitness_2 << std::endl;
+            std::cout << "probability: " << probability << std::endl;
+            std::cout << "pivot: " << pivot << std::endl;
+        }
     }
-                
+    
+    if (OUTPUT) {
+        std::cout << wins << "/" << size/2 << " tournaments won"
+                  << " by fitter" << std::endl;
+    }                
+    
     return winners;
 }
 
@@ -425,7 +510,8 @@ void Population<N>::merge (Individual<N> * pool_1, Individual<N> * pool_2) {
         individuals [i + size/2] = pool_2 [i];
     }
                 
-    dice(5);
+    dice (5);
+
 }
 
 
@@ -444,8 +530,28 @@ void Population<N>::dice (int iterations) {
 
 template <int N>
 void Population<N>::swap (int index_1, int index_2) {
+/*
+    std::cout << "---\n";
+    individuals [index_1].print();
+    std::cout << std::endl;
+    individuals [index_2].print();
+    std::cout << std::endl; */
+/*    
     Individual<N> * help = & individuals [index_1];
     individuals [index_1] = individuals [index_2];
     individuals [index_2] = * help;
+*/    
+    
+    Individual<N> help (individuals [index_1]);
+    individuals [index_1] = individuals [index_2];
+    individuals [index_2] = help;
+/*    
+    std::cout << "help:\n";
+    help.print();
+    std::cout << std::endl;
+    individuals [index_1].print();
+    std::cout << std::endl;
+    individuals [index_2].print();
+    std::cout << std::endl; */
 }
 
