@@ -1,4 +1,5 @@
 #include <emscripten/bind.h>
+#include <emscripten.h>
 
 #include "antColony/ant.h"
 #include "antColony/ant.cpp"
@@ -19,38 +20,134 @@ using namespace ant_colony;
 
 class AntColonyJSON {
 public:
-  AntColonyJSON(const char* json) {
+  AntColonyJSON(int size, std::string transfer, int sourceID, int targetID) {
+
+    EM_ASM_({
+      console.log('size: ' + $0);
+    }, size);
+
+    char *json = new char[transfer.length() + 1];
+    strcpy(json, transfer.c_str());
+
+    this->output = transfer;
 
     Document document;
     document.Parse(json);
-    assert(document.IsObject());
 
-    assert(document.HasMember("size"));
-    assert(document["size"].IsInt());
+    const Value& a = document;
+    assert(a.IsArray());
 
-    int size = document["size"].GetInt();
-    int colonyPosition = 0;
-    int foodPosition = document["size"].GetInt() - 1;
-    int antNumber = 40;
-
-    const Value& graph = document["graph"];
-    assert(graph.IsArray());
-
-    for (SizeType i = 0; i < graph.Size(); i++) {
-      printf("graph[%d] = %d\n", i, graph[i].GetInt());
+    // Create Matrix
+    double arr [size][size];
+    for(size_t i = 0; i < size; i++) {
+      for(size_t j = 0; j < size; j++) {
+        arr[i][j] = 1;
+      } 
     }
 
-    const double *const* matrix;
+    // Fill values in matrix
+    for (SizeType i = 0; i < a.Size(); i++) {
+
+      // For each object
+      assert(a[i].IsObject());
+      const Value &o = a[i];
+      assert(o["source"].IsNumber());
+      assert(o["target"].IsNumber());
+      arr[o["source"].GetInt()][o["target"].GetInt()] = 1;
+      arr[o["target"].GetInt()][o["source"].GetInt()] = 1;
+    }
+
+    EM_ASM_({
+      console.log('matrix test 1: ' + $0);
+    }, arr[0][1]);
+
+            
+    double * arr1[size];
+    for(int i = 0; i < size;++i)
+      arr1[i] = arr[i];
+    double ** matrix = arr1;
+
     
-    col = new AntColony(antNumber, matrix, size, colonyPosition, foodPosition, 40, 0.05);
+    for(size_t i = 0; i < size; i++) {
+      for(size_t j = 0; j < size; j++) {          
+          EM_ASM_({
+            console.log('insert value: ' + $0);
+          }, arr[i][j]);
+      }
+    }
+
+/**
+    double arr9 [15][15] = { {0,1,1,0,0,0,0,0,0,0,0,0,0,0,0},
+              {1,0,0,1,0,0,0,0,0,0,0,0,0,0,0},
+              {1,0,0,1,1,0,0,0,0,0,0,0,0,0,0},
+              {0,1,1,0,0,0,0,0,1,0,1,0,0,0,0},
+              {0,0,1,0,0,1,1,0,0,0,0,0,0,0,0},
+              {0,0,0,0,1,0,1,1,0,0,0,0,0,0,0},
+              {0,0,0,0,1,1,0,0,1,0,0,0,0,0,0},
+              {0,0,0,0,0,1,0,0,1,1,0,0,0,0,0},
+              {0,0,0,1,0,0,1,1,0,1,1,1,0,0,0},
+              {0,0,0,0,0,0,0,1,1,0,0,1,1,0,0},
+              {0,0,0,1,0,0,0,0,1,0,0,1,0,1,0},
+              {0,0,0,0,0,0,0,0,1,1,1,0,1,1,1},
+              {0,0,0,0,0,0,0,0,0,1,0,1,0,0,1},
+              {0,0,0,0,0,0,0,0,0,0,1,1,0,0,1},
+              {0,0,0,0,0,0,0,0,0,0,0,1,1,1,0} };
+  
+  double * arr19[15];
+  for(int i = 0; i < 15;++i)
+    arr19[i] = arr9[i];
+
+  double ** matrix9 = arr19;
+*/    
+    col = new AntColony(40, matrix, size, sourceID, targetID, 40, 0.05);
     col->setPheromonWeight(2.5);
     col->setCostWeight(-1);
+    col->nextStep(10);
+
+    ILandscape & landscape = col->getLandscape();
+    auto ph = landscape.getPheromone();
+
+    EM_ASM_({
+      console.log('pheromone: ' + $0);
+    }, ph.size());
+
+
+    /**
+    Document outputDoc;
+    outputDoc.SetArray();
+    Document::AllocatorType& allocator = outputDoc.GetAllocator();
+
+    unsigned int j = 0;
+    for(size_t i = 0; i < ph.size(); i++) {
+      for(size_t j = 0; j < ph.size(); j++) {          
+          Value objValue;
+          objValue.SetObject();
+          objValue.AddMember("source",i,allocator);
+          objValue.AddMember("target",j,allocator);
+
+          EM_ASM_({
+            console.log('value: ' + $0);
+          }, ph[i][j]);
+
+          objValue.AddMember("value",ph[i][j],allocator);
+          outputDoc.PushBack(objValue,allocator);
+          ++j;
+      }    
+    }
+
+    StringBuffer buffer;
+    Writer<StringBuffer> writer(buffer);
+    outputDoc.Accept(writer);
+
+    std::string output2 = buffer.GetString();
+
+    */
+
+    delete [] json;
 }
 
-std::string nextStep(int n) {
-
+std::string nextStep(int steps) {
     
-
     auto ph = col->getLandscape().getPheromone();
     
     for(unsigned int i = 0; i < ph.size(); ++i) {
@@ -67,18 +164,20 @@ std::string nextStep(int n) {
       // cout << endl;
     }
 
-    return "Hello World";
-
+    return this->output;
 }
 
 private:
   IAntColony * col;
+  std::string output;
 
+  bool isType(emscripten::val value, const std::string& type) {
+      return (value.typeof().as<std::string>() == type);
+  }
 };
 
 EMSCRIPTEN_BINDINGS(antColony_module) {
   class_<AntColonyJSON>("AntColonyJSON")
-    .constructor<const char*>()
-    .function("nextStep", &AntColonyJSON::nextStep)
-    ;
+    .constructor<int, std::string, int, int>()
+    .function("nextStep", &AntColonyJSON::nextStep);
 }

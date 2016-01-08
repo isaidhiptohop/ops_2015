@@ -1,7 +1,7 @@
 /**
  * Created by sebastiankoch on 07/01/16.
  *
- * This program uses a modified version of the graph-creator by https://github.com/metacademy/directed-graph-creator
+ * This program uses a modified version of the graph-creator by Colorado Reed (https://github.com/metacademy/directed-graph-creator)
  */
 
     // define AntGraph object
@@ -21,7 +21,8 @@
             justScaleTransGraph: false,
             lastKeyDown: -1,
             shiftNodeDrag: false,
-            selectedText: null
+            selectedText: null,
+            simulationStarted: false
         };
 
         thisGraph.svg = svg;
@@ -32,12 +33,12 @@
         // displayed when dragging between nodes
         thisGraph.dragLine = svgG.append('svg:path')
             .attr('class', 'link dragline hidden')
-            .attr('d', 'M0,0L0,0')
-            .style('marker-end', 'url(#mark-end-arrow)');
+            .attr('d', 'M0,0L0,0');
 
         // svg nodes and edges
         thisGraph.paths = svgG.append("g").selectAll("g");
         thisGraph.circles = svgG.append("g").selectAll("g");
+
 
         thisGraph.drag = d3.behavior.drag()
             .origin(function(d){
@@ -46,9 +47,6 @@
             .on("drag", function(args){
                 thisGraph.state.justDragged = true;
                 thisGraph.dragmove.call(thisGraph, args);
-            })
-            .on("dragend", function() {
-                // todo check if edge-mode is selected
             });
 
         // listen for key events
@@ -64,6 +62,23 @@
         // handle delete graph
         d3.select("#delete-graph").on("click", function(){
             thisGraph.deleteGraph(false);
+            thisGraph.instance.delete();
+        });
+
+        // handle start simulation
+        d3.select("#start-simulation").on("click", function(){
+
+            thisGraph.state.simulationStarted = true;
+
+            var transferEdges = [];
+            thisGraph.edges.forEach(function(e){
+                transferEdges.push({source: e.source.id, target: e.target.id});
+            });
+
+            var transfer = JSON.stringify(transferEdges);
+
+            thisGraph.instance = new Module.AntColonyJSON(thisGraph.nodes.length, transfer, 1, 0);
+            console.log('antColony result: ' + thisGraph.instance.nextStep(5));
         });
     };
 
@@ -281,12 +296,13 @@
             thisGraph.nodes.push(d);
             thisGraph.updateGraph();
             // make title of text immediently editable
+            /**
             var d3txt = thisGraph.changeTextOfNode(thisGraph.circles.filter(function(dval){
                     return dval.id === d.id;
                 }), d),
                 txtNode = d3txt.node();
             thisGraph.selectElementContents(txtNode);
-            txtNode.focus();
+            txtNode.focus(); */
         } else {
             // dragged from node
             state.shiftNodeDrag = false;
@@ -339,10 +355,12 @@
         thisGraph.paths = thisGraph.paths.data(thisGraph.edges, function(d){
             return String(d.source.id) + "+" + String(d.target.id);
         });
+
+
+
         var paths = thisGraph.paths;
         // update existing paths
-        paths.style('marker-end', 'url(#end-arrow)')
-            .classed(consts.selectedClass, function(d){
+        paths.classed(consts.selectedClass, function(d){
                 return d === state.selectedEdge;
             })
             .attr("d", function(d){
@@ -372,11 +390,20 @@
         thisGraph.circles = thisGraph.circles.data(thisGraph.nodes, function(d){ return d.id;});
         thisGraph.circles.attr("transform", function(d){return "translate(" + d.x + "," + d.y + ")";});
 
+
         // add new nodes
-        var newGs= thisGraph.circles.enter()
+        var newGs = thisGraph.circles.enter()
             .append("g");
 
-        newGs.classed(consts.circleGClass, true)
+        newGs.classed('root', function(d){
+                return d.type == 1;
+            })
+            .classed('target', function(d){
+                return d.type == 2;
+            })
+            .classed(consts.circleGClass, function(d){
+                return d.type != 1 && d.type != 2;
+            })
             .attr("transform", function(d){return "translate(" + d.x + "," + d.y + ")";})
             .on("mouseover", function(d){
                 if (state.shiftNodeDrag){
@@ -396,6 +423,8 @@
 
         newGs.append("circle")
             .attr("r", String(consts.nodeRadius));
+
+
 
         // remove old nodes
         thisGraph.circles.exit().remove();

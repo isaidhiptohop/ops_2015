@@ -10,28 +10,6 @@
     <script src="js/d3.min.js"></script>
     <script src="js/antcolony.module.js"></script>
     <script src="js/antgraph.js"></script>
-    <script>
-
-        function newGraph() {
-
-        }
-
-        function startSimulation() {
-            var instance = new Module.AntColonyJSON("Hello World");
-
-            console.log('antColony result: ' + instance.nextStep(5));
-
-            instance.delete();
-        }
-
-        function nextStep() {
-
-
-        }
-
-    </script>
-
-
 
 </head>
 <body>
@@ -48,23 +26,23 @@ glyphicon glyphicon-trash
 
 <!-- Split button -->
 
-<div class="container" style="width: 800px">
+<div class="container" style="width: 600px">
     <div class="row">
-        <div class="col-md-9"><h3>Ant Colony Optimization Simulator</h3></div>
-        <div class="col-md-3">
-            <div class="btn-toolbar" role="toolbar" style="margin-top: 20px; margin-bottom: 10px">
+        <div class="col-md-8"><h3>Ant Colony Optimization Simulator</h3></div>
+        <div class="col-md-4">
+            <div class="btn-toolbar" role="toolbar" style="margin-top: 15px; margin-bottom: 10px; padding-left: 15px; padding-right: 0px">
                 <div class="btn-group">
-                    <button type="button" class="btn btn-danger">
+                    <button type="button" id="delete-graph" class="btn btn-danger">
                         <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                     </button>
                 </div>
                 <div class="btn-group">
-                    <button type="button" class="btn btn-success">
+                    <button type="button" id="start-simulation" class="btn btn-success">
                         <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
                     </button>
                 </div>
                 <div class="btn-group" >
-                    <button type="button" class="btn btn-warning" disabled="disabled">
+                    <button type="button" id="next-step" class="btn btn-warning" disabled="disabled">
                         <span class="glyphicon glyphicon-step-forward" aria-hidden="true"></span>
                     </button>
                     <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled="disabled">
@@ -88,30 +66,20 @@ glyphicon glyphicon-trash
 
         <script>
 
-            /**
-            var w = 800;
-            var h = 450;
-
-            var svg = d3.select("body").append("svg")
-                    .attr("id", "chart")
-                    .attr("width", w)
-                    .attr("height", h);
-            */
-            /**** MAIN ****/
 
             var docEl = document.documentElement,
                     bodyEl = document.getElementsByTagName('body')[0];
 
-            var width = 800;
-            var height = 450;
+            var width = 600;
+            var height = 550;
 
-            var xLoc = width/2 - 25,
-                    yLoc = 100;
+            var xLoc = width/2,
+                    yLoc = 50;
 
             // initial node data
-            var nodes = [{title: "new concept", id: 0, x: xLoc, y: yLoc},
-                {title: "new concept", id: 1, x: xLoc, y: yLoc + 200}];
-            var edges = [{source: nodes[1], target: nodes[0]}];
+            var nodes = [{id: 0, type: 2, x: xLoc, y: yLoc},
+                {id: 1, type: 1, x: xLoc, y: yLoc+450}];
+            var edges = [];
 
 
             /** MAIN SVG **/

@@ -37,6 +37,19 @@ g.conceptG circle{
 	stroke-width: 2px;
 }
 
+g.root circle{
+	fill: #5CB85C;
+	stroke: #333;
+	stroke-width: 2px;
+}
+
+g.target circle{
+	fill: #d9534f;
+	stroke: #333;
+	stroke-width: 2px;
+}
+
+
 g.conceptG:hover circle{
 	fill: rgb(200, 238, 241);
 }
