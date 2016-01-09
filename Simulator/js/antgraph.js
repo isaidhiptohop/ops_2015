@@ -70,15 +70,31 @@
 
             thisGraph.state.simulationStarted = true;
 
+            console.log(JSON.stringify(thisGraph.nodes));
+            console.log(JSON.stringify(thisGraph.edges));
+
             var transferEdges = [];
             thisGraph.edges.forEach(function(e){
-                transferEdges.push({source: e.source.id, target: e.target.id, value: 1});
+                transferEdges.push({source: e.source.id, target: e.target.id, value: "40"});
             });
 
             var transfer = JSON.stringify(transferEdges);
 
             thisGraph.instance = new Module.AntColonyJSON(thisGraph.nodes.length, transfer, 1, 0);
-            console.log('antColony result: ' + thisGraph.instance.nextStep(5));
+
+            // console.log('antColony result: ' + thisGraph.instance.nextStep(50));
+
+            var result = JSON.parse(thisGraph.instance.nextStep(50));
+
+            console.log(JSON.stringify(result));
+
+            for(var i = 0; i < thisGraph.edges.length; i++) {
+                thisGraph.edges[i].value = result[i].value;
+            }
+
+            console.log(JSON.stringify(thisGraph.edges));
+
+            thisGraph.updateGraph();
         });
     };
 
@@ -87,27 +103,6 @@
     };
 
     AntGraph.prototype.consts =  {
-
-        LEVEL0: "level0",
-        LEVEL1: "level1",
-        LEVEL2: "level2",
-        LEVEL3: "level3",
-        LEVEL4: "level4",
-        LEVEL5: "level5",
-        LEVEL6: "level6",
-        LEVEL7: "level7",
-        LEVEL8: "level8",
-        LEVEL9: "level9",
-        LEVEL10: "level10",
-        LEVEL11: "level11",
-        LEVEL12: "level12",
-        LEVEL13: "level13",
-        LEVEL14: "level14",
-        LEVEL15: "level15",
-        LEVEL16: "level16",
-        LEVEL17: "level17",
-        LEVEL18: "level18",
-        LEVEL19: "level19",
 
         selectedClass: "selected",
         connectClass: "connect-node",
@@ -241,7 +236,7 @@
 
         if (mouseDownNode !== d){
             // we're in a different node: create new edge for mousedown edge and add to graph
-            var newEdge = {source: mouseDownNode, target: d};
+            var newEdge = {source: mouseDownNode, target: d, value: "40"};
             var filtRes = thisGraph.paths.filter(function(d){
                 if (d.source === newEdge.target && d.target === newEdge.source){
                     thisGraph.edges.splice(thisGraph.edges.indexOf(d), 1);
@@ -292,7 +287,7 @@
         } else if (state.graphMouseDown && d3.event.shiftKey){
             // clicked not dragged from svg
             var xycoords = d3.mouse(thisGraph.svgG.node()),
-                d = {id: thisGraph.idct++, title: "new concept", x: xycoords[0], y: xycoords[1]};
+                d = {id: thisGraph.idct++, type: 0, x: xycoords[0], y: xycoords[1]};
             thisGraph.nodes.push(d);
             thisGraph.updateGraph();
             // make title of text immediently editable
@@ -363,6 +358,12 @@
         paths.classed(consts.selectedClass, function(d){
                 return d === state.selectedEdge;
             })
+            .classed('link40', function(d){
+                return d.value == 40;
+            })
+            .classed('link100', function(d){
+                return d.value == 100;
+            })
             .attr("d", function(d){
                 return "M" + d.source.x + "," + d.source.y + "L" + d.target.x + "," + d.target.y;
             });
@@ -370,8 +371,13 @@
         // add new paths
         paths.enter()
             .append("path")
-            .style('marker-end','url(#end-arrow)')
             .classed("link", true)
+            .classed('link40', function(d){
+                return d.value == 40;
+            })
+            .classed('link100', function(d){
+                return d.value == 100;
+            })
             .attr("d", function(d){
                 return "M" + d.source.x + "," + d.source.y + "L" + d.target.x + "," + d.target.y;
             })

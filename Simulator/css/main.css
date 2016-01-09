@@ -68,6 +68,76 @@ path.link {
 	cursor: default;
 }
 
+path.link10 {
+	fill: none;
+	stroke: #333;
+	stroke-width: 8px;
+	cursor: default;
+}
+
+path.link20 {
+	fill: none;
+	stroke: #333;
+	stroke-width: 8px;
+	cursor: default;
+}
+
+path.link30 {
+	fill: none;
+	stroke: #333;
+	stroke-width: 8px;
+	cursor: default;
+}
+
+path.link40 {
+	fill: none;
+	stroke: #333;
+	stroke-width: 8px;
+	cursor: default;
+}
+
+path.link50 {
+	fill: none;
+	stroke: #333;
+	stroke-width: 8px;
+	cursor: default;
+}
+
+path.link60 {
+	fill: none;
+	stroke: #333;
+	stroke-width: 8px;
+	cursor: default;
+}
+
+path.link70 {
+	fill: none;
+	stroke: #333;
+	stroke-width: 8px;
+	cursor: default;
+}
+
+path.link80 {
+	fill: none;
+	stroke: #333;
+	stroke-width: 8px;
+	cursor: default;
+}
+
+path.link90 {
+	fill: none;
+	stroke: #333;
+	stroke-width: 8px;
+	cursor: default;
+}
+
+path.link100 {
+	fill: none;
+	stroke: #ff4704;
+	stroke-width: 8px;
+	cursor: default;
+}
+
 path.link:hover{
 	stroke: rgb(94, 196, 204);
 }
