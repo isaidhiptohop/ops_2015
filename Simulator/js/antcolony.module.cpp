@@ -1,5 +1,6 @@
 #include <emscripten/bind.h>
 #include <emscripten.h>
+#include <sstream>
 
 #include "antColony/ant.h"
 #include "antColony/ant.cpp"
@@ -18,6 +19,7 @@ using namespace emscripten;
 using namespace rapidjson;
 using namespace ant_colony;
 
+
 class AntColonyJSON {
 public:
   AntColonyJSON(int size, std::string transfer, int sourceID, int targetID) {
@@ -28,8 +30,6 @@ public:
 
     char *json = new char[transfer.length() + 1];
     strcpy(json, transfer.c_str());
-
-    this->output = transfer;
 
     Document document;
     document.Parse(json);
@@ -111,6 +111,47 @@ public:
       console.log('pheromone: ' + $0);
     }, ph.size());
 
+    for(size_t i = 0; i < size; i++) {
+      for(size_t j = 0; j < size; j++) { 
+        EM_ASM_({
+            console.log('value: ' + $0);
+          }, ph[i][j]);
+
+      }
+    }
+
+    // Value Werte eintragen in a (Dokument Value Array)
+
+    Document::AllocatorType& allocator = document.GetAllocator();
+    assert(a.IsArray());
+
+    for (SizeType i = 0; i < a.Size(); i++) {
+
+      std::ostringstream strs;
+      double vout = ph[document[i]["source"].GetInt()][document[i]["target"].GetInt()];
+      
+      document[i]["value"].SetString(vout);
+
+      //const Value& e = a[i]["value"];
+      //assert(e.IsObject());
+
+      //e.SetString("0.001"); // call SetString() on the reference
+      
+      // e.AddMember("test","test",allocator);
+      //Value v;
+      //v.SetObject();
+
+      //e.AddMember(Value("value",ph[v["source"].GetInt()][v["target"].GetInt()],allocator));
+    }
+
+    StringBuffer buffer;
+    Writer<StringBuffer> writer(buffer);
+    document.Accept(writer);
+
+    this->output = buffer.GetString();
+
+
+    //ph[i][j]    
 
     /**
     Document outputDoc;

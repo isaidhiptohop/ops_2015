@@ -72,7 +72,7 @@
 
             var transferEdges = [];
             thisGraph.edges.forEach(function(e){
-                transferEdges.push({source: e.source.id, target: e.target.id});
+                transferEdges.push({source: e.source.id, target: e.target.id, value: 1});
             });
 
             var transfer = JSON.stringify(transferEdges);
