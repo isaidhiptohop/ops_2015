@@ -11,6 +11,40 @@
     <script src="js/antcolony.module.js"></script>
     <script src="js/antgraph.js"></script>
 
+
+    <script>
+        var graph;
+
+        function reset() {
+
+            var width = 600;
+            var height = 550;
+
+            d3.select("svg").remove();
+
+            var svg = d3.select("#simulator").append("svg")
+                    .attr("id", "chart")
+                    .attr("width", width)
+                    .attr("height", height);
+
+            var xLoc = width/2,
+                    yLoc = 50;
+
+            // initial node data
+            var nodes = [{id: 0, type: 2, x: xLoc, y: yLoc},
+                {id: 1, type: 1, x: xLoc, y: yLoc+450}];
+            var edges = [];
+
+            graph = new AntGraph(svg, nodes, edges);
+            graph.setIdCt(2);
+            graph.updateGraph();
+
+
+            d3.select("#next-step").attr('disabled', 'disabled');
+        }
+
+    </script>
+
 </head>
 <body>
 
@@ -32,7 +66,7 @@ glyphicon glyphicon-trash
         <div class="col-md-4">
             <div class="btn-toolbar" role="toolbar" style="margin-top: 15px; margin-bottom: 10px; padding-left: 15px; padding-right: 0px">
                 <div class="btn-group">
-                    <button type="button" id="delete-graph" class="btn btn-danger">
+                    <button type="button" id="delete-graph" class="btn btn-danger" onclick="reset()">
                         <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                     </button>
                 </div>
@@ -63,7 +97,7 @@ glyphicon glyphicon-trash
 </div>
 
 
-
+<div id="simulator">
         <script>
 
 
@@ -83,16 +117,16 @@ glyphicon glyphicon-trash
 
 
             /** MAIN SVG **/
-            var svg = d3.select("body").append("svg")
+            var svg = d3.select("#simulator").append("svg")
                     .attr("id", "chart")
                     .attr("width", width)
                     .attr("height", height);
-            var graph = new AntGraph(svg, nodes, edges);
+            graph = new AntGraph(svg, nodes, edges);
             graph.setIdCt(2);
             graph.updateGraph();
 
         </script>
-
+</div>
 <p>Create and move nodes with shift+click</p>
 
 </body>

@@ -59,12 +59,6 @@
         svg.on("mousedown", function(d){thisGraph.svgMouseDown.call(thisGraph, d);});
         svg.on("mouseup", function(d){thisGraph.svgMouseUp.call(thisGraph, d);});
 
-        // handle delete graph
-        d3.select("#delete-graph").on("click", function(){
-            thisGraph.deleteGraph(false);
-            thisGraph.instance.delete();
-        });
-
         // handle start simulation
         d3.select("#start-simulation").on("click", function(){
 
@@ -84,7 +78,25 @@
 
             // console.log('antColony result: ' + thisGraph.instance.nextStep(50));
 
-            var result = JSON.parse(thisGraph.instance.nextStep(50));
+            var result = JSON.parse(thisGraph.instance.nextStep(5));
+
+            console.log(JSON.stringify(result));
+
+            for(var i = 0; i < thisGraph.edges.length; i++) {
+                thisGraph.edges[i].value = result[i].value;
+            }
+
+            console.log(JSON.stringify(thisGraph.edges));
+
+            d3.select("#next-step").attr('disabled', null);
+
+            thisGraph.updateGraph();
+        });
+
+        // handle delete graph
+        d3.select("#next-step").on("click", function(){
+
+            var result = JSON.parse(thisGraph.instance.nextStep(5));
 
             console.log(JSON.stringify(result));
 
@@ -95,6 +107,7 @@
             console.log(JSON.stringify(thisGraph.edges));
 
             thisGraph.updateGraph();
+
         });
     };
 
