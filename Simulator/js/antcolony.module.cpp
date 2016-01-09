@@ -105,14 +105,21 @@ std::string nextStep(int steps) {
       console.log('pheromone: ' + $0);
     }, ph.size());
 
+    double sum = 0;
+
     for(size_t i = 0; i < this->size; i++) {
       for(size_t j = 0; j < this->size; j++) { 
+
+        sum += ph[i][j];
+
         EM_ASM_({
             console.log('value: ' + $0 + " at " + $1 + "," + $2);
           }, ph[i][j], i, j);
 
       }
     }
+
+    sum = sum/2;
 
     // Value Werte eintragen in a (Dokument Value Array)
 
@@ -127,6 +134,21 @@ std::string nextStep(int steps) {
       const Value& v = this->document[i];
       double vout = ph[v["source"].GetInt()][v["target"].GetInt()];
 
+      // double p = (86 - (1/(1+vout))*86);
+
+      int px = (int) ((vout / sum) * 86) ;
+
+      EM_ASM_({
+            console.log('px value: ' + $0);
+      }, px); 
+
+      std::stringstream ss;
+      ss << px;
+      std::string str = ss.str();
+
+      this->document[i]["value"].SetInt(px);
+
+      /**
       if(vout < 0) {
         this->document[i]["value"].SetString("10");
       } else if (vout == 0) {
@@ -146,6 +168,7 @@ std::string nextStep(int steps) {
       } else {
         this->document[i]["value"].SetString("100");
       }
+      */
 
     }
 

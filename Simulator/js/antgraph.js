@@ -358,11 +358,266 @@
         paths.classed(consts.selectedClass, function(d){
                 return d === state.selectedEdge;
             })
+            .classed('link0', function(d){
+                return d.value == 0;
+            })
+            .classed('link1', function(d){
+                return d.value == 1;
+            })
+            .classed('link2', function(d){
+                return d.value == 2;
+            })
+            .classed('link3', function(d){
+                return d.value == 3;
+            })
+            .classed('link4', function(d){
+                return d.value == 4;
+            })
+            .classed('link5', function(d){
+                return d.value == 5;
+            })
+            .classed('link6', function(d){
+                return d.value == 6;
+            })
+            .classed('link7', function(d){
+                return d.value == 7;
+            })
+            .classed('link8', function(d){
+                return d.value == 8;
+            })
+            .classed('link9', function(d){
+                return d.value == 9;
+            })
+            .classed('link10', function(d){
+                return d.value == 10;
+            })
+            .classed('link11', function(d){
+                return d.value == 11;
+            })
+            .classed('link12', function(d){
+                return d.value == 12;
+            })
+            .classed('link13', function(d){
+                return d.value == 13;
+            })
+            .classed('link14', function(d){
+                return d.value == 14;
+            })
+            .classed('link15', function(d){
+                return d.value == 15;
+            })
+            .classed('link16', function(d){
+                return d.value == 16;
+            })
+            .classed('link17', function(d){
+                return d.value == 17;
+            })
+            .classed('link18', function(d){
+                return d.value == 18;
+            })
+            .classed('link19', function(d){
+                return d.value == 19;
+            })
+            .classed('link20', function(d){
+                return d.value == 20;
+            })
+            .classed('link21', function(d){
+                return d.value == 21;
+            })
+            .classed('link22', function(d){
+                return d.value == 22;
+            })
+            .classed('link23', function(d){
+                return d.value == 23;
+            })
+            .classed('link24', function(d){
+                return d.value == 24;
+            })
+            .classed('link25', function(d){
+                return d.value == 25;
+            })
+            .classed('link26', function(d){
+                return d.value == 26;
+            })
+            .classed('link27', function(d){
+                return d.value == 27;
+            })
+            .classed('link28', function(d){
+                return d.value == 28;
+            })
+            .classed('link29', function(d){
+                return d.value == 29;
+            })
+            .classed('link30', function(d){
+                return d.value == 30;
+            })
+            .classed('link31', function(d){
+                return d.value == 31;
+            })
+            .classed('link32', function(d){
+                return d.value == 32;
+            })
+            .classed('link33', function(d){
+                return d.value == 33;
+            })
+            .classed('link34', function(d){
+                return d.value == 34;
+            })
+            .classed('link35', function(d){
+                return d.value == 35;
+            })
+            .classed('link36', function(d){
+                return d.value == 36;
+            })
+            .classed('link37', function(d){
+                return d.value == 37;
+            })
+            .classed('link38', function(d){
+                return d.value == 38;
+            })
+            .classed('link39', function(d){
+                return d.value == 39;
+            })
             .classed('link40', function(d){
                 return d.value == 40;
             })
-            .classed('link100', function(d){
-                return d.value == 100;
+            .classed('link41', function(d){
+                return d.value == 41;
+            })
+            .classed('link42', function(d){
+                return d.value == 42;
+            })
+            .classed('link43', function(d){
+                return d.value == 43;
+            })
+            .classed('link44', function(d){
+                return d.value == 44;
+            })
+            .classed('link45', function(d){
+                return d.value == 45;
+            })
+            .classed('link46', function(d){
+                return d.value == 46;
+            })
+            .classed('link47', function(d){
+                return d.value == 47;
+            })
+            .classed('link48', function(d){
+                return d.value == 48;
+            })
+            .classed('link49', function(d){
+                return d.value == 49;
+            })
+            .classed('link50', function(d){
+                return d.value == 50;
+            })
+            .classed('link51', function(d){
+                return d.value == 51;
+            })
+            .classed('link52', function(d){
+                return d.value == 52;
+            })
+            .classed('link53', function(d){
+                return d.value == 53;
+            })
+            .classed('link54', function(d){
+                return d.value == 54;
+            })
+            .classed('link55', function(d){
+                return d.value == 55;
+            })
+            .classed('link56', function(d){
+                return d.value == 56;
+            })
+            .classed('link57', function(d){
+                return d.value == 57;
+            })
+            .classed('link58', function(d){
+                return d.value == 58;
+            })
+            .classed('link59', function(d){
+                return d.value == 59;
+            })
+            .classed('link60', function(d){
+                return d.value == 60;
+            })
+            .classed('link61', function(d){
+                return d.value == 61;
+            })
+            .classed('link62', function(d){
+                return d.value == 62;
+            })
+            .classed('link63', function(d){
+                return d.value == 63;
+            })
+            .classed('link64', function(d){
+                return d.value == 64;
+            })
+            .classed('link65', function(d){
+                return d.value == 65;
+            })
+            .classed('link66', function(d){
+                return d.value == 66;
+            })
+            .classed('link67', function(d){
+                return d.value == 67;
+            })
+            .classed('link68', function(d){
+                return d.value == 68;
+            })
+            .classed('link69', function(d){
+                return d.value == 69;
+            })
+            .classed('link70', function(d){
+                return d.value == 70;
+            })
+            .classed('link71', function(d){
+                return d.value == 71;
+            })
+            .classed('link72', function(d){
+                return d.value == 72;
+            })
+            .classed('link73', function(d){
+                return d.value == 73;
+            })
+            .classed('link74', function(d){
+                return d.value == 74;
+            })
+            .classed('link75', function(d){
+                return d.value == 75;
+            })
+            .classed('link76', function(d){
+                return d.value == 76;
+            })
+            .classed('link77', function(d){
+                return d.value == 77;
+            })
+            .classed('link78', function(d){
+                return d.value == 78;
+            })
+            .classed('link79', function(d){
+                return d.value == 79;
+            })
+            .classed('link80', function(d){
+                return d.value == 80;
+            })
+            .classed('link81', function(d){
+                return d.value == 81;
+            })
+            .classed('link82', function(d){
+                return d.value == 82;
+            })
+            .classed('link83', function(d){
+                return d.value == 83;
+            })
+            .classed('link84', function(d){
+                return d.value == 84;
+            })
+            .classed('link85', function(d){
+                return d.value == 85;
+            })
+            .classed('link86', function(d){
+                return d.value == 86;
             })
             .attr("d", function(d){
                 return "M" + d.source.x + "," + d.source.y + "L" + d.target.x + "," + d.target.y;
@@ -401,7 +656,7 @@
         var newGs = thisGraph.circles.enter()
             .append("g");
 
-        newGs.classed('root', function(d){
+        newGs.classed('source', function(d){
                 return d.type == 1;
             })
             .classed('target', function(d){
