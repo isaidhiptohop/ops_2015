@@ -110,7 +110,10 @@ std::string nextStep(int steps) {
     for(size_t i = 0; i < this->size; i++) {
       for(size_t j = 0; j < this->size; j++) { 
 
-        sum += ph[i][j];
+        if(ph[i][j] > sum) {
+          sum = ph[i][j];
+        }
+        // sum += ph[i][j];
 
         EM_ASM_({
             console.log('value: ' + $0 + " at " + $1 + "," + $2);
@@ -119,7 +122,7 @@ std::string nextStep(int steps) {
       }
     }
 
-    sum = sum/2;
+    // sum = sum/2;
 
     // Value Werte eintragen in a (Dokument Value Array)
 
