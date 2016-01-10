@@ -1,0 +1,213 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+
+/* Nullify */
+
+html, body{
+	height: 100%;
+}
+
+body, h1, h2, h3, p, ol, ul, img{
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+/* Further settings */
+*{
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body{
+    font-family: arial, helvetica, sans-serif;
+    font-size: 100%; /* graceful degradation for older versions - override after that */
+    /*font-size: 6vmin;*/ /* Is das geil! :D */
+    width: 100%;
+    max-width: 1000px;
+    height: 100%;
+    line-height: 1;
+    margin: 0 auto;
+}
+
+@media screen{
+	button{
+		background-color: #cccccc;
+		color: #ffffff;
+	}
+	
+	body{
+		background-color: #cccccc;
+	}
+}
+
+@media print{
+	body{
+		background-color: #ffffff;
+		color: #000000;
+	}
+}
+
+@media speech{
+	body{
+		background-color: #ffffff;
+		color: #000000;
+	}
+}
+
+@media screen and (orientation: portrait){
+	
+}
+
+@media screen and (orientation: landscape){
+	
+}
+
+h1{
+    font-size: 150%;
+    font-weight: normal;
+    margin-bottom: 2ex;
+}
+
+h2{
+	font-size: 120%;
+	font-weight: bold;
+	margin: 3ex 0 2ex;
+}
+
+h3{
+	font-size: 100%;
+	font-weight: bold;
+	margin: 3ex 1ex 1ex;
+}
+
+p{
+	margin: 1ex 2ex;
+}
+
+.hidden{
+	display: none;
+}
+
+#container{
+	margin: 1em 0;
+	border: 1ex solid #aaaaaa;
+	border-radius: 2em;
+	background-color: #ffffff;
+	overflow: hidden;
+}
+
+#header{
+	height: 7ex;
+	line-height: 7ex;
+	vertical-align: middle;
+}
+
+#header p{
+	margin: 0;
+	padding: 0;
+	font-size: 150%;
+	text-align: center;
+}
+
+#navigation{
+	border-radius: 2em 2em 0 0;
+	height: 5ex;
+	line-height: 5ex;
+	vertical-align: middle;
+	background-color: #339933;
+}
+
+#navigation ul{
+	margin: 0;
+	padding: 0;
+}
+	
+#navigation li{
+	width: 20%;
+	text-align: center;
+	float: left;
+	list-style-position: inside;
+	list-style-type: none;
+	border-radius: 2em 2em 0 0;
+	overflow: hidden;
+}
+
+#navigation a{
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: bold;
+	display: block;
+}
+
+#navigation ul li:hover{
+	background-color: #33ff33;
+}
+
+#content{
+	position: relative;
+	padding: 1em;
+	min-height: 20ex;
+}
+
+#background{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	border-radius: 1em;
+	z-index: -1;
+}
+
+#footer{
+	padding: 0 1em;
+	height: 5ex;
+	line-height: 5ex;
+	vertical-align: middle;
+	text-align: right;
+	background-color: #339933;
+}
+
+body.main li.main, body.download li.download, body.anwendung li.anwendung, body.algorithmen li.algorithmen, body.team li.team{
+	background-color: #336633;
+}
+
+ol.list{
+	list-style-type: decimal;
+}
+
+ol.list, ul.list, ol>ul, ol>ol, ul>ol, ul.list ul{
+	margin: 0 4ex 1ex;
+}
+
+ol>ol, ul>ol{
+	list-style-type: lower-alpha;
+}
+
+ul.list{
+	list-style-type: disc;
+}
+
+ul.list>ul{
+	list-style-type: circle;
+}
+
+ul.list>ul>ul{
+	list-style-type: square;
+}
