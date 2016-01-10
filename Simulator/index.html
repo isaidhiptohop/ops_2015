@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Ant Colony Optimization</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
+    <link href="css/antgraph.css" rel="stylesheet">
     <script src="js/jquery-2.1.4.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/d3.min.js"></script>
@@ -14,6 +14,31 @@
 
     <script>
         var graph;
+
+        var antNumber = 40;
+        var updateFactor = 40;
+        var delayFactor = 0.05;
+        var PheromonWeight = 2.5;
+        var CostWeight = -1;
+        var stepsNum = 5;
+
+        function init_modal() {
+            document.getElementById('antNumber').value = antNumber;
+            document.getElementById('updateFactor').value = updateFactor;
+            document.getElementById('declayFactor').value = delayFactor;
+            document.getElementById('PheromonWeight').value = PheromonWeight;
+            document.getElementById('CostWeight').value = CostWeight;
+            document.getElementById('stepsNum').value = stepsNum;
+        }
+
+        function modal_save() {
+            antNumber = document.getElementById('antNumber').value;
+            updateFactor = document.getElementById('updateFactor').value;
+            delayFactor = document.getElementById('declayFactor').value;
+            PheromonWeight = document.getElementById('PheromonWeight').value;
+            CostWeight = document.getElementById('CostWeight').value;
+            stepsNum = document.getElementById('stepsNum').value;
+        }
 
         function reset() {
 
@@ -39,6 +64,18 @@
             graph.setIdCt(2);
             graph.updateGraph();
 
+            /**
+            antNumber = 40;
+            updateFactor = 40;
+            delayFactor = 0.05;
+            PheromonWeight = 2.5;
+            CostWeight = -1;
+            stepsNum = 5;
+
+            init_modal;
+
+             */
+
 
             d3.select("#next-step").attr('disabled', 'disabled');
         }
@@ -46,7 +83,7 @@
     </script>
 
 </head>
-<body>
+<body onload="init_modal()">
 
 <!--
 
@@ -62,9 +99,8 @@ glyphicon glyphicon-trash
 
 <div class="container" style="width: 600px">
     <div class="row">
-        <div class="col-md-8"><h3>Ant Colony Optimization Simulator</h3></div>
-        <div class="col-md-4">
-            <div class="btn-toolbar" role="toolbar" style="margin-top: 15px; margin-bottom: 10px; padding-left: 15px; padding-right: 0px">
+        <div class="col-md-4 col-md-push-8 padding-zero">
+            <div class="btn-toolbar toolbar-left" role="toolbar">
                 <div class="btn-group">
                     <button type="button" id="delete-graph" class="btn btn-danger" onclick="reset()">
                         <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
@@ -74,25 +110,68 @@ glyphicon glyphicon-trash
                     <button type="button" id="start-simulation" class="btn btn-success">
                         <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
                     </button>
+                    <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" data-toggle="modal" data-target="#myModal">Parameter festlegen</a></li>
+                    </ul>
                 </div>
                 <div class="btn-group" >
                     <button type="button" id="next-step" class="btn btn-warning" disabled="disabled">
                         <span class="glyphicon glyphicon-step-forward" aria-hidden="true"></span>
                     </button>
-                    <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled="disabled">
-                        <span class="caret"></span>
-                        <span class="sr-only">Toggle Dropdown</span>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">5 Steps</a></li>
-                        <li><a href="#">10 Steps</a></li>
-                        <li><a href="#">20 Steps</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">100 Steps</a></li>
-                    </ul>
                 </div>
             </div>
         </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Parameter</h4>
+            </div>
+            <div class="modal-body" style="text-align:left;">
+
+                    <div class="form-group">
+                        <label for="antNumber">antNumber</label>
+                        <input type="number" class="form-control" id="antNumber" step="5">
+                    </div>
+                    <div class="form-group">
+                        <label for="updateFactor">updateFactor</label>
+                        <input type="number" class="form-control" id="updateFactor" step="5">
+                    </div>
+                    <div class="form-group">
+                        <label for="declayFactor">decayFactor</label>
+                        <input type="number" class="form-control" id="declayFactor" step="0.01">
+                    </div>
+                    <div class="form-group">
+                        <label for="PheromonWeight">PheromonWeight</label>
+                        <input type="number" class="form-control" id="PheromonWeight" step="0.5">
+                    </div>
+                    <div class="form-group">
+                        <label for="CostWeight">CostWeight</label>
+                        <input type="number" class="form-control" id="CostWeight">
+                    </div>
+                    <div class="form-group">
+                        <label for="CostWeight">Steps</label>
+                        <input type="number" class="form-control" id="stepsNum">
+                    </div>
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="modal_save()">Speichern</button>
+            </div>
+        </div>
+
     </div>
 </div>
 
@@ -127,7 +206,7 @@ glyphicon glyphicon-trash
 
         </script>
 </div>
-<p>Create and move nodes with shift+click</p>
+<p>Knoten erstellen und verschieben mit Shift + linke Maustaste</p>
 
 </body>
 </html>

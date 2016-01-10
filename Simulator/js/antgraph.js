@@ -64,8 +64,15 @@
 
             thisGraph.state.simulationStarted = true;
 
-            console.log(JSON.stringify(thisGraph.nodes));
-            console.log(JSON.stringify(thisGraph.edges));
+            // console.log("Node: " + JSON.stringify(thisGraph.nodes));
+            console.log("Start Edges: " + JSON.stringify(thisGraph.edges));
+
+            console.log("antNumber : " + antNumber);
+            console.log("updateFactor : " + updateFactor);
+            console.log("delayFactor : " + delayFactor);
+            console.log("PheromonWeight : " + PheromonWeight);
+            console.log("CostWeight : " + CostWeight);
+            console.log("stepsNum : " + stepsNum);
 
             var transferEdges = [];
             thisGraph.edges.forEach(function(e){
@@ -74,19 +81,17 @@
 
             var transfer = JSON.stringify(transferEdges);
 
-            thisGraph.instance = new Module.AntColonyJSON(thisGraph.nodes.length, transfer, 1, 0);
+            thisGraph.instance = new Module.AntColonyJSON(thisGraph.nodes.length, transfer, 1, 0, Number(antNumber), Number(updateFactor), Number(delayFactor), Number(PheromonWeight), Number(CostWeight));
 
-            // console.log('antColony result: ' + thisGraph.instance.nextStep(50));
+            var result = JSON.parse(thisGraph.instance.nextStep(Number(stepsNum)));
 
-            var result = JSON.parse(thisGraph.instance.nextStep(5));
-
-            console.log(JSON.stringify(result));
+            // console.log(JSON.stringify(result));
 
             for(var i = 0; i < thisGraph.edges.length; i++) {
                 thisGraph.edges[i].value = result[i].value;
             }
 
-            console.log(JSON.stringify(thisGraph.edges));
+            console.log("New Edges: " + JSON.stringify(thisGraph.edges));
 
             d3.select("#next-step").attr('disabled', null);
 
@@ -119,7 +124,7 @@
 
         selectedClass: "selected",
         connectClass: "connect-node",
-        circleGClass: "conceptG",
+        circleGClass: "node",
         graphClass: "graph",
         activeEditId: "active-editing",
         BACKSPACE_KEY: 8,
@@ -138,19 +143,6 @@
             thisGraph.updateGraph();
         } else{
             thisGraph.dragLine.attr('d', 'M' + d.x + ',' + d.y + 'L' + d3.mouse(thisGraph.svgG.node())[0] + ',' + d3.mouse(this.svgG.node())[1]);
-        }
-    };
-
-    AntGraph.prototype.deleteGraph = function(skipPrompt){
-        var thisGraph = this,
-            doDelete = true;
-        if (!skipPrompt){
-            doDelete = window.confirm("Press OK to delete this graph");
-        }
-        if(doDelete){
-            thisGraph.nodes = [];
-            thisGraph.edges = [];
-            thisGraph.updateGraph();
         }
     };
 
@@ -245,9 +237,14 @@
 
         if (!mouseDownNode) return;
 
-        thisGraph.dragLine.classed("hidden", true);
+
 
         if (mouseDownNode !== d){
+
+            // Create new edge
+
+
+
             // we're in a different node: create new edge for mousedown edge and add to graph
             var newEdge = {source: mouseDownNode, target: d, value: "40"};
             var filtRes = thisGraph.paths.filter(function(d){
@@ -259,6 +256,8 @@
             if (!filtRes[0].length){
                 thisGraph.edges.push(newEdge);
                 thisGraph.updateGraph();
+
+                thisGraph.dragLine.classed("hidden", true);
             }
         } else{
             // we're in the same node
@@ -290,7 +289,7 @@
         this.state.graphMouseDown = true;
     };
 
-    // mouseup on main svg
+    // Create node ?
     AntGraph.prototype.svgMouseUp = function(){
         var thisGraph = this,
             state = thisGraph.state;
@@ -298,10 +297,15 @@
             // dragged not clicked
             state.justScaleTransGraph = false;
         } else if (state.graphMouseDown && d3.event.shiftKey){
-            // clicked not dragged from svg
-            var xycoords = d3.mouse(thisGraph.svgG.node()),
-                d = {id: thisGraph.idct++, type: 0, x: xycoords[0], y: xycoords[1]};
+
+            // Create new node
+
+            var xycoords = d3.mouse(thisGraph.svgG.node());
+            var d = {id: thisGraph.idct++, type: 0, x: xycoords[0], y: xycoords[1], label: ""};
             thisGraph.nodes.push(d);
+
+            d3.select("#next-step").attr('disabled', 'disabled');
+
             thisGraph.updateGraph();
             // make title of text immediently editable
             /**
@@ -335,6 +339,9 @@
             case consts.BACKSPACE_KEY:
             case consts.DELETE_KEY:
                 d3.event.preventDefault();
+
+                thisGraph.dragLine.classed("hidden", true);
+
                 if (selectedNode){
                     thisGraph.nodes.splice(thisGraph.nodes.indexOf(selectedNode), 1);
                     thisGraph.spliceLinksForNode(selectedNode);
@@ -698,9 +705,70 @@
         newGs.append("circle")
             .attr("r", String(consts.nodeRadius));
 
+        /* Create the text for each block */
+        newGs.append("text")
+            .attr("dx", function(d){return -20})
+            .text(function(d){return d.label})
+
 
 
         // remove old nodes
         thisGraph.circles.exit().remove();
     };
+
+
+    var graph;
+
+            function reset() {
+
+                var width = 600;
+                var height = 550;
+
+                d3.select("svg").remove();
+
+                var svg = d3.select("#simulator").append("svg")
+                        .attr("id", "chart")
+                        .attr("width", width)
+                        .attr("height", height);
+
+                var xLoc = width/2,
+                        yLoc = 50;
+
+                // initial node data
+                var nodes = [{id: 0, type: 2, x: xLoc, y: yLoc},
+                    {id: 1, type: 1, x: xLoc, y: yLoc+450}];
+                var edges = [];
+
+                graph = new AntGraph(svg, nodes, edges);
+                graph.setIdCt(2);
+                graph.updateGraph();
+
+
+                d3.select("#next-step").attr('disabled', 'disabled');
+            }
+
+
+            var docEl = document.documentElement,
+                    bodyEl = document.getElementsByTagName('body')[0];
+
+            var width = 600;
+            var height = 550;
+
+            var xLoc = width/2,
+                    yLoc = 50;
+
+            // initial node data
+            var nodes = [{id: 0, type: 2, x: xLoc, y: yLoc, label: ""},
+                {id: 1, type: 1, x: xLoc, y: yLoc+450, label: "s"}];
+            var edges = [];
+
+
+            /** MAIN SVG **/
+            var svg = d3.select("#simulator").append("svg")
+                    .attr("id", "chart")
+                    .attr("width", width)
+                    .attr("height", height);
+            graph = new AntGraph(svg, nodes, edges);
+            graph.setIdCt(2);
+            graph.updateGraph();
 
