@@ -28,6 +28,14 @@ p{
 	padding-left: 53px;
 }
 
+.padding-zero {
+	padding-right: 0px;
+}
+
+.container-antcolony {
+	width: 600px;
+}
+
 marker{
 	fill: #333;
 }
