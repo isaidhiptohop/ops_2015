@@ -76,8 +76,6 @@
 
             thisGraph.instance = new Module.AntColonyJSON(thisGraph.nodes.length, transfer, 1, 0);
 
-            // console.log('antColony result: ' + thisGraph.instance.nextStep(50));
-
             var result = JSON.parse(thisGraph.instance.nextStep(5));
 
             console.log(JSON.stringify(result));
@@ -119,7 +117,7 @@
 
         selectedClass: "selected",
         connectClass: "connect-node",
-        circleGClass: "conceptG",
+        circleGClass: "node",
         graphClass: "graph",
         activeEditId: "active-editing",
         BACKSPACE_KEY: 8,
@@ -302,6 +300,9 @@
             var xycoords = d3.mouse(thisGraph.svgG.node()),
                 d = {id: thisGraph.idct++, type: 0, x: xycoords[0], y: xycoords[1]};
             thisGraph.nodes.push(d);
+
+            d3.select("#next-step").attr('disabled', 'disabled');
+
             thisGraph.updateGraph();
             // make title of text immediently editable
             /**
