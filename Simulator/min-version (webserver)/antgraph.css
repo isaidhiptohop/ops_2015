@@ -1,0 +1,423 @@
+body,html{
+	margin: 0;
+	padding: 0;
+	font-family: "Arial", sans-serif;
+	font-size: 0.95em;
+	text-align: center;
+}
+#chart{
+	background-color: #fbf4e7;
+	border: 1px solid #CCC;
+}
+
+body{
+	margin: 0;
+	padding: 0;
+	overflow:hidden;
+}
+
+p{
+	text-align: center;
+	overflow: overlay;
+	position: relative;
+}
+
+
+.conceptG text{
+	pointer-events: none;
+}
+
+marker{
+	fill: #333;
+}
+
+g.conceptG circle{
+	fill: #F6FBFF;
+	stroke: #333;
+	stroke-width: 2px;
+}
+
+g.source circle{
+	fill: #5CB85C;
+	stroke: #333;
+	stroke-width: 2px;
+}
+
+g.target circle{
+	fill: #d9534f;
+	stroke: #333;
+	stroke-width: 2px;
+}
+
+
+g.conceptG:hover circle{
+	fill: rgb(200, 238, 241);
+}
+
+g.selected circle{
+	fill: rgb(250, 232, 255);
+}
+g.selected:hover circle{
+	fill: rgb(250, 232, 255);
+}
+
+path.link {
+	fill: none;
+	stroke: #333;
+	stroke-width: 8px;
+	cursor: default;
+}
+
+path.link0 {
+	stroke: rgb(255,255,255);
+}
+
+path.link1 {
+	stroke: rgb(251,251,251);
+}
+
+path.link2 {
+	stroke: rgb(247,247,247);
+}
+
+path.link3 {
+	stroke: rgb(243,243,243);
+}
+
+path.link4 {
+	stroke: rgb(239,239,239);
+}
+
+path.link5 {
+	stroke: rgb(236,236,236);
+}
+
+path.link6 {
+	stroke: rgb(233,233,233);
+}
+
+path.link7 {
+	stroke: rgb(230,230,230);
+}
+
+path.link8 {
+	stroke: rgb(227,227,227);
+}
+
+path.link9 {
+	stroke: rgb(224,224,224);
+}
+
+path.link10 {
+	stroke: rgb(221,221,221);
+}
+
+path.link11 {
+	stroke: rgb(218,218,218);
+}
+
+path.link12 {
+	stroke: rgb(215,215,215);
+}
+
+path.link13 {
+	stroke: rgb(212,212,212);
+}
+
+path.link14 {
+	stroke: rgb(209,209,209);
+}
+
+path.link15 {
+	stroke: rgb(206,206,206);
+}
+
+path.link16 {
+	stroke: rgb(203,203,203);
+}
+
+path.link17 {
+	stroke: rgb(200,200,200);
+}
+
+path.link18 {
+	stroke: rgb(197,197,197);
+}
+
+path.link19 {
+	stroke: rgb(194,194,194);
+}
+
+path.link20 {
+	stroke: rgb(191,191,191);
+}
+
+path.link21 {
+	stroke: rgb(188,188,188);
+}
+
+path.link22 {
+	stroke: rgb(185,185,185);
+}
+
+path.link23 {
+	stroke: rgb(182,182,182);
+}
+
+path.link24 {
+	stroke: rgb(179,179,179);
+}
+
+path.link25 {
+	stroke: rgb(176,176,176);
+}
+
+path.link26 {
+	stroke: rgb(173,173,173);
+}
+
+path.link27 {
+	stroke: rgb(170,170,170);
+}
+
+path.link28 {
+	stroke: rgb(167,167,167);
+}
+
+path.link29 {
+	stroke: rgb(164,164,164);
+}
+
+path.link30 {
+	stroke: rgb(161,161,161);
+}
+
+path.link31 {
+	stroke: rgb(158,158,158);
+}
+
+path.link32 {
+	stroke: rgb(155,155,155);
+}
+
+path.link33 {
+	stroke: rgb(152,152,152);
+}
+
+path.link34 {
+	stroke: rgb(149,149,149);
+}
+
+path.link35 {
+	stroke: rgb(146,146,146);
+}
+
+path.link36 {
+	stroke: rgb(143,143,143);
+}
+
+path.link37 {
+	stroke: rgb(140,140,140);
+}
+
+path.link38 {
+	stroke: rgb(137,137,137);
+}
+
+path.link39 {
+	stroke: rgb(134,134,143);
+}
+
+path.link40 {
+	stroke: rgb(140,140,140);
+}
+
+path.link41 {
+	stroke: rgb(137,137,137);
+}
+
+path.link42 {
+	stroke: rgb(134,134,134);
+}
+
+path.link43 {
+	stroke: rgb(131,131,131);
+}
+
+path.link44 {
+	stroke: rgb(128,128,128);
+}
+
+path.link45 {
+	stroke: rgb(125,125,125);
+}
+
+path.link46 {
+	stroke: rgb(122,122,122);
+}
+
+path.link49 {
+	stroke: rgb(119,119,119);
+}
+
+path.link50 {
+	stroke: rgb(116,116,116);
+}
+
+path.link51 {
+	stroke: rgb(113,113,113);
+}
+
+path.link52 {
+	stroke: rgb(100,100,100);
+}
+
+path.link53 {
+	stroke: rgb(97,97,97);
+}
+
+path.link54 {
+	stroke: rgb(94,94,94);
+}
+
+path.link55 {
+	stroke: rgb(91,91,91);
+}
+
+path.link56 {
+	stroke: rgb(88,88,88);
+}
+
+path.link57 {
+	stroke: rgb(85,85,85);
+}
+
+path.link58 {
+	stroke: rgb(82,82,82);
+}
+
+path.link59 {
+	stroke: rgb(79,79,79);
+}
+
+path.link61 {
+	stroke: rgb(76,76,76);
+}
+
+path.link62 {
+	stroke: rgb(73,73,73);
+}
+
+path.link63 {
+	stroke: rgb(70,70,70);
+}
+
+path.link64 {
+	stroke: rgb(67,67,67);
+}
+
+path.link65 {
+	stroke: rgb(64,64,64);
+}
+
+path.link66 {
+	stroke: rgb(61,61,61);
+}
+
+path.link67 {
+	stroke: rgb(58,58,58);
+}
+
+path.link68 {
+	stroke: rgb(55,55,55);
+}
+
+path.link69 {
+	stroke: rgb(52,52,52);
+}
+
+path.link70 {
+	stroke: rgb(49,49,49);
+}
+
+path.link71 {
+	stroke: rgb(46,46,46);
+}
+
+path.link72 {
+	stroke: rgb(43,43,43);
+}
+
+path.link73 {
+	stroke: rgb(40,40,40);
+}
+
+path.link74 {
+	stroke: rgb(37,37,37);
+}
+
+path.link75 {
+	stroke: rgb(34,34,34);
+}
+
+path.link76 {
+	stroke: rgb(31,31,31);
+}
+
+path.link77 {
+	stroke: rgb(29,29,29);
+}
+
+path.link78 {
+	stroke: rgb(26,26,26);
+}
+
+path.link79 {
+	stroke: rgb(23,23,23);
+}
+
+path.link80 {
+	stroke: rgb(20,20,20);
+}
+
+path.link81 {
+	stroke: rgb(17,17,17);
+}
+
+path.link82 {
+	stroke: rgb(14,14,14);
+}
+
+path.link83 {
+	stroke: rgb(11,11,11);
+}
+
+path.link84 {
+	stroke: rgb(8,8,8);
+}
+
+path.link85 {
+	stroke: rgb(5,5,5);
+}
+
+path.link86 {
+	stroke: rgb(2,2,2);
+}
+
+
+
+path.link:hover{
+	stroke: rgb(0, 0, 0);
+}
+
+g.connect-node circle{
+	fill: #BEFFFF;
+}
+
+path.link.hidden{
+	stroke-width: 0;
+}
+
+path.link.selected {
+	stroke: rgb(229, 172, 247);
+}
