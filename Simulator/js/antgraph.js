@@ -707,8 +707,9 @@
 
         /* Create the text for each block */
         newGs.append("text")
-            .attr("dx", function(d){return -20})
-            .text(function(d){return d.label})
+            .attr("dx", function(d){return -4})
+            .attr("dy", function(d){return 4})
+            .text(function(d){return d.label});
 
 
 
