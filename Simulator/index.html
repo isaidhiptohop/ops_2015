@@ -35,6 +35,8 @@
             PheromonWeight = document.getElementById('PheromonWeight').value;
             CostWeight = document.getElementById('CostWeight').value;
             stepsNum = document.getElementById('stepsNum').value;
+
+            d3.select("#next-step").attr('disabled', 'disabled');
         }
 
         function reset() {
