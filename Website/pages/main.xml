@@ -1,0 +1,107 @@
+<h1>Einleitung</h1>
+<p>Erklären Sie die beiden Erwähnten Algorithmen.</p>
+<p>Veranschaulichen Sie die Ergebnisse durch Graphiken.</p>
+
+<h2>Ameisenalgorithmus</h2>
+<h3>Unterpunkt 1</h3>
+<p>Text 1</p>
+<p>Text 2</p>
+<h3>Unterpunkt 2</h3>
+<p>Text 1</p>
+<p>Text 2</p>
+<h3>Unterpunkt 3</h3>
+<h2>Genetische Algorithmen</h2>
+<h3>Allgemein</h3>
+
+<h3>Anwendungsgebiete</h3>
+<p>Genetische Algorithmen sind Algorithmen, die mit einem Soft-Computing Ansatz zu lösen sind. Soft-Computing Ansätze werden durch modellfreie Ansätze, Annäherungen statt exakten Lösungen (die nicht immer ausreichen), schnelles finden einer brauchbaren aber nicht exakten Lösung.</p>
+
+<h4>Lösungsansätze</h4>
+<p>Analytische Lösung: Sehr effizient, aber nur in seltenen Fällen anwendbar</p>
+<p>Vollständige Durchforstung: Sehr ineffizient (=nur kleine Suchbäume)</p>
+<p>Blinde Zufallssuche: Immer anwendbar, meist nicht effizient</p>
+<p>Gesteuerte Suche: Es ist nöttig, dass die Funktonswerte, den Elementen des Suchbaumes ähnlich sind.</p>
+<h4>Parameteroptimierung</h4>
+<p>Bezeichnet das finden eines Parameters, sodass der gegebene realwertige Funktion ein Optimum annimmt.</p>
+
+<h4>Packproblem</h4>
+<p>Rucksackproblem (Wert des Rucksackes maximal, bei begrenztem Gewicht</p>
+
+<h4>Wegeproblem</h4>
+<p>Travelling Salesman Problem (Reihenfolge der Ziele), Anwendung beim Bohren von Platinen</p>
+
+<h4>Anordnungsproblem</h4>
+<p>Positionsfindung von Verteilerknoten (Steinerbäume usw.)</p>
+
+<h4>Planungsprobleme</h4>
+<p>Arbeitspläne, Zeitpläne, Optimierung von Compiler</p>
+
+<h4>Strategische Probleme</h4>
+<p>Gefangenendilemma</p>
+
+<h4>Biologische Modellierung</h4>
+<p>Spinnennetz Bildung</p>
+
+<h3>Motivation</h3>
+<p>Genetische Algorithmen basieren auf der bilogoschen Evolutionstheorie. Das Prinzip, dass es in jeder Generation oder Iteration eine zufällige Variation gibt, und dass durch die natürliche Auslese bestimmt wird, ob die Veränderung gut war oder nicht.</p>
+<p>Dieses Prinzip stützt sich eben auf die Diversität (Vielfalt), Variation (Mutation), Vererbung (Nächste Generation weitergeben), Artbildung (So weit variiert, dass eine neue Art entsteht), Überproduktion (Falls jemand stirbt), Anpassung (Wer sich nicht anpasst wird ausgelesen), blinde Variation (Zufälligkeit), Gradualismus (Nur kleine Änderungen pro Iteration / Generation), Vererbung mit Modifikationen (was gut funktioniert wird behalten), ökologische Nischen (Platz finden, wo Überleben möglich ist), wachsende Komplexität (pro Generation / Iteration)</p>
+
+<h3>Elemente aus genetischem Algorithmus</h3>
+<p>Ein Algorithmus besteht aus einer Kodierungsvorschrift (wie werden Lösungskandidaten kodiert), einer Methode, die eine Anfangspopulation erzeugt, einer Bewertungsfunktion (Bewertung der zu optimierenden Funktion), einer Auswahlmethode (Was bleibt, was geht), genetische Operatoren (Mutationen (Zufall), Crossover (Verbindungen)), Parameter (Populationsgröße), Abbruchkriterium</p>
+
+<h3>Beispiel N-Damen-Problem</h3>
+<p>Lösungsansatz Backtracking</p>
+<ul class="list">
+	<li>Die Damen werden zeilenweise, von unten nach oben, platziert.</li>
+	<li>Jede zeile wird</li>
+		<ul>
+			<li>Jede Dame von links nach rechts auf die Felder der Zeile gesetzt</li>
+			<li>Prüfung auf Kollision (in tieferen Zeilen)</li>
+				<ul>
+					<li>Wenn ja, dann ein Feld weiter rechts prüfen.</li>
+					<li>Wenn nein, nächste Zeile rekursiv aufrufen</li>
+				</ul>
+		</ul>
+	<li>Wird eine Lösung gefunden, in der keine Kollision stattfindet, wird diese ausgegeben.</li>
+</ul>
+<p>Lösungsansatz genetischer Algorithmus</p>
+
+<ol class="list">
+	<li>Wähle die passenden Parameter:</li>
+	<ol>
+		<li>Population [10]</li>
+		<li>Iteration[1000]</li>
+		<li>Mutation Faktor[0,1-0,5]</li>
+		<li>N Damen[8]</li>
+	</ol>
+	<li>Erzeuge die Startpopulation:</li>
+	<ol>
+		<li>Erzeuge pro Individuum ein Chromosom zufällig</li>
+	</ol>
+	<li>Decodiere die Chromosomen und finde die Fitness:</li>
+	<ol>
+		<li>Überprüfe Spaltenabhängigkeiten</li>
+		<li>Überprüfe Diagonalen</li>
+		<li>Berechne Fitness (max = 0 -> Lösung)</li>
+	</ol>
+	<li>Veranstalte Turnier</li>
+	<ol>
+		<li>Wähle Individuen zufällig aus, gewichtet nach Fitness</li>
+		<li>Aufgrund dieser Individuen wird die neue Generation gebildet</li>
+	</ol>
+	<li>Cross Over</li>
+	<ul>
+		<li>Wir haben jetzt nur mehr 50% der Individuen unserer Population. Um die Nachkommen zu bilden, wird ein Cross Over durchgeführt</li>
+		<ol>
+			<li>Es werden so lange 2 zufällige Individuen genommen und Nachkommen erzeugt, bis die Population wieder auf der Startanzahl ist.</li>
+			<li>Wenn man 2 Individuen hat, wird eine zufällige Trennlinie gewählt und die Chromosomen über und unter der Trennlinie zwischen den Individuen ausgetauscht</li>
+			<li>So entstehen 2 neue Individuen.</li>
+		</ol>
+	</ul>
+	<li>Mutation</li>
+	<ul>
+		<li>Damit es nicht zum Fall kommt, dass immer die selben Chromosomen ausgetauscht werden, gibt es die Mutation, die so viele betrifft, wie oben der Parameter genannt wird.</li>
+		<li>Dabei werden einfach x% der Individuen zufällig viele zufällige Chromosomen zufällig gesetzt.</li>
+	</ul>
+	<li>Wieder bewerten der Fitness und schauen, ob wir eine Lösung haben. Wenn nicht, dann einfach nächste Generation.</li>
+</ol>

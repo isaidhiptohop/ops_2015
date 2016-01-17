@@ -6,7 +6,7 @@ body,html{
 	text-align: center;
 }
 #chart{
-	background-color: #fbf4e7;
+	background-color: rgba(240, 173, 78, 0.31);
 	border: 1px solid #CCC;
 }
 
@@ -22,19 +22,32 @@ p{
 	position: relative;
 }
 
+.toolbar-left {
+	margin-top: 15px; 
+	margin-bottom: 8px;
+	padding-left: 29px;
+}
 
-.conceptG text{
-	pointer-events: none;
+.padding-zero {
+	padding-right: 0px;
+}
+
+.container-antcolony {
+	width: 600px;
 }
 
 marker{
 	fill: #333;
 }
 
-g.conceptG circle{
+g.node circle{
 	fill: #F6FBFF;
 	stroke: #333;
 	stroke-width: 2px;
+}
+
+g.node:hover circle{
+	fill: rgb(200, 238, 241);
 }
 
 g.source circle{
@@ -49,10 +62,6 @@ g.target circle{
 	stroke-width: 2px;
 }
 
-
-g.conceptG:hover circle{
-	fill: rgb(200, 238, 241);
-}
 
 g.selected circle{
 	fill: rgb(250, 232, 255);

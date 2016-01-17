@@ -20,7 +20,7 @@ using namespace ant_colony;
 
 class AntColonyJSON {
 public:
-  AntColonyJSON(int size, std::string transfer, int sourceID, int targetID) {
+  AntColonyJSON(int size, std::string transfer, int sourceID, int targetID, int antNumber, int updateFactor, double delayFactor, double PheromonWeight, int CostWeight) {
 
     EM_ASM_({
       console.log('size: ' + $0);
@@ -55,14 +55,7 @@ public:
       arr[o["source"].GetInt()][o["target"].GetInt()] = 1;
       arr[o["target"].GetInt()][o["source"].GetInt()] = 1;
 
-      EM_ASM_({
-      console.log('Insert 1 at: ' + $0 + ' , ' + $1);
-    }, o["source"].GetInt(), o["target"].GetInt());
     }
-
-    EM_ASM_({
-      console.log('matrix test 1: ' + $0);
-    }, arr[0][1]);
 
             
     double * arr1[size];
@@ -80,16 +73,12 @@ public:
     }
     */
   
-    col = new AntColony(40, matrix, size, sourceID, targetID, 40, 0.05);
-    col->setPheromonWeight(2.5);
-    col->setCostWeight(-1);
+    col = new AntColony(antNumber, matrix, size, sourceID, targetID, updateFactor, delayFactor);
+    col->setPheromonWeight(PheromonWeight);
+    col->setCostWeight(CostWeight);
 
     std::ostringstream strs = this->printLandscape(col->getLandscape());
     std::string str = strs.str();
-
-    EM_ASM_({
-      console.log('Matrix: ' + $0);
-    }, str.c_str());
 
     delete [] json;
 }
@@ -100,10 +89,6 @@ std::string nextStep(int steps) {
 
     ILandscape & landscape = col->getLandscape();
     auto ph = landscape.getPheromone();
-
-    EM_ASM_({
-      console.log('pheromone: ' + $0);
-    }, ph.size());
 
     double sum = 0;
 
@@ -220,6 +205,6 @@ private:
 
 EMSCRIPTEN_BINDINGS(antColony_module) {
   class_<AntColonyJSON>("AntColonyJSON")
-    .constructor<int, std::string, int, int>()
+    .constructor<int, std::string, int, int, int, int, double, double, int>()
     .function("nextStep", &AntColonyJSON::nextStep);
 }
