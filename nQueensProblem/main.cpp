@@ -1,65 +1,65 @@
-#include "population.h"
-#include "individual.h"
+#include <iostream>
+#include <random>
 
-#define FILE_LINE_OUT() (std::cout << __FILE__ << ":" << __LINE__ << std::endl)
-/*
-template <int N>
-void printBoard (Individual<N> * individual);
-*/
-int main () {
-    const int N = 5;
-    Population<N> * pop = new Population<N> (100, 0.5);
-//    Individual<N> * fittest = nullptr;
-//    pop->print ();
-    while (pop->iterate()) {
-        
-/*        Individual<N> * winners = pop->tournament ();
-        pop->mutation (winners);
-        Individual<N> * children = pop->crossOver (winners);
-        pop->merge (winners, children);
-        fittest = pop->getFittest (); */
-//        if (fittest) printBoard (fittest);
-//        else pop->print ();
-//        std::cin >> k;
+#include "individual.h"
+#include "population.h"
+
+char help [] = "\n./nqueens <N> <POPULATION_SIZE> [<M_P>] [<ALPHA>]\n\n"
+              "N ................. problem size.\n"
+              "POPULATION SIZE ... size of your population. if the population\n"
+              "                    is not divisible by 4, the size will be\n"
+              "                    round up to the next number thats\n"
+              "                    divisible by four.\n"
+              "M_P ............... mutation probability. optional. default\n"
+              "                    default value is 0\n"
+              "ALPHA ............. additional weight for the tournament\n"
+              "                    decision. optional. default value is 1\n\n";
+
+int main (int argc, char * argv []) {
+    int N = 1;
+    int size = 1;
+    double m_p = 0;
+    int alpha = 1;
+    
+    std::string arg_0;
+    
+    if (argc == 2) {
+        arg_0.assign (argv [0]);
     }
+    
+    if (arg_0.compare("help") == 0) {
+        std::cout << help;
+    } else if (argc == 3) {
+        N = std::stoi (argv [1]);
+        size = std::stoi (argv [2]);
+    } else if (argc == 4) {
+        N = std::stoi (argv [1]);
+        size = std::stoi (argv [2]);
+        m_p = std::stod (argv [3]);
+    } else if (argc == 5) {
+        N = std::stoi (argv [1]);
+        size = std::stoi (argv [2]);
+        m_p = std::stod (argv [3]);
+        alpha = std::stoi (argv [4]);
+    } else if (argc < 2 || argc > 5) {
+        std::cout << "invalid amount of arguments. try again." << std::endl;
+        return 1;
+    }
+    
+    std::cout << "LINE 49\n";
+    Population pop (N, size, m_p, alpha);
+    std::cout << "LINE 51\n";
+    int i = 1;
+    Individual * fittest = nullptr;
+    do {
+        std::cout << i++ << std::endl;
+        fittest = pop.iterate(1);
+        pop.saveStats ();
+//        std::cout << fittest->getFitness () << std::endl;
+    } while (i < 1);
+    
+    fittest->printBoard ();
     
     return 0;
 }
-/*
-template <int N>
-void printBoard (Individual<N> * individual) {
-    for (int j = 0; j < 2*N + 1; j++) {
-        if (j % 2) {
-            std::cout << "+";
-        }
-        else {
-            std::cout << "-";
-        }
-    }
-    
-    std::cout << std::endl;
 
-    for (int i = 0; i < N; i++) {
-        for (int j = 0; j < N; j++) {
-            if (individual->getChromosom (i) == j) {
-                std::cout << "|X";
-            }
-            else {
-                std::cout << "| ";
-            }
-        }
-        
-        std::cout << "|" << std::endl;
-        
-        for (int j = 0; j < 2*N + 1; j++) {
-            if (j % 2) {
-                std::cout << "+";
-            }
-            else {
-                std::cout << "-";
-            }
-        }
-        std::cout << std::endl;
-    }
-}
-*/

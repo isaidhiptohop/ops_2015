@@ -9,26 +9,31 @@
 extern std::default_random_engine generator;
 
 class Individual {
-        static unsigned int N;
         int * chromosom = nullptr;
+        int fitness;
     
     public:
-        Individual (unsigned int N, int * chromosom = nullptr);
+        static int N;
+
+        Individual (int * chromosom = nullptr);
         Individual (const Individual & individual);
         Individual & operator= (const Individual & individual);
         ~Individual ();
         
         void setChromosom (int * array);
-        void getChromosom (int * array);
+        int getChromosom (int * array);
+        int * getChromosom ();
         int getChromosom (int i) const;
+
         int getFitness ();
         void mutate ();
-        void print ();
 
-        static void crossOver (const Individual * parent_1, 
-                               const Individual * parent_2,
-                               Individual & children_1, 
-                               Individual & children_2);
+        void print ();
+        void printBoard ();
+
+//        static void setN (int N);
+    private:
+        void calcFitness ();
 };
 
 #endif // INDIVIDUAL_H
