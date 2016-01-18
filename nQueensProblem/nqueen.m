@@ -22,27 +22,14 @@
 ## Author: phuksz <phuksz@X-Baby>
 ## Created: 2016-01-17
 
-data = nqueens_9_1000_00_1;
+av1 = nqueens_9_1000_00_1 (2:nqueens_9_1000_00_1 (1,5), 1);
+av2 = nqueens_9_1000_00_2 (2:nqueens_9_1000_00_2 (1,5), 1);
+av3 = nqueens_9_1000_00_3 (2:nqueens_9_1000_00_3 (1,5), 1);
+av4 = nqueens_9_1000_00_4 (2:nqueens_9_1000_00_4 (1,5), 1);
+av5 = nqueens_9_1000_00_5 (2:nqueens_9_1000_00_5 (1,5), 1);
 
-N = data (1,1);
-pop_size = data (1,2);
-m_p = data (1,3);
-alpha = data (1,4);
-size = data (1,5);
-%size = 100;
+max_size = max ([size (av1), size (av2), size (av3), size (av4), size (av5)]);
 
-av_fitness = data (2:size+1, 1);
-peak_fitness = data (2:size+1, 8);
-av_winner_fitness = data (2:size+1, 3);
-peak_winner_fitness = data (2:size+1, 8);
-av_postmutation_fitness = data (2:size+1, 5);
-peak_postmutation_fitness = data (2:size+1, 8);
-av_children_fitness = data (2:size+1, 7);
-peak_children_fitness = data (2:size+1, 8);
-mutations = data (2:size+1, 9);
+x = [1:max_size];
 
-plot (1:size, av_fitness, 1:size, av_winner_fitness);
-figure;
-plot (1:size, (av_winner_fitness./min(av_winner_fitness)), 
-      1:size, (av_postmutation_fitness./min(av_postmutation_fitness)), 
-      1:size, mutations./max(mutations));
+plot (x, av1 (x), x, av2 (x), x, av3 (x), x, av4 (x), x, av5 (x));
