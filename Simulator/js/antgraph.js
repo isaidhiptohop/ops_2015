@@ -708,8 +708,8 @@
 
         /* Create the text for each block */
         newGs.append("text")
-            .attr("dx", function(d){return -4})
-            .attr("dy", function(d){return 4})
+            .attr("dx", function(d){return -5})
+            .attr("dy", function(d){return 5})
             .text(function(d){return d.label});
 
 
@@ -760,8 +760,8 @@
                     yLoc = 50;
 
             // initial node data
-            var nodes = [{id: 0, type: 2, x: xLoc, y: yLoc, label: ""},
-                {id: 1, type: 1, x: xLoc, y: yLoc+450, label: "s"}];
+            var nodes = [{id: 0, type: 2, x: xLoc, y: yLoc, label: "Z"},
+                {id: 1, type: 1, x: xLoc, y: yLoc+450, label: "A"}];
             var edges = [];
 
 
