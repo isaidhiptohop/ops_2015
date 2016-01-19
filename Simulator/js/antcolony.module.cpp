@@ -23,6 +23,22 @@ public:
   AntColonyJSON(int size, std::string transfer, int sourceID, int targetID, int antNumber, int updateFactor, double delayFactor, double PheromonWeight, int CostWeight) {
 
     EM_ASM_({
+            console.log('Start antColony: ');
+            console.log($7 + ' Nodes');
+            console.log('source: ' + $5);
+            console.log('target: ' + $6);
+
+            console.log('Parameters: ');
+            console.log('antNumner: ' + $0);
+            console.log('updateFactor: ' + $1);
+            console.log('delayFactor: ' + $2);
+            console.log('PheromonWeight: ' + $3);
+            console.log('CostWeight: ' + $4);
+          }, antNumber, updateFactor, delayFactor, PheromonWeight, CostWeight, sourceID, targetID, size);
+
+
+
+    EM_ASM_({
       console.log('size: ' + $0);
     }, size);
 
@@ -39,14 +55,16 @@ public:
     // Create Matrix
     double arr [size][size];
     for(size_t i = 0; i < size; i++) {
+
       for(size_t j = 0; j < size; j++) {
+
         arr[i][j] = 0;
+
       } 
     }
 
     // Fill values in matrix
     for (SizeType i = 0; i < a.Size(); i++) {
-
       // For each object
       assert(a[i].IsObject());
       const Value &o = a[i];
@@ -57,11 +75,24 @@ public:
 
     }
 
-            
+    // Umschreiben
+       
     double * arr1[size];
     for(int i = 0; i < size; i++)
       arr1[i] = arr[i];
     double ** matrix = arr1;
+
+    // Test Matrix
+
+    for(size_t i = 0; i < this->size; i++) {
+      for(size_t j = 0; j < this->size; j++) { 
+        EM_ASM_({
+            console.log('in [' + $1 + ',' + $2 + ']: ' + $0);
+
+        }, matrix[i][j], i, j);
+      }
+      
+    }
 
     /**
     for(size_t i = 0; i < size; i++) {
@@ -87,6 +118,10 @@ std::string nextStep(int steps) {
 
     col->nextStep(steps);
 
+    EM_ASM_({
+            console.log('Do: ' + $0 + " Steps");
+          }, steps);    
+
     ILandscape & landscape = col->getLandscape();
     auto ph = landscape.getPheromone();
 
@@ -98,13 +133,15 @@ std::string nextStep(int steps) {
         if(ph[i][j] > sum) {
           sum = ph[i][j];
         }
-        // sum += ph[i][j];
+
+        // Test Matrix
 
         EM_ASM_({
-            console.log('value: ' + $0 + " at " + $1 + "," + $2);
-          }, ph[i][j], i, j);
-
+            console.log('out [' + $1 + ',' + $2 + ']: ' + $0);
+        }, ph[i][j], i, j);
       }
+
+      
     }
 
     // sum = sum/2;

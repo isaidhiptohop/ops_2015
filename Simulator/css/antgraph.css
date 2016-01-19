@@ -6,7 +6,7 @@ body,html{
 	text-align: center;
 }
 #chart{
-	background-color: rgba(240, 173, 78, 0.31);
+	background-color: #add6ad;
 	border: 1px solid #CCC;
 }
 
@@ -430,3 +430,18 @@ path.link.hidden{
 path.link.selected {
 	stroke: rgb(229, 172, 247);
 }
+
+.btn-success {
+	background-color: #339933;
+}
+
+.btn-danger {
+	background-color: #993333;
+}
+
+.btn-warning {
+	background-color: #996633;
+}
+
+
+

@@ -67,13 +67,14 @@
             // console.log("Node: " + JSON.stringify(thisGraph.nodes));
             console.log("Start Edges: " + JSON.stringify(thisGraph.edges));
 
+/**
             console.log("antNumber : " + antNumber);
             console.log("updateFactor : " + updateFactor);
             console.log("delayFactor : " + delayFactor);
             console.log("PheromonWeight : " + PheromonWeight);
             console.log("CostWeight : " + CostWeight);
             console.log("stepsNum : " + stepsNum);
-
+*/
             var transferEdges = [];
             thisGraph.edges.forEach(function(e){
                 transferEdges.push({source: e.source.id, target: e.target.id, value: "40"});
