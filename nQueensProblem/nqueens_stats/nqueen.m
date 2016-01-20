@@ -44,6 +44,7 @@ x = [1:min_size];
 
 figure;
 plot (x, av1 (x), x, av2 (x), x, av3 (x), x, av4 (x), x, av5 (x));
+legend ('\alpha = 1', '\alpha = 2', '\alpha = 3', '\alpha = 4', '\alpha = 5');
 
 load nqueens_9_1000_010_2;
 load nqueens_9_1000_029_2;
@@ -83,12 +84,22 @@ mut_9_3 = mut_9_3 / max (mut_9_3);
 
 figure;
 plot (x, av_9_0 (x), x, av_9_1 (x), x, av_9_2 (x), x, av_9_3 (x));
+legend ('p_m = 0.1', 'p_m = 0.3', 'p_m = 0.6', 'p_m = 1');
 
 figure;
-plot (x, av_w_9_0 (x), x, av_pm_9_0 (x), x, mut_9_0 (x));
-figure;
-plot (x, av_w_9_1 (x), x, av_pm_9_1 (x), x, mut_9_1 (x));
-figure;
-plot (x, av_w_9_2 (x), x, av_pm_9_2 (x), x, mut_9_2 (x));
-figure;
-plot (x, av_w_9_3 (x), x, av_pm_9_3 (x), x, mut_9_3 (x));
+subplot (1,2,1);
+plot (x, av_w_9_0 (x), x, av_pm_9_0 (x), x, mut_9_0 (x), 2, 2);
+legend ('winners', 'winners after mutation', 'mutations (normalized)');
+
+#figure;
+#plot (x, av_w_9_1 (x), x, av_pm_9_1 (x), x, mut_9_1 (x));
+#legend ('winners', 'winners after mutation', 'mutations (normalized)');
+
+#figure;
+#plot (x, av_w_9_2 (x), x, av_pm_9_2 (x), x, mut_9_2 (x));
+#legend ('winners', 'winners after mutation', 'mutations (normalized)');
+
+#figure;
+subplot (1,2,2);
+plot (x, av_w_9_3 (x), x, av_pm_9_3 (x), x, mut_9_3 (x), 2, 2);
+legend ('winners', 'winners after mutation', 'mutations (normalized)');

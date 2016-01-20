@@ -114,6 +114,7 @@ void Individual::print () {
 }
 
 void Individual::printBoard () {
+    std::cout << "fitness: " << this->fitness << std::endl;
     std::cout << "+";    
     for (int i = 0; i < N; i++) {
         std::cout << "--+";

@@ -21,14 +21,15 @@ int main (int argc, char * argv []) {
     double m_p = 0;
     int alpha = 1;
     
-    std::string arg_0;
+    std::string arg_1;
     
     if (argc == 2) {
-        arg_0.assign (argv [0]);
+        arg_1.assign (argv [1]);
     }
     
-    if (arg_0.compare("help") == 0) {
+    if (arg_1.compare("help") == 0) {
         std::cout << help;
+        return -1;
     } else if (argc == 3) {
         N = std::stoi (argv [1]);
         size = std::stoi (argv [2]);
@@ -46,17 +47,15 @@ int main (int argc, char * argv []) {
         return 1;
     }
     
-    std::cout << "LINE 49\n";
     Population pop (N, size, m_p, alpha);
-    std::cout << "LINE 51\n";
-    int i = 1;
+//    int i = 1;
     Individual * fittest = nullptr;
     do {
-        std::cout << i++ << std::endl;
+//        std::cout << i++ << std::endl;
         fittest = pop.iterate(1);
         pop.saveStats ();
 //        std::cout << fittest->getFitness () << std::endl;
-    } while (i < 1);
+    } while (fittest->getFitness () != 0);
     
     fittest->printBoard ();
     
