@@ -40,8 +40,7 @@ int main() {
 						{1,1,1,0}};
 	double * arr1[] = {arr[0],arr[1],arr[2],arr[3]};
 	double ** matrix = arr1;*/
-
-	/**
+	
 	double arr [15][15] = { {0,1,1,0,0,0,0,0,0,0,0,0,0,0,0},
 							{1,0,0,1,0,0,0,0,0,0,0,0,0,0,0},
 							{1,0,0,1,1,0,0,0,0,0,0,0,0,0,0},
@@ -56,20 +55,14 @@ int main() {
 							{0,0,0,0,0,0,0,0,1,1,1,0,1,1,1},
 							{0,0,0,0,0,0,0,0,0,1,0,1,0,0,1},
 							{0,0,0,0,0,0,0,0,0,0,1,1,0,0,1},
-							{0,0,0,0,0,0,0,0,0,0,0,1,1,1,0} }; */
-
-	double arr [3][3] = { {0,0,1},
-							{0,0,1},
-							{1,1,0} };
+							{0,0,0,0,0,0,0,0,0,0,0,1,1,1,0} };
 	
-	double * arr1[3];
-	for(int i = 0; i < 3;++i)
+	double * arr1[15];
+	for(int i = 0; i < 15;++i)
 		arr1[i] = arr[i];
 	
 	double ** matrix = arr1;
-
-	IAntColony * col = new AntColony(40, matrix, 3, 0, 1, 40, 0.05);
-
+	IAntColony * col = new AntColony(40, matrix, 15, 0, 11, 40, 0.05);
 	col->setPheromonWeight(2.5);
 	col->setCostWeight(-1);
 	while(true) {
