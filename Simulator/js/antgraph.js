@@ -82,7 +82,7 @@
 
             var transfer = JSON.stringify(transferEdges);
 
-            thisGraph.instance = new Module.AntColonyJSON(thisGraph.nodes.length, transfer, 1, 0, Number(antNumber), Number(updateFactor), Number(delayFactor), Number(PheromonWeight), Number(CostWeight));
+            thisGraph.instance = new Module.AntColonyJSON(thisGraph.nodes.length, transfer, 0, 1, Number(antNumber), Number(updateFactor), Number(delayFactor), Number(PheromonWeight), Number(CostWeight));
 
             var result = JSON.parse(thisGraph.instance.nextStep(Number(stepsNum)));
 
@@ -760,8 +760,8 @@
                     yLoc = 50;
 
             // initial node data
-            var nodes = [{id: 0, type: 2, x: xLoc, y: yLoc, label: "Z"},
-                {id: 1, type: 1, x: xLoc, y: yLoc+450, label: "A"}];
+            var nodes = [{id: 0, type: 2, x: xLoc, y: yLoc, label: "A"},
+                {id: 1, type: 1, x: xLoc, y: yLoc+450, label: "Z"}];
             var edges = [];
 
 
