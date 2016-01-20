@@ -77,7 +77,7 @@
 */
             var transferEdges = [];
             thisGraph.edges.forEach(function(e){
-                transferEdges.push({source: e.source.id, target: e.target.id, value: "40"});
+                transferEdges.push({source: e.source.id, target: e.target.id, value: "86"});
             });
 
             var transfer = JSON.stringify(transferEdges);
@@ -247,7 +247,7 @@
 
 
             // we're in a different node: create new edge for mousedown edge and add to graph
-            var newEdge = {source: mouseDownNode, target: d, value: "40"};
+            var newEdge = {source: mouseDownNode, target: d, value: "86"};
             var filtRes = thisGraph.paths.filter(function(d){
                 if (d.source === newEdge.target && d.target === newEdge.source){
                     thisGraph.edges.splice(thisGraph.edges.indexOf(d), 1);
@@ -648,11 +648,8 @@
         paths.enter()
             .append("path")
             .classed("link", true)
-            .classed('link40', function(d){
-                return d.value == 40;
-            })
-            .classed('link100', function(d){
-                return d.value == 100;
+            .classed('link86', function(d){
+                return d.value == 86;
             })
             .attr("d", function(d){
                 return "M" + d.source.x + "," + d.source.y + "L" + d.target.x + "," + d.target.y;
