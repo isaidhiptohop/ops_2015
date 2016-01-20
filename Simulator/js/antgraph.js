@@ -67,21 +67,22 @@
             // console.log("Node: " + JSON.stringify(thisGraph.nodes));
             console.log("Start Edges: " + JSON.stringify(thisGraph.edges));
 
+/**
             console.log("antNumber : " + antNumber);
             console.log("updateFactor : " + updateFactor);
             console.log("delayFactor : " + delayFactor);
             console.log("PheromonWeight : " + PheromonWeight);
             console.log("CostWeight : " + CostWeight);
             console.log("stepsNum : " + stepsNum);
-
+*/
             var transferEdges = [];
             thisGraph.edges.forEach(function(e){
-                transferEdges.push({source: e.source.id, target: e.target.id, value: "40"});
+                transferEdges.push({source: e.source.id, target: e.target.id, value: "86"});
             });
 
             var transfer = JSON.stringify(transferEdges);
 
-            thisGraph.instance = new Module.AntColonyJSON(thisGraph.nodes.length, transfer, 1, 0, Number(antNumber), Number(updateFactor), Number(delayFactor), Number(PheromonWeight), Number(CostWeight));
+            thisGraph.instance = new Module.AntColonyJSON(thisGraph.nodes.length, transfer, 0, 1, Number(antNumber), Number(updateFactor), Number(delayFactor), Number(PheromonWeight), Number(CostWeight));
 
             var result = JSON.parse(thisGraph.instance.nextStep(Number(stepsNum)));
 
@@ -101,7 +102,7 @@
         // handle delete graph
         d3.select("#next-step").on("click", function(){
 
-            var result = JSON.parse(thisGraph.instance.nextStep(5));
+            var result = JSON.parse(thisGraph.instance.nextStep(Number(stepsNum)));
 
             console.log(JSON.stringify(result));
 
@@ -246,7 +247,7 @@
 
 
             // we're in a different node: create new edge for mousedown edge and add to graph
-            var newEdge = {source: mouseDownNode, target: d, value: "40"};
+            var newEdge = {source: mouseDownNode, target: d, value: "86"};
             var filtRes = thisGraph.paths.filter(function(d){
                 if (d.source === newEdge.target && d.target === newEdge.source){
                     thisGraph.edges.splice(thisGraph.edges.indexOf(d), 1);
@@ -647,11 +648,8 @@
         paths.enter()
             .append("path")
             .classed("link", true)
-            .classed('link40', function(d){
-                return d.value == 40;
-            })
-            .classed('link100', function(d){
-                return d.value == 100;
+            .classed('link86', function(d){
+                return d.value == 86;
             })
             .attr("d", function(d){
                 return "M" + d.source.x + "," + d.source.y + "L" + d.target.x + "," + d.target.y;
@@ -707,8 +705,8 @@
 
         /* Create the text for each block */
         newGs.append("text")
-            .attr("dx", function(d){return -4})
-            .attr("dy", function(d){return 4})
+            .attr("dx", function(d){return -5})
+            .attr("dy", function(d){return 5})
             .text(function(d){return d.label});
 
 
@@ -736,9 +734,10 @@
                         yLoc = 50;
 
                 // initial node data
-                var nodes = [{id: 0, type: 2, x: xLoc, y: yLoc},
-                    {id: 1, type: 1, x: xLoc, y: yLoc+450}];
+                var nodes = [{id: 0, type: 2, x: xLoc, y: yLoc, label: "A"},
+                {id: 1, type: 1, x: xLoc, y: yLoc+450, label: "Z"}];
                 var edges = [];
+
 
                 graph = new AntGraph(svg, nodes, edges);
                 graph.setIdCt(2);
@@ -759,8 +758,8 @@
                     yLoc = 50;
 
             // initial node data
-            var nodes = [{id: 0, type: 2, x: xLoc, y: yLoc, label: ""},
-                {id: 1, type: 1, x: xLoc, y: yLoc+450, label: "s"}];
+            var nodes = [{id: 0, type: 2, x: xLoc, y: yLoc, label: "A"},
+                {id: 1, type: 1, x: xLoc, y: yLoc+450, label: "Z"}];
             var edges = [];
 
 
