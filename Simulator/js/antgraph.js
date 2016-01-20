@@ -102,7 +102,7 @@
         // handle delete graph
         d3.select("#next-step").on("click", function(){
 
-            var result = JSON.parse(thisGraph.instance.nextStep(5));
+            var result = JSON.parse(thisGraph.instance.nextStep(Number(stepsNum)));
 
             console.log(JSON.stringify(result));
 
@@ -737,9 +737,10 @@
                         yLoc = 50;
 
                 // initial node data
-                var nodes = [{id: 0, type: 2, x: xLoc, y: yLoc},
-                    {id: 1, type: 1, x: xLoc, y: yLoc+450}];
+                var nodes = [{id: 0, type: 2, x: xLoc, y: yLoc, label: "A"},
+                {id: 1, type: 1, x: xLoc, y: yLoc+450, label: "Z"}];
                 var edges = [];
+
 
                 graph = new AntGraph(svg, nodes, edges);
                 graph.setIdCt(2);
