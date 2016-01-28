@@ -3,17 +3,79 @@
 <p>Veranschaulichen Sie die Ergebnisse durch Graphiken.</p>
 
 <h2>Ameisenalgorithmus</h2>
-<h3>Unterpunkt 1</h3>
-<p>Text 1</p>
-<p>Text 2</p>
-<h3>Unterpunkt 2</h3>
-<p>Text 1</p>
-<p>Text 2</p>
-<h3>Unterpunkt 3</h3>
+
+<h3>Was macht der Ameisenalgorithmus</h3>
+<p>Der Ameisenalgorithmus ist ein metaheuristisches Verfahren, das Probleme lösen kann, die sich auf Pfadfindungsprobleme in Graphen reduzieren lassen. Dabei wird die Schwarmintelligenz von Ameisen auf der Futtersuche simuliert. An vielen Stellen lässt sich der Ameisenalgorithmus auf besondere Problemstellungen anpassen, wie bei der Parametrisierung, zusätzlichen Entscheidungsregeln bei der Kantenwahl und bei der Aktualisierung von Pheromonspuren.</p>
+
+<h3>Wie funktioniert er allgemein?</h3>
+<p>Die Idee des Ameisenalgorithmus orientiert sich am natürlichen Vorbild einer Ameisenkolonie auf der Suche nach Futter. Ameisen legen bei der Suche nach Futter Pheromonspuren, um anderen Ameisen den Weg zum Futter zu zeigen. Da kürzere Wege in konstanter Zeit höher frequentiert werden, sammelt sich hier eine stärkere Pheromonspur und langfristig kristallisiert sich ein kurzer Pfad zum Futter heraus.</p>
+<p>Im Ameisenalgorithmus simuliert man eine beliebige Anzahl an Ameisen, die sich in einem Graph bewegen. Die Kantenwahl, also der Weg, der von einem Knoten aus als nächstes gegangen werden soll, wird hierbei durch eine gewichtete Zufallsentscheidung getroffen. Einfluss auf diese Entscheidung haben neben der Pheromonspur auch die Kantenlänge. Als Formel für die Kantenwahl lässt sich allgemein
+p_{xy}=\frac{(\tau_{xy}^{\alpha})(\eta_{xy}^{\beta})}{\sum_{z \element allowed_{x}(\tau_{xy}^{\alpha})(\eta_{xy}^{\beta})}</p>
+<p>heranziehen. \tau beschreibt hierbei die Kantenlänge bzw. die Kosten einer Kante, \eta das Pheromonlevel. \alpha und \beta sind Parameter, mit denen sich wiederum die Gewichtung der Kantenlänge oder des Pheromonlevels anpassen lässt. Unterschiedliche Graphen können unterschiedliche Einstellung bevorzugen.</p>
+<p>Haben alle Ameisen ihre Bewegung vollzogen, werden die Pheromonspuren aktualisiert. Im gewöhnlichen Fall wird pro Ameise, die sich auf einem Pfad bewegt hat, ein konstanter Pheromonwert zur Kante hinzugefügt. In anderen Varianten des Ameisenalgorithmus kann der Pheromonwert auch antiproportional zur Kantenlänge sein, sodass lange Pfade in einer Iteration, die eine konstante Dauer darstellt, weniger Pheromon erhalten als kurze. Dieser Ansatz ist dabei dem realen Vorbild sehr nahe, wo kurze Wege während eines konstanten Zeitschritts aufgrund höherer Frequenzen mehr Pheromone erhalten.</p>
+<p>Neben dem Pheromonupdate, das an die Bewegungen der Ameisen gekoppelt ist, herrscht auch ein Pheromonabbau. Auch in der Realität zerfallen, zersetzen und verlieren sich Pheromonspuren mit der Zeit. Um das zu simulieren wird nach jeder Iteration ein bestimmt, als Parameter übergebener Prozentsatz an Pheromon abgebaut, also einfach reduziert.</p>
+<p>Es liegt im Ermessen des Anwenders, wann er einen kurzen Weg gefunden hat. Prinzipiell kann der Ameisenalgorithmus endlos lang weiter ausgeführt werden, was aber nicht heißen muss, dass er irgendwann eine globale optimale Lösung findet. Dennoch sollte mit steigenden Iterationen die Pheromonspur irgendwann auf einen Weg hin konvergieren. Dieser Weg kann anschließend per Greedy-Strategie nur unter Berücksichtigung der Pheromonspur bei der Kantenwahl zusammengestellt werden. Weiter kann das Ergebnis auch zwischen mehreren Pfaden, die ungefähr gleich viel kosten, oszillieren oder der Pfad kann in einem Kreislauf enden und nie wirklich zum Ziel führen. Um solche Sonderfälle, insbesondere letzten, wo die Ameisen irgendwann nur noch im Kreislaufen, vorzubeugen, haben wir einige Optimierungsmaßnahmen getroffen, die in Punkt 4 (Verweis pl0x) näher beschrieben werden.</p>
+
+<h3<h3>Unser Ameisenalgorithmus</h3>
+<p>Der von uns implementierte Ameisenalgorithmus ist zur Lösung des Problems, den kürzesten Weg zwischen 2 Punkten in einem Graph zu finden, beschränkt, d.h. es ist nicht möglich mehrzielige Probleme wie das Travelling-Salseman Problem zu lösen. Diese Einschränkung folgt direkt aus der Entscheidung den Hin- und Rückweg  der Ameise unterschiedlich zu behandeln (siehe 5.2 /*Markus: kannst du hier nen Verweis machen*/).</p>
+<p>Weitere Einschränkungen der Ameise:</p>
+<ul>
+	<li>sie kann nicht den Weg, auf dem sie zu dem Knoten gekommen ist, zurückgehen, es sei denn, sie hat keinen anderen Weg</li>
+	<li>sie darf kein Ziel zwei mal besuchen, es sei denn, sie hat bereits alle anderen ebenfalls besucht</li>
+	<li>am Hinweg zum Futter legt sie keine Pheromonspur</li>
+	<li>Auf dem Rückweg geht die Ameise denselben Pfad wie auf dem Hinweg in umgekehrter Reihenfolge. Ausnahme: musste sie einmal einen Pfad wegen Regel 1 zurückgehen, so wird dieser Pfad nicht gegangen.</li>
+</ul>
+<p>Die Pheromonmatrix wird erst upgedatet, nachdem alle Ameisen ihren Weg gegangen sind, um eine Gleichzeitigkeit der Bewegungen zu erzwingen (Anm. v. Richi: “simulieren”?), sodass die letzten Ameisen in einer Iteration nicht von den ersten beeinflusst werden.</p>
+
+<h3>Probleme des Ameisenalgorithmus</h3>
+
+<h4>Allgemeine Probleme</h4>
+<p>Beim Ameisenalgorithmus ist es nicht garantiert, dass die global beste Lösung gefunden wird. Somit kann die gefundene Lösung beliebig viel schlechter sein als die optimale. Es ist auch möglich, dass sich der gefundene Pfad nach einigen Iterationen ändert, wenn der zweite Pfad in etwa dieselben Kosten hat.</p>
+<p>Bei entarteten Graphen kann der Algorithmus je nach eingegebenen Parameter katastrophal falsche Ergebnisse liefern.</p>
+
+<h4>Probleme unserer Implementierung</h4>
+<p>Folgende Probleme entstanden bei unsere Implementierung des Ameisenalgorithmus, dadurch entstehen die in 4 beschriebenen Regeln für eine Ameise.</p>
+<ul>
+	<li>Wenn sich die Ameise bei jedem Knoten frei entscheiden könnte wo sie hingeht, wäre es auch möglich, dass sie den Weg zurück nimmt, was jedoch nicht Zielführend ist. Deshalb wurde der Rückweg ausgenommen, es sei denn es gibt keine andere Möglichkeit.</li>
+	<li>Wenn die Ameise immer alle Ziele besuchen darf, hat sie gar keinen Anreizt ein anderes Ziel zu finden, und wird deshalb immer im Kreis um ein Ziel laufen, deshalb wurden besuchte Ziele gesperrt.</li>
+	<li>Wenn die Ameise immer Pheromone legt, entstehen bei großen und lose verketteten Graphen mit wenigen Zielen oft Kreise, in denen sich die Ameisen bewegen, ohne daraus ausbrechen zu können. Deshalb wird zwischen Hin- und Rückweg unterschieden. Dadurch wird die Ameise bei der erstmaligen Futtersuche ohne Beeinflussung das Futter suchen, und erst bei gefundenem Fressen andere Ameisen auf ihren Pfad lenken. Eine andere Lösung für dieses Problem wäre gewesen, dass eine Ameise einen beliebigen Knoten nur einmal besuchen kann, es sei denn, sie hat keine andere Möglichkeit mehr, als diese Regel zu verletzen, in diesem Fall wird die History gelöscht, und die Ameise darf somit wieder alle nicht-Ziel Knoten besuchen, dafür muss sie eine Iteration “aussetzen”. Der Grund wieso diese Lösung nicht verwendet wurde, ist der höhere Rechenaufwand im Vergleich zur Implementierten Lösung.</li>
+</ul>
+
+<h3>Wofür kann man den Ameisenalgorithmus einsetzen</h3>
+<p>Den Ameisenalgorithmus kann man zur Lösung von NP-schweren Problemen, sowie verteilten Problemen - also Problemen, welche über mehrere Rechner verteilt sind - einsetzen.</p>
+
+<h4>Vehicle Routing Problem / Tourenplanung</h4>
+<p>Problemstellung -> Eine bestimmte Anzahl an Kunden muss mit jeweils nachgefragten Gütern beliefert werden, sowie nachgefragte Services, welche eine bestimmte Zeit beanspruchen, durchgeführt werden. Touren starten und enden bei einem Lager. Fahrzeuge sind in der Kapazität und der maximalen Fahrtlänge eingeschränkt. Fahrtzeit bzw. Distanz zwischen Orten ist bekannt.</p>
+<p>Ziel -> Die Zeit bzw. Länge der Touren soll minimiert werden.</p>
+<p>Umsetzung -> Mittels Ant System, Hybrid Ant System (und mehrere Abwandlungen davon). Das Problem ist auch mit mehreren Kolonien lösbar.</p>
+
+<h4>Routing in Netzwerken / AntNet</h4>
+<p>Problemstellung -> Ein Netzwerk soll derart gesteuert werden, dass Datenpakete unter Berücksichtigung der derzeitigen Netzwerkauslastung über den schnellsten Weg vom Ausgangssystem zum Zielsystem gesendet werden. Ausgangspunkte, Ziele und Anzahl der Datenpakete sind von der Nachfrage im Netzwerk abhängig und müssen nicht bekannt sein. Es handelt sich um ein auf mehrere Rechner verteiltes Problem. Die Auslastung der einzelnen Knotenpunkte variiert ständig.</p>
+<p>Ziel -> Der schnellste Weg für Datenpakete soll unter sich ständig ändernden Bedingungen gefunden werden.</p>
+<p>Umsetzung -> Es gibt 2 Phasen. Eine Initialisierungsphase, in welcher die Ameisen die Routingtabellen initialisieren und eine Hauptphase. In der Hauptphase laufen sowohl Ameisen (so genannte “forward ants” und “backward ants”) als auch Datenpakete durch das Netzwerk. Backward ants haben gegenüber Datenpaketen und forward ants Vorrang. In regelmäßigen Abständen wird auf jeden Knoten eine forward ant mit einem zufälligen Ziel gesetzt - die Verteilung der Ziele sollte ungefähr der tatsächlichen Verteilung der Datenpaketziele entsprechen. Jede forward ant trägt eine Tabelle mit den durchlaufenen Knoten sowie der Zeit seit Verlassen des Startknotens mit sich. Läuft eine Ameise im Kreis, werden die zu viel besuchten Knoten aus der Tabelle entfernt. Erreicht sie den Zielknoten, wird eine backward ant generiert, welche den exakt umgekehrten Weg der forward ant gehen soll. Auf diesem Weg aktualisiert sie die Routing-Tabellen, sowie eine vorhandene Matrix, welche die geschätzten Durchschnittszeiten vom Knoten zu einem Zielknoten und die entsprechende Varianz enthält. Durch die Aktualisierungen aller Ameisen wird die Netzwerkauslastung indirekt in den Routing-Tabellen festgehalten - nach diesen Werten orientierne sich die forward ants und die Datenpakete.</p>
+
+<h4>Weitere Probleme, auf welche der Ameisenalgorithmus angewendet werden kann</h4>
+<ul>
+	<li>Design von digitalen Schaltkreisen</li>
+	<li>Travelling Salesman Problem</li>
+	<li>Mehrzieloptimierungsprobleme</li>
+	<li>Dynamische und verteilte Probleme</li>
+	<li>Quadratic Assignment Problem</li>
+	<li>Bioinformatik Proteinfaltung</li>
+	<li>Maschinenbelegungsoptimierung</li>
+	<li>Personaleinsatzplanung</li>
+	<li>Frequenzzuweisung (Frequency assignment)</li>
+	<li>Generalisiertes Zuweisungsproblem (Generalized assignment)</li>
+	<li>Mehrfaches Rucksack Problem (Multiple knapsack)</li>
+	<li>Routing von optischen Netzwerken (Optical networks routing)</li>
+	<li>Redundanzenzuweisung (Redundancy allocation)</li>
+	<li>Bedingungserfüllungsproblem (Constraint satisfaction)</li>
+</ul>
+
 <h2>Genetische Algorithmen</h2>
 <h3>Allgemein</h3>
 
-<h3>Anwendungsgebiete</h3>
+<h4>Anwendungsgebiete</h4>
 <p>Genetische Algorithmen sind Algorithmen, die mit einem Soft-Computing Ansatz zu lösen sind. Soft-Computing Ansätze werden durch modellfreie Ansätze, Annäherungen statt exakten Lösungen (die nicht immer ausreichen), schnelles finden einer brauchbaren aber nicht exakten Lösung.</p>
 
 <h4>Lösungsansätze</h4>

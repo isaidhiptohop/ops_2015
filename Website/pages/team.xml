@@ -1,7 +1,37 @@
-<h2>Team</h2>
+<h1>Team</h1>
 <p>Unser Team</p>
-Moosbrugger Jakob
-Wiesinger Georg
-Paul Richard
-Koch Sebastian
-Zila Markus
+
+<table>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Bereiche</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Koch Sebastian</td>
+			<td>Website Visualisierung</td>
+		</tr>
+		<tr>
+			<td>Moosbrugger Jakob</td>
+			<td>Programmierung und Theorie</td>
+		</tr>
+		<tr>
+			<td>Paul Richard</td>
+			<td>Programmierung</td>
+		</tr>
+		<tr>
+			<td>Wiesinger Georg</td>
+			<td>Website Erstellung und Texte</td>
+		</tr>
+		<tr>
+			<td>Zila Markus</td>
+			<td>Theorieausarbeitung</td>
+		</tr>
+	</tbody>
+</table>
+
+
+
+

@@ -1,3 +1,32 @@
-<h2>Anwendungsfälle</h2>
-<p>Recherchieren  Sie ̈über  weitere  Anwendungen  der  vorgestellten  Algorithmen und  stellen  Sie  die  Ergebnisse  in  einer  Graphik  dar.  Wofür  eignet  sich  was?</p>
-<p>Wann sollte man besser andere Methoden verwenden?</p>
+<h1>Anwendungsfälle</h1>
+
+<h2>Vehicle Routing Problem / Tourenplanung</h2>
+<p>Problemstellung -> Eine bestimmte Anzahl an Kunden muss mit jeweils nachgefragten Gütern beliefert werden, sowie nachgefragte Services, welche eine bestimmte Zeit beanspruchen, durchgeführt werden. Touren starten und enden bei einem Lager. Fahrzeuge sind in der Kapazität und der maximalen Fahrtlänge eingeschränkt. Fahrtzeit bzw. Distanz zwischen Orten ist bekannt.</p>
+<p>Ziel -> Die Zeit bzw. Länge der Touren soll minimiert werden.</p>
+<p>Umsetzung -> Mittels Ant System, Hybrid Ant System (und mehrere Abwandlungen davon). Das Problem ist auch mit mehreren Kolonien lösbar.</p>
+
+<h2>Routing in Netzwerken / AntNet</h2>
+<p>Problemstellung -> Ein Netzwerk soll derart gesteuert werden, dass Datenpakete unter Berücksichtigung der derzeitigen Netzwerkauslastung über den schnellsten Weg vom Ausgangssystem zum Zielsystem gesendet werden. Ausgangspunkte, Ziele und Anzahl der Datenpakete sind von der Nachfrage im Netzwerk abhängig und müssen nicht bekannt sein. Es handelt sich um ein auf mehrere Rechner verteiltes Problem. Die Auslastung der einzelnen Knotenpunkte variiert ständig.</p>
+<p>Ziel -> Der schnellste Weg für Datenpakete soll unter sich ständig ändernden Bedingungen gefunden werden.</p>
+<p>Umsetzung -> Es gibt 2 Phasen. Eine Initialisierungsphase, in welcher die Ameisen die Routingtabellen initialisieren und eine Hauptphase. In der Hauptphase laufen sowohl Ameisen (so genannte “forward ants” und “backward ants”) als auch Datenpakete durch das Netzwerk. Backward ants haben gegenüber Datenpaketen und forward ants Vorrang. In regelmäßigen Abständen wird auf jeden Knoten eine forward ant mit einem zufälligen Ziel gesetzt - die Verteilung der Ziele sollte ungefähr der tatsächlichen Verteilung der Datenpaketziele entsprechen. Jede forward ant trägt eine Tabelle mit den durchlaufenen Knoten sowie der Zeit seit Verlassen des Startknotens mit sich. Läuft eine Ameise im Kreis, werden die zu viel besuchten Knoten aus der Tabelle entfernt. Erreicht sie den Zielknoten, wird eine backward ant generiert, welche den exakt umgekehrten Weg der forward ant gehen soll. Auf diesem Weg aktualisiert sie die Routing-Tabellen, sowie eine vorhandene Matrix, welche die geschätzten Durchschnittszeiten vom Knoten zu einem Zielknoten und die entsprechende Varianz enthält. Durch die Aktualisierungen aller Ameisen wird die Netzwerkauslastung indirekt in den Routing-Tabellen festgehalten - nach diesen Werten orientierne sich die forward ants und die Datenpakete.</p>
+
+<h2>Weitere Probleme, auf welche der Ameisenalgorithmus angewendet werden kann</h2>
+<ul>
+	<li>Design von digitalen Schaltkreisen</li>
+	<li>Travelling Salesman Problem</li>
+	<li>Mehrzieloptimierungsprobleme</li>
+	<li>Dynamische und verteilte Probleme</li>
+	<li>Quadratic Assignment Problem</li>
+	<li>Bioinformatik Proteinfaltung</li>
+	<li>Maschinenbelegungsoptimierung</li>
+	<li>Personaleinsatzplanung</li>
+	<li>Frequenzzuweisung (Frequency assignment)</li>
+	<li>Generalisiertes Zuweisungsproblem (Generalized assignment)</li>
+	<li>Mehrfaches Rucksack Problem (Multiple knapsack)</li>
+	<li>Routing von optischen Netzwerken (Optical networks routing)</li>
+	<li>Redundanzenzuweisung (Redundancy allocation)</li>
+	<li>Bedingungserfüllungsproblem (Constraint satisfaction)</li>
+</ul>
+
+<h2>Ameisenalgorithmus Simulation</h2>
+<object width="950" height="670" data="../Simulator/index.html" type="text/html"></object>
