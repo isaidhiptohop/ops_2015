@@ -11,7 +11,7 @@
 <p>Umsetzung -> Es gibt 2 Phasen. Eine Initialisierungsphase, in welcher die Ameisen die Routingtabellen initialisieren und eine Hauptphase. In der Hauptphase laufen sowohl Ameisen (so genannte “forward ants” und “backward ants”) als auch Datenpakete durch das Netzwerk. Backward ants haben gegenüber Datenpaketen und forward ants Vorrang. In regelmäßigen Abständen wird auf jeden Knoten eine forward ant mit einem zufälligen Ziel gesetzt - die Verteilung der Ziele sollte ungefähr der tatsächlichen Verteilung der Datenpaketziele entsprechen. Jede forward ant trägt eine Tabelle mit den durchlaufenen Knoten sowie der Zeit seit Verlassen des Startknotens mit sich. Läuft eine Ameise im Kreis, werden die zu viel besuchten Knoten aus der Tabelle entfernt. Erreicht sie den Zielknoten, wird eine backward ant generiert, welche den exakt umgekehrten Weg der forward ant gehen soll. Auf diesem Weg aktualisiert sie die Routing-Tabellen, sowie eine vorhandene Matrix, welche die geschätzten Durchschnittszeiten vom Knoten zu einem Zielknoten und die entsprechende Varianz enthält. Durch die Aktualisierungen aller Ameisen wird die Netzwerkauslastung indirekt in den Routing-Tabellen festgehalten - nach diesen Werten orientierne sich die forward ants und die Datenpakete.</p>
 
 <h2>Weitere Probleme, auf welche der Ameisenalgorithmus angewendet werden kann</h2>
-<ul>
+<ul class="list">
 	<li>Design von digitalen Schaltkreisen</li>
 	<li>Travelling Salesman Problem</li>
 	<li>Mehrzieloptimierungsprobleme</li>

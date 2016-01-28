@@ -19,7 +19,7 @@ p_{xy}=\frac{(\tau_{xy}^{\alpha})(\eta_{xy}^{\beta})}{\sum_{z \element allowed_{
 <h3<h3>Unser Ameisenalgorithmus</h3>
 <p>Der von uns implementierte Ameisenalgorithmus ist zur Lösung des Problems, den kürzesten Weg zwischen 2 Punkten in einem Graph zu finden, beschränkt, d.h. es ist nicht möglich mehrzielige Probleme wie das Travelling-Salseman Problem zu lösen. Diese Einschränkung folgt direkt aus der Entscheidung den Hin- und Rückweg  der Ameise unterschiedlich zu behandeln (siehe 5.2 /*Markus: kannst du hier nen Verweis machen*/).</p>
 <p>Weitere Einschränkungen der Ameise:</p>
-<ul>
+<ul class="list">
 	<li>sie kann nicht den Weg, auf dem sie zu dem Knoten gekommen ist, zurückgehen, es sei denn, sie hat keinen anderen Weg</li>
 	<li>sie darf kein Ziel zwei mal besuchen, es sei denn, sie hat bereits alle anderen ebenfalls besucht</li>
 	<li>am Hinweg zum Futter legt sie keine Pheromonspur</li>
@@ -35,7 +35,7 @@ p_{xy}=\frac{(\tau_{xy}^{\alpha})(\eta_{xy}^{\beta})}{\sum_{z \element allowed_{
 
 <h4>Probleme unserer Implementierung</h4>
 <p>Folgende Probleme entstanden bei unsere Implementierung des Ameisenalgorithmus, dadurch entstehen die in 4 beschriebenen Regeln für eine Ameise.</p>
-<ul>
+<ul class="list">
 	<li>Wenn sich die Ameise bei jedem Knoten frei entscheiden könnte wo sie hingeht, wäre es auch möglich, dass sie den Weg zurück nimmt, was jedoch nicht Zielführend ist. Deshalb wurde der Rückweg ausgenommen, es sei denn es gibt keine andere Möglichkeit.</li>
 	<li>Wenn die Ameise immer alle Ziele besuchen darf, hat sie gar keinen Anreizt ein anderes Ziel zu finden, und wird deshalb immer im Kreis um ein Ziel laufen, deshalb wurden besuchte Ziele gesperrt.</li>
 	<li>Wenn die Ameise immer Pheromone legt, entstehen bei großen und lose verketteten Graphen mit wenigen Zielen oft Kreise, in denen sich die Ameisen bewegen, ohne daraus ausbrechen zu können. Deshalb wird zwischen Hin- und Rückweg unterschieden. Dadurch wird die Ameise bei der erstmaligen Futtersuche ohne Beeinflussung das Futter suchen, und erst bei gefundenem Fressen andere Ameisen auf ihren Pfad lenken. Eine andere Lösung für dieses Problem wäre gewesen, dass eine Ameise einen beliebigen Knoten nur einmal besuchen kann, es sei denn, sie hat keine andere Möglichkeit mehr, als diese Regel zu verletzen, in diesem Fall wird die History gelöscht, und die Ameise darf somit wieder alle nicht-Ziel Knoten besuchen, dafür muss sie eine Iteration “aussetzen”. Der Grund wieso diese Lösung nicht verwendet wurde, ist der höhere Rechenaufwand im Vergleich zur Implementierten Lösung.</li>
@@ -55,7 +55,7 @@ p_{xy}=\frac{(\tau_{xy}^{\alpha})(\eta_{xy}^{\beta})}{\sum_{z \element allowed_{
 <p>Umsetzung -> Es gibt 2 Phasen. Eine Initialisierungsphase, in welcher die Ameisen die Routingtabellen initialisieren und eine Hauptphase. In der Hauptphase laufen sowohl Ameisen (so genannte “forward ants” und “backward ants”) als auch Datenpakete durch das Netzwerk. Backward ants haben gegenüber Datenpaketen und forward ants Vorrang. In regelmäßigen Abständen wird auf jeden Knoten eine forward ant mit einem zufälligen Ziel gesetzt - die Verteilung der Ziele sollte ungefähr der tatsächlichen Verteilung der Datenpaketziele entsprechen. Jede forward ant trägt eine Tabelle mit den durchlaufenen Knoten sowie der Zeit seit Verlassen des Startknotens mit sich. Läuft eine Ameise im Kreis, werden die zu viel besuchten Knoten aus der Tabelle entfernt. Erreicht sie den Zielknoten, wird eine backward ant generiert, welche den exakt umgekehrten Weg der forward ant gehen soll. Auf diesem Weg aktualisiert sie die Routing-Tabellen, sowie eine vorhandene Matrix, welche die geschätzten Durchschnittszeiten vom Knoten zu einem Zielknoten und die entsprechende Varianz enthält. Durch die Aktualisierungen aller Ameisen wird die Netzwerkauslastung indirekt in den Routing-Tabellen festgehalten - nach diesen Werten orientierne sich die forward ants und die Datenpakete.</p>
 
 <h4>Weitere Probleme, auf welche der Ameisenalgorithmus angewendet werden kann</h4>
-<ul>
+<ul class="list">
 	<li>Design von digitalen Schaltkreisen</li>
 	<li>Travelling Salesman Problem</li>
 	<li>Mehrzieloptimierungsprobleme</li>
@@ -152,7 +152,7 @@ p_{xy}=\frac{(\tau_{xy}^{\alpha})(\eta_{xy}^{\beta})}{\sum_{z \element allowed_{
 		<li>Aufgrund dieser Individuen wird die neue Generation gebildet</li>
 	</ol>
 	<li>Cross Over</li>
-	<ul>
+	<ul class="list">
 		<li>Wir haben jetzt nur mehr 50% der Individuen unserer Population. Um die Nachkommen zu bilden, wird ein Cross Over durchgeführt</li>
 		<ol>
 			<li>Es werden so lange 2 zufällige Individuen genommen und Nachkommen erzeugt, bis die Population wieder auf der Startanzahl ist.</li>
@@ -161,7 +161,7 @@ p_{xy}=\frac{(\tau_{xy}^{\alpha})(\eta_{xy}^{\beta})}{\sum_{z \element allowed_{
 		</ol>
 	</ul>
 	<li>Mutation</li>
-	<ul>
+	<ul class="list">
 		<li>Damit es nicht zum Fall kommt, dass immer die selben Chromosomen ausgetauscht werden, gibt es die Mutation, die so viele betrifft, wie oben der Parameter genannt wird.</li>
 		<li>Dabei werden einfach x% der Individuen zufällig viele zufällige Chromosomen zufällig gesetzt.</li>
 	</ul>
